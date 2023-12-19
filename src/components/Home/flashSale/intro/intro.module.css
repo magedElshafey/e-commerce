@@ -1,0 +1,23 @@
+.best {
+    color: var(--blackColor);
+
+font-size: 20px;
+font-weight: 600;
+}
+.end {
+color: #000;
+font-size: 14px;
+font-weight: 400;
+}
+.link {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--redColor) !important;
+}
+.icon {
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    color: var(--redColor) !important;
+    width: 20px !important;
+    height: 20px !important;
+}

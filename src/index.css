@@ -24,6 +24,8 @@ body {
   --yellowColor: #f3de6d;
   --grayColor: #e8e8e8;
   --textColor: #555;
+  --sectionColor : #fcc8c7 ; 
+   --darkColor: #191c1f;
 }
 .pointer {
   cursor: pointer;
@@ -90,4 +92,7 @@ body {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.red {
+  color: red;
 }

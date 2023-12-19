@@ -1,0 +1,11 @@
+.mainDiv {
+    padding: 6px 12px;
+    background-color: #F3DE6D;
+    border-radius: 2px;
+    direction: ltr !important;
+    color: var(--darkColor);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}

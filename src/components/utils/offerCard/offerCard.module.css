@@ -1,0 +1,24 @@
+.card {
+    background-color: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+   
+}
+.mainImg {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+}
+.title {
+color: #191C1F;
+font-size: 14px;
+font-weight: 500;
+text-transform: uppercase;
+}
+.desc {
+color: #5F6C72;
+font-size: 14px;
+font-weight: 400;
+}

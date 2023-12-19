@@ -1,0 +1,11 @@
+.mainDiv {
+    width: 100vw;
+    background-color: var(--sectionColor);
+    height: 98px;
+}
+@media screen and (max-width : 992px) {
+    .mainDiv {
+      
+        height: auto;
+    }
+}

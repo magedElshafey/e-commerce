@@ -51,6 +51,11 @@ import room9 from "../assets/room-09.png";
 import room10 from "../assets/room-10.png";
 import room11 from "../assets/room-11.png";
 import room12 from "../assets/room-12.png";
+// we offer assets
+import offer1 from "../assets/offer-01.svg";
+import offer2 from "../assets/offer-02.svg";
+import offer3 from "../assets/offer-03.svg";
+import offer4 from "../assets/offer-04.svg";
 // shared layou3
 export const categories = [
   {
@@ -6502,5 +6507,27 @@ export const clientFaqs = [
     id: 6,
     question: "ما هى سياسة الاسترجاع؟",
     answer: ["في حالة استلام منتج مكسور"],
+  },
+];
+export const weoffer = [
+  {
+    img: offer1,
+    title: "Fasted Delivery",
+    desc: "Delivery in 24/H",
+  },
+  {
+    img: offer2,
+    title: "Support 24/7",
+    desc: "Live contact/message",
+  },
+  {
+    img: offer3,
+    title: "24 Hours Return",
+    desc: "100% money-back guarantee",
+  },
+  {
+    img: offer4,
+    title: "Secure Payment",
+    desc: "Your money is safe",
   },
 ];

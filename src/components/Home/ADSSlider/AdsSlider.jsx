@@ -31,7 +31,7 @@ const AdsSlider = ({ data }) => {
   return (
     <div className="container position-relative">
       {data.length && (
-        <div className="controls mb-3">
+        <div className="controls mb-3 mt-5 mt-md-0 pt-4 pt-md-0 ">
           <button onClick={slickPrev}>
             {i18n.language === "ar" ? <FaChevronRight /> : <FaChevronLeft />}
           </button>

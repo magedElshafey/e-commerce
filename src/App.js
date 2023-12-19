@@ -27,6 +27,7 @@ import {
   rooms,
   productStaticContent,
   clientFaqs,
+  weoffer,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -69,7 +70,16 @@ const App = () => {
       <CategoriesHeader data={categories} />
       <MobileHeader data={categories} cartItemsLength={items.length} />
       <Routes>
-        <Route path="/" element={<Home bannerSlider={bannerSlider} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              bannerSlider={bannerSlider}
+              weoffer={weoffer}
+              flashsale={specialProducts}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
