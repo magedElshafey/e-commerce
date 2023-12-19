@@ -1,0 +1,24 @@
+.mainDiv {
+  background-color: var(--redColor);
+  width: 100vw;
+  padding: 8px 190px;
+  display: flex;
+  align-items: center;
+}
+.welcome {
+  font-weight: 400;
+  font-size: 13px;
+}
+.follow {
+  font-weight: 400;
+  font-size: 13px;
+}
+.line {
+  width: 1px;
+  opacity: 0.16;
+}
+.select {
+  background-color: transparent !important;
+  border: none;
+  color: #ffffff;
+}

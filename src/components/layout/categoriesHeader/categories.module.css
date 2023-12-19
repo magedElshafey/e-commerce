@@ -1,0 +1,37 @@
+.mainDiv {
+  width: 100vw;
+  height: 50px;
+  background-color: var(--grayColor);
+  position: relative;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.bg {
+  padding: 10px;
+}
+.bg,
+.link {
+  transition: var(--mainTransition);
+  -webkit-transition: var(--mainTransition);
+  -moz-transition: var(--mainTransition);
+  -ms-transition: var(--mainTransition);
+  -o-transition: var(--mainTransition);
+}
+.bg:hover {
+  background-color: white;
+}
+.link {
+  color: black !important;
+  font-weight: 600;
+}
+.bg:hover .link {
+  color: var(--textColor) !important;
+}

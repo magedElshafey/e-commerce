@@ -1,0 +1,62 @@
+.mainDiv {
+  width: 100vw;
+  background-color: var(--blackColor);
+  display: flex;
+  align-items: center;
+  padding: 8px 116px;
+}
+.logo {
+  width: 31px;
+  height: 31px;
+  object-fit: cover;
+}
+.tecno {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+}
+.searchContainer {
+  background-color: white;
+  padding: 9px 15px;
+  flex-grow: 1;
+  margin: 0 75px;
+  position: relative;
+  box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.inp {
+  border: none;
+  background-color: transparent;
+  width: 100% !important;
+}
+.inp::placeholder {
+  color: #77878f;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.inp:focus {
+  outline: none;
+}
+.icon {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.icon.ltr {
+right: 25px;
+}
+.icon.rtl {
+  left: 25px;
+}
