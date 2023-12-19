@@ -25,6 +25,7 @@
     "react-social-sharing": "^3.3.0",
     "react-star-ratings": "^2.3.0",
     "react-transition-group": "^4.4.5",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

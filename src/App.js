@@ -33,6 +33,7 @@ import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
 import MainHeader from "./components/layout/mainHrader/MainHeader";
 import CategoriesHeader from "./components/layout/categoriesHeader/CategoriesHeader";
 import MobileHeader from "./components/layout/mobileHeader/MobileHeader";
+import Home from "./pages/Home";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -67,6 +68,9 @@ const App = () => {
       <MainHeader />
       <CategoriesHeader data={categories} />
       <MobileHeader data={categories} cartItemsLength={items.length} />
+      <Routes>
+        <Route path="/" element={<Home bannerSlider={bannerSlider} />} />
+      </Routes>
     </Router>
   );
 };

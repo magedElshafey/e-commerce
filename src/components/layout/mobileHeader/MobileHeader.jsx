@@ -63,7 +63,11 @@ const MobileHeader = ({ data, cartItemsLength }) => {
           </div>
         </div>
       </div>
-      <MenuSidebar data={data} showMenu={showMenu} setShowMenu={setShowMenu} />
+      <MenuSidebar
+        data={data}
+        showMenu={showSidebar}
+        setShowMenu={setShowSidebar}
+      />
     </div>
   );
 };
