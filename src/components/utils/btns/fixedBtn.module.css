@@ -8,7 +8,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: var(--whiteColor);
+  background-color: var(--redColor);
+  color: white;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

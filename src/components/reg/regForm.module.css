@@ -1,0 +1,22 @@
+.title {
+  color: var(--redColor);
+}
+.forgetContainer {
+  width: 70%;
+}
+@media screen and (max-width: 767px) {
+  .forgetContainer {
+    width: 100%;
+  }
+}
+.socialBtn {
+  border: none;
+  background-color: #e8ecef;
+}
+.socialBtn p {
+  font-size: 12px;
+}
+.forgetContainer img {
+  width: 24px;
+  height: 24px;
+}

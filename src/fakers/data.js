@@ -1,18 +1,19 @@
 // social media icons
-import facebook from "../assets/social/icons8-facebook-48.png";
-import insta from "../assets/social/icons8-instagram-48.png";
-import whats from "../assets/social/icons8-whatsapp-48.png";
-import tiktok from "../assets/social/icons8-tiktok-48.png";
+import facebook from "../assets/facebook.svg";
+import insta from "../assets/instagram.svg";
+import youtube from "../assets/youtube.svg";
+import whats from "../assets/whats.png";
+import tiktok from "../assets/tiktok.png";
+import snap from "../assets/snap.png";
 // banner slider images
-import banner1 from "../assets/bannerSlider/bannerSlider-01.avif";
-import banner2 from "../assets/bannerSlider/bannerSlider-02.avif";
-import banner3 from "../assets/bannerSlider/bannerSlider-03.avif";
-import banner4 from "../assets/bannerSlider/bannerSlider-04.avif";
+import banner from "../assets/bannerSlider/banner.png";
 // offers img4
 import daily from "../assets/offers/Daily-Deals-EN_3.webp";
 import hard from "../assets/offers/dailyOffer.webp";
 import freeShipping from "../assets/offers/Free-Shipping-AR_4.webp";
 import hourly from "../assets/offers/Hour-Offer.webp";
+// blogs
+import blog from "../assets/blog.png";
 // products
 import pro1 from "../assets/products/pro-01.webp";
 import pro2 from "../assets/products/pro-02.webp";
@@ -56,6 +57,18 @@ import offer1 from "../assets/offer-01.svg";
 import offer2 from "../assets/offer-02.svg";
 import offer3 from "../assets/offer-03.svg";
 import offer4 from "../assets/offer-04.svg";
+// shop with categories
+import cat1 from "../assets/cat-01.png";
+import cat2 from "../assets/cat-02.png";
+import cat3 from "../assets/cat-03.png";
+import cat4 from "../assets/cat-04.png";
+// payment
+import payment1 from "../assets/payment-01.svg";
+import payment2 from "../assets/payment-02.svg";
+import payment3 from "../assets/payment-03.svg";
+import payment4 from "../assets/payment-04.svg";
+import payment5 from "../assets/payment-05.svg";
+import payment6 from "../assets/payment-06.svg";
 // shared layou3
 export const categories = [
   {
@@ -5832,24 +5845,32 @@ export const socialMedia = {
       img: tiktok,
       path: "https://www.tiktok.com",
     },
+    {
+      img: youtube,
+      path: "https://www.youtube.com",
+    },
+    {
+      img: snap,
+      path: "https://www.snapchat.com",
+    },
   ],
 };
 // home page
 export const bannerSlider = [
   {
-    img: banner1,
+    img: banner,
     path: "/",
   },
   {
-    img: banner2,
+    img: banner,
     path: "/",
   },
   {
-    img: banner3,
+    img: banner,
     path: "/",
   },
   {
-    img: banner4,
+    img: banner,
     path: "/",
   },
 ];
@@ -6101,6 +6122,11 @@ export const branches = [
     address: "طلخا - تقسيم بهاء شارع الجمهورية",
     phone: "01022153359",
     website: "https://www.google.com",
+    enTitle: "Al-Tanatwi - Crushing Bahaa",
+    enCity: "Talkha",
+    enGovernment: "Al-Dakahlia",
+    enAddress: "Talkha - Bahaa Division, Al-Jumhuriya Street",
+    isReversed: false,
   },
   {
     title: "الطناطوي- صلاح سالم",
@@ -6109,6 +6135,11 @@ export const branches = [
     address: "طلخا - شارع صلاح سالم",
     phone: "01022153359",
     website: "https://www.google.com",
+    enTitle: "Al-Tanatwi - Crushing Bahaa",
+    enCity: "Talkha",
+    enGovernment: "Al-Dakahlia",
+    enAddress: "Talkha - Bahaa Division, Al-Jumhuriya Street",
+    isReversed: true,
   },
   {
     title: "الطناطوي- الطوميهي",
@@ -6117,6 +6148,11 @@ export const branches = [
     address: "المنصورة - ميدان الطوميهي",
     phone: "01022153359",
     website: "https://www.google.com",
+    enTitle: "Al-Tanatwi - Crushing Bahaa",
+    enCity: "Talkha",
+    enGovernment: "Al-Dakahlia",
+    enAddress: "Talkha - Bahaa Division, Al-Jumhuriya Street",
+    isReversed: false,
   },
   {
     title: "الطناطوي- تقسيم بهاء",
@@ -6125,6 +6161,11 @@ export const branches = [
     address: "طلخا - تقسيم بهاء شارع الجمهورية",
     phone: "01022153359",
     website: "https://www.google.com",
+    enTitle: "Al-Tanatwi - Crushing Bahaa",
+    enCity: "Talkha",
+    enGovernment: "Al-Dakahlia",
+    enAddress: "Talkha - Bahaa Division, Al-Jumhuriya Street",
+    isReversed: true,
   },
 ];
 export const dashboardLinks = [
@@ -6514,20 +6555,103 @@ export const weoffer = [
     img: offer1,
     title: "Fasted Delivery",
     desc: "Delivery in 24/H",
+    arTitle: "أسرع التسليم",
+    arDesc: "التسليم خلال 24 ساعة",
   },
   {
     img: offer2,
     title: "Support 24/7",
     desc: "Live contact/message",
+    arTitle: "دعم 24/7",
+    arDesc: "اتصال مباشر/رسالة",
   },
   {
     img: offer3,
     title: "24 Hours Return",
     desc: "100% money-back guarantee",
+    arTitle: "24 ساعة العودة",
+    arDesc: "ضمان استرداد الأموال بنسبة 100%",
   },
   {
     img: offer4,
     title: "Secure Payment",
+    arTitle: "دفع امن",
     desc: "Your money is safe",
+    arDesc: "أموالك آمنة",
   },
+];
+export const shopWithCategory = [
+  {
+    img: cat1,
+    mainCategory: "الأجهزة المنزلية",
+    mainCategoryEn: "appliance",
+    path: "appliances",
+  },
+  {
+    img: cat2,
+    mainCategory: "الجاليري و التحف",
+    mainCategoryEn: "Gallery",
+    path: "gallery",
+  },
+  {
+    img: cat3,
+    mainCategory: "المفروشات",
+    mainCategoryEn: "upholstery",
+    path: "upholstery",
+  },
+  {
+    img: cat4,
+    mainCategory: "السجاد",
+    mainCategoryEn: "rugs",
+    path: "rug",
+  },
+  {
+    img: cat1,
+    mainCategory: "النجف",
+    mainCategoryEn: "chandeliers",
+    path: "chandelier",
+  },
+  {
+    img: cat2,
+    mainCategory: "رفايع الأجهزة الكهربائية",
+    mainCategoryEn: "Electrical ",
+    path: "smallElectrical",
+  },
+  {
+    img: cat3,
+    mainCategory: "المراتب",
+    mainCategoryEn: "ranks",
+    path: "rank",
+  },
+];
+export const blogs = [
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+  },
+];
+export const payment = [
+  payment1,
+  payment2,
+  payment3,
+  payment4,
+  payment5,
+  payment6,
 ];

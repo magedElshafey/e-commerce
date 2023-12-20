@@ -3,8 +3,12 @@ import style from "./mainHeader.module.css";
 import { GoSearch } from "react-icons/go";
 import logo from "../../../assets/logo-ar.png";
 import { useTranslation } from "react-i18next";
-const MainHeader = () => {
-  const { i18n , t } = useTranslation();
+import { useNavigate } from "react-router-dom";
+const MainHeader = ({ isLogin }) => {
+  const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
+  const handleAccountNavigate = () =>
+    isLogin ? navigate("/accountDetails") : navigate("/login");
   return (
     <div className={`d-none d-md-block ${style.mainDiv}`}>
       <div className="container">
@@ -19,7 +23,7 @@ const MainHeader = () => {
           <div className={style.searchContainer}>
             <input
               className={style.inp}
-              placeholder= {t('search')}
+              placeholder={t("search")}
               type="text"
             />
             <GoSearch
@@ -71,6 +75,7 @@ const MainHeader = () => {
               />
             </svg>
             <svg
+              onClick={handleAccountNavigate}
               className="pointer"
               xmlns="http://www.w3.org/2000/svg"
               width="20"

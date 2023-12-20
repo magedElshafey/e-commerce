@@ -1,0 +1,19 @@
+.mainDiv {
+  width: 100vw;
+  background-color: var(--sectionColor);
+}
+
+.title {
+  color: var(--darkColor);
+  font-size: 28px;
+  font-weight: 600;
+}
+.link {
+  color: var(--darkColor);
+  font-size: 18px;
+  font-weight: 700;
+}
+.icon {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./weoffer.module.css";
 import OfferCard from "../../utils/offerCard/OfferCard";
+
 const Weoffer = ({ data }) => {
   return (
     <div className={`my-4 ${style.mainDiv} d-flex align-items-center`}>

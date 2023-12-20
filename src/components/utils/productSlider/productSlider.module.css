@@ -1,0 +1,9 @@
+.slickControls {
+  display: flex;
+  gap: 5px;
+}
+.slickControls button {
+  color: var(--textColor) !important;
+  background-color: transparent;
+  border: none;
+}

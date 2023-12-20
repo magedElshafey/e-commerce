@@ -1,0 +1,10 @@
+.mainImg {
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+}
+@media screen and (max-width: 767px) {
+  .mainImg {
+    height: 430px;
+  }
+}

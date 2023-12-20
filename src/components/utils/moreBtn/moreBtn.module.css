@@ -1,0 +1,24 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  align-items: center;
+  border: none;
+  padding: 8px;
+  color: white !important;
+  background-color: black;
+  transition: 0.4s;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.btn:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,6 @@
+.bgSection {
+  background-color: var(--sectionColor);
+}
+.bgGray {
+  background-color: var(--grayColor);
+}
