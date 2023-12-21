@@ -2,7 +2,10 @@ import React from "react";
 import style from "./productCard.module.css";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ data }) => {
+  const navigate = useNavigate();
+  const navigateProductDetails = (id) => navigate(`/product/${id}`);
   return (
     <div className={`pb-3 ${style.card}`}>
       {/**img */}
@@ -100,7 +103,10 @@ const ProductCard = ({ data }) => {
           <div className={style.circule}>
             <BsCart className={style.icon} />
           </div>
-          <div className={style.circule}>
+          <div
+            onClick={() => navigateProductDetails(data.id)}
+            className={style.circule}
+          >
             <AiOutlineEye className={style.icon} />
           </div>
         </div>

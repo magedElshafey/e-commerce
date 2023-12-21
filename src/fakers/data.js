@@ -69,7 +69,160 @@ import payment3 from "../assets/payment-03.svg";
 import payment4 from "../assets/payment-04.svg";
 import payment5 from "../assets/payment-05.svg";
 import payment6 from "../assets/payment-06.svg";
+// takseet
+import takset1 from "../assets/takset-01.webp";
+import takset2 from "../assets/takset-02.webp";
+import takset3 from "../assets/takset-03.webp";
+import takset4 from "../assets/takset-04.webp";
+import takset5 from "../assets/takset-05.webp";
 // shared layou3
+export const takset = [
+  {
+    img: takset1,
+    details: [
+      {
+        monthNum: 10,
+        amount: 170,
+      },
+      {
+        monthNum: 12,
+        amount: 150,
+      },
+      {
+        monthNum: 18,
+        amount: 120,
+      },
+      {
+        monthNum: 24,
+        amount: 100,
+      },
+      {
+        monthNum: 30,
+        amount: 80,
+      },
+      {
+        monthNum: 36,
+        amount: 60,
+      },
+    ],
+  },
+  {
+    img: takset2,
+    details: [
+      {
+        monthNum: 10,
+        amount: 170,
+      },
+      {
+        monthNum: 12,
+        amount: 150,
+      },
+      {
+        monthNum: 18,
+        amount: 120,
+      },
+      {
+        monthNum: 24,
+        amount: 100,
+      },
+      {
+        monthNum: 30,
+        amount: 80,
+      },
+      {
+        monthNum: 36,
+        amount: 60,
+      },
+    ],
+  },
+  {
+    img: takset3,
+    details: [
+      {
+        monthNum: 10,
+        amount: 170,
+      },
+      {
+        monthNum: 12,
+        amount: 150,
+      },
+      {
+        monthNum: 18,
+        amount: 120,
+      },
+      {
+        monthNum: 24,
+        amount: 100,
+      },
+      {
+        monthNum: 30,
+        amount: 80,
+      },
+      {
+        monthNum: 36,
+        amount: 60,
+      },
+    ],
+  },
+  {
+    img: takset4,
+    details: [
+      {
+        monthNum: 10,
+        amount: 170,
+      },
+      {
+        monthNum: 12,
+        amount: 150,
+      },
+      {
+        monthNum: 18,
+        amount: 120,
+      },
+      {
+        monthNum: 24,
+        amount: 100,
+      },
+      {
+        monthNum: 30,
+        amount: 80,
+      },
+      {
+        monthNum: 36,
+        amount: 60,
+      },
+    ],
+  },
+  {
+    img: takset5,
+    details: [
+      {
+        monthNum: 10,
+        amount: 170,
+      },
+      {
+        monthNum: 12,
+        amount: 150,
+      },
+      {
+        monthNum: 18,
+        amount: 120,
+      },
+      {
+        monthNum: 24,
+        amount: 100,
+      },
+      {
+        monthNum: 30,
+        amount: 80,
+      },
+      {
+        monthNum: 36,
+        amount: 60,
+      },
+    ],
+  },
+];
 export const categories = [
   {
     mainCategory: "الأجهزة المنزلية",
@@ -5790,6 +5943,10 @@ export const importantLinks = {
     {
       title: "فروعنا",
       path: "/branches",
+    },
+    {
+      title: "المدونة",
+      path: "/blogs",
     },
     {
       title: "عروض الطنطاوي",

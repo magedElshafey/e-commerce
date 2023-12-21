@@ -38,5 +38,17 @@
   "government": "government",
   "address": "address",
   "phone": "phone",
-  "website": "website"
+  "website": "website",
+  "le": "EGP",
+  "code": "code",
+  "color": "choose color",
+  "required": "This field is required",
+  "takseet": "Or installments up to",
+  "month": "month",
+  "cart": "add to cart",
+  "whishlist": "add to wishlist",
+  "cartError": "This product is multi-colored, please select a color.",
+  "months": "months",
+  "monthlyInstallment": "monthly installment",
+  "takseetAvailable": "Installment offers available"
 }

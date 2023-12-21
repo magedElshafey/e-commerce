@@ -32,6 +32,7 @@ import {
   blogs,
   payment,
   branches,
+  takset,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -44,6 +45,7 @@ import Footer from "./components/layout/footer/Footer";
 import Login from "./pages/Login";
 import Reg from "./pages/Reg";
 import Branches from "./pages/Branches";
+import Product from "./pages/Product";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -109,6 +111,21 @@ const App = () => {
       </Routes>
       <Routes>
         <Route path="/branches" element={<Branches data={branches} />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/product/:id"
+          element={
+            <Product
+              data={allProducts}
+              content={productStaticContent}
+              specialProducts={specialProducts}
+              bestSaller={bestSaller}
+              clientFaqs={clientFaqs}
+              takset={takset}
+            />
+          }
+        />
       </Routes>
       <Footer
         categories={categories}
