@@ -1,0 +1,18 @@
+.mainContainer {
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.titleContainer , .questionContainer {
+    border-bottom: 1px solid #eee;
+}
+.icon {
+    color: var(--redColor);
+}
+.arrow {
+    width: fit-content;
+}

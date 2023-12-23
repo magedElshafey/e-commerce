@@ -1,0 +1,16 @@
+.mainImg {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.faqContainer {
+  background-color: white;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}

@@ -1,0 +1,21 @@
+.mainDiv {
+    background-color: var(--sectionColor);
+    width: 100vw;
+}
+.box {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    padding: 9px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.detailsContainer {
+    border-bottom: 1px solid #eee;
+}
+.menu , .menu li {
+    list-style-type: disc;
+    list-style-position: inside;
+}

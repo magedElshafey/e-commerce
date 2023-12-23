@@ -101,7 +101,7 @@ body {
   width: 100vw;
   height: 1px;
 }
-.inp {
+.inp , .area {
   caret-color: var(--redColor);
   border: 1px solid #e8ecef;
   width: 70%;
@@ -118,7 +118,10 @@ body {
   -o-transition: 0.4s;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.inp:focus {
+.area {
+  height: 150px;
+}
+.inp:focus , .area:focus {
   outline: none;
   border: 1px solid var(--redColor);
 }
@@ -164,9 +167,14 @@ body {
   background-color: #e8ecef;
 }
 .fw500 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 .error {
   color: var(--redColor);
   font-size: 14px;
+}
+@media screen and (max-width : 767px) {
+  .inp , .area {
+    width: 100%;
+  }
 }

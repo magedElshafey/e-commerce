@@ -33,6 +33,8 @@ import {
   payment,
   branches,
   takset,
+  about1,
+  about2,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -46,6 +48,11 @@ import Login from "./pages/Login";
 import Reg from "./pages/Reg";
 import Branches from "./pages/Branches";
 import Product from "./pages/Product";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import FAQ from "./pages/FAQ";
+import MainCategory from "./pages/MainCategory";
+import SubCategory from "./pages/SubCategory";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -87,6 +94,7 @@ const App = () => {
         cartItemsLength={items.length}
         isLogin={isLogin}
       />
+      {/**home*/}
       <Routes>
         <Route
           path="/"
@@ -103,15 +111,30 @@ const App = () => {
           }
         />
       </Routes>
+      {/**auth*/}
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
       <Routes>
         <Route path="/reg" element={<Reg />} />
       </Routes>
+      {/**static pages*/}
       <Routes>
         <Route path="/branches" element={<Branches data={branches} />} />
       </Routes>
+      <Routes>
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/about"
+          element={<About about1={about1} about2={about2} />}
+        />
+      </Routes>
+      <Routes>
+        <Route path="/faqs" element={<FAQ data={faqs} />} />
+      </Routes>
+      {/**shop , offer , product*/}
       <Routes>
         <Route
           path="/product/:id"
@@ -125,6 +148,19 @@ const App = () => {
               takset={takset}
             />
           }
+        />
+      </Routes>
+      {/**categories*/}
+      <Routes>
+        <Route
+          path="/cat/:title"
+          element={<MainCategory data={categories} />}
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/cat/:title/:subTitle"
+          element={<SubCategory data={categories} />}
         />
       </Routes>
       <Footer

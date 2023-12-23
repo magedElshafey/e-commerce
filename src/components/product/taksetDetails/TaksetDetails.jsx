@@ -10,7 +10,9 @@ const TaksetDetails = ({ data }) => {
   }, []);
   return (
     <div className="container">
-      <p className="text-center mb-1 fw500 m-0 p-0">{t("takseetAvailable")}</p>
+      <p className="text-center mb-1 fw-bold m-0 p-0">
+        {t("takseetAvailable")}
+      </p>
       <div className="d-flex align-items-center flex-wrap m-0 p-0">
         {data.map((item, index) => (
           <div

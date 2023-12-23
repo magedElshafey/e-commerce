@@ -50,5 +50,10 @@
   "cartError": "This product is multi-colored, please select a color.",
   "months": "months",
   "monthlyInstallment": "monthly installment",
-  "takseetAvailable": "Installment offers available"
+  "takseetAvailable": "Installment offers available",
+  "moreDetails": "More details",
+  "clientFaqs": "Customer questions",
+  "msg": "message",
+  "send": "send",
+  "faq": "Most frequently asked questions"
 }
