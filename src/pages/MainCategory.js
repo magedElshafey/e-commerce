@@ -20,6 +20,7 @@ const MainCategory = ({ data }) => {
           <CategorySlider
             data={specialData[0].subCategories}
             path={`/cat/${specialData[0].path}`}
+            length={5}
           />
         )}
         <div className="my-4">

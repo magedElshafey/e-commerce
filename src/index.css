@@ -39,7 +39,7 @@ body {
   background-color: var(--grayColor);
   height: 100vh;
   width: 300px;
-  z-index: 80000000 !important;
+  z-index: 8000000 !important;
   transition: 0.4s;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
@@ -101,7 +101,8 @@ body {
   width: 100vw;
   height: 1px;
 }
-.inp , .area {
+.inp,
+.area {
   caret-color: var(--redColor);
   border: 1px solid #e8ecef;
   width: 70%;
@@ -121,7 +122,8 @@ body {
 .area {
   height: 150px;
 }
-.inp:focus , .area:focus {
+.inp:focus,
+.area:focus {
   outline: none;
   border: 1px solid var(--redColor);
 }
@@ -173,8 +175,9 @@ body {
   color: var(--redColor);
   font-size: 14px;
 }
-@media screen and (max-width : 767px) {
-  .inp , .area {
+@media screen and (max-width: 767px) {
+  .inp,
+  .area {
     width: 100%;
   }
 }

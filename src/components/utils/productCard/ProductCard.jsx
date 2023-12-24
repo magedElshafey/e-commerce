@@ -10,7 +10,11 @@ const ProductCard = ({ data }) => {
     <div className={`pb-3 ${style.card}`}>
       {/**img */}
       <div className="d-flex justify-content-center my-3">
-        <img alt="product/img" className={style.mainImg} src={data.img} />
+        <img
+          alt="product/img"
+          className={style.mainImg}
+          src={data.img || data.mainImg}
+        />
       </div>
       {/*reveiw*/}
       <div className="d-flex align-items-center gap-1 mb-2">

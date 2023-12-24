@@ -53,6 +53,8 @@ import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import MainCategory from "./pages/MainCategory";
 import SubCategory from "./pages/SubCategory";
+import SubSubCategory from "./pages/SubSubCategory";
+import CartSidebar from "./components/cart/cartSidebar/CartSidebar";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -93,6 +95,12 @@ const App = () => {
         data={categories}
         cartItemsLength={items.length}
         isLogin={isLogin}
+      />
+      *{" "}
+      <CartSidebar
+        openCart={openCart}
+        cartItemsLength={items.length}
+        cartItems={items}
       />
       {/**home*/}
       <Routes>
@@ -161,6 +169,12 @@ const App = () => {
         <Route
           path="/cat/:title/:subTitle"
           element={<SubCategory data={categories} />}
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/cat/:title/:subTitle/:subSubTitle"
+          element={<SubSubCategory data={categories} />}
         />
       </Routes>
       <Footer

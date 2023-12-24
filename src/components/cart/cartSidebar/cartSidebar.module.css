@@ -1,0 +1,41 @@
+/* start cart side bar */
+.mainContainer {
+  background-color: black !important;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 99 !important;
+  overflow-y: scroll;
+  width: 500px !important;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+@media screen and (max-width: 767px) {
+  .mainContainer {
+    width: 320px !important;
+  }
+}
+
+.hide {
+  left: -500%;
+}
+
+.show {
+  left: 0;
+}
