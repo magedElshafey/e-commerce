@@ -20,7 +20,7 @@ const Footer = ({
               {i18n.language === "ar" ? "لوجو" : "Logo"}
             </h1>
             <p className="m-0 p-0 mb-3 text-white-50">{t("slogan")}</p>
-            <h2 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h2>
+            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h3>
             <div className="d-flex align-items-center gap-2 flex-wrap">
               {socialMedia.links.map((item, index) => (
                 <a
@@ -39,9 +39,9 @@ const Footer = ({
             </div>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h2 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("importantLinks")}
-            </h2>
+            </h3>
             <ul className="m-0 p-0">
               {importantLinks.links.map((link, index) => (
                 <li key={index} className="mb-2 p-0">
@@ -56,9 +56,9 @@ const Footer = ({
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h2 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("categories")}
-            </h2>
+            </h3>
 
             <ul className="m-0 p-0">
               {categories.map((category, index) => (
@@ -74,9 +74,9 @@ const Footer = ({
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h2 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("account")}
-            </h2>
+            </h3>
             <ul className="m-0 p-0">
               {account.links.map((link, index) => (
                 <li key={index} className="mb-2 p-0">

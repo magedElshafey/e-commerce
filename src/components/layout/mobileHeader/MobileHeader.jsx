@@ -17,8 +17,9 @@ import { BsFacebook } from "react-icons/bs";
 import { FaPinterestP } from "react-icons/fa";
 import { BiLogoYoutube } from "react-icons/bi";
 import { GoSearch } from "react-icons/go";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MenuSidebar from "../menuSidebar/MenuSidebar";
+import { openCart } from "../../../Redux/cart";
 const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
             </div>
             <div className="d-flex align-items-center gap-1">
               <AiOutlineShoppingCart
+                onClick={() => dispatch(openCart())}
                 size={20}
                 className={`pointer ${style.cart}`}
               />

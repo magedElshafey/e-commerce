@@ -3,7 +3,10 @@ import style from "./productCard.module.css";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../../Redux/cart";
+import { useDispatch } from "react-redux";
 const ProductCard = ({ data }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const navigateProductDetails = (id) => navigate(`/product/${id}`);
   return (
@@ -104,7 +107,10 @@ const ProductCard = ({ data }) => {
           <div className={style.circule}>
             <AiOutlineHeart className={style.icon} />
           </div>
-          <div className={style.circule}>
+          <div
+            onClick={() => dispatch(addToCart(data))}
+            className={style.circule}
+          >
             <BsCart className={style.icon} />
           </div>
           <div

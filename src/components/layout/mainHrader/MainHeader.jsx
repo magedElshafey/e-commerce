@@ -4,7 +4,12 @@ import { GoSearch } from "react-icons/go";
 import logo from "../../../assets/logo-ar.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { closeCart, openCart } from "../../../Redux/cart";
+import { useDispatch, useSelector } from "react-redux";
 const MainHeader = ({ isLogin }) => {
+  const { isCartOpen } = useSelector((state) => state.cartSlice);
+  console.log("is cart open ? ", isCartOpen);
+  const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const handleAccountNavigate = () =>
@@ -35,6 +40,7 @@ const MainHeader = ({ isLogin }) => {
           {/*cart , favourite , login */}
           <div className="d-flex align-items-center gap-2">
             <svg
+              onClick={() => dispatch(openCart())}
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"

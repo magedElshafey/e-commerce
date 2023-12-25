@@ -1,0 +1,49 @@
+.stepContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #23262f;
+  color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+@media screen and (max-width: 767px) {
+  .stepContainer {
+    width: 20px;
+    height: 20px;
+  }
+}
+.green {
+  background-color: #38cb89 !important;
+}
+
+.active {
+  opacity: 1;
+}
+.notActive {
+  opacity: 0.5;
+}
+.stepContainer p {
+  color: white;
+  font-weight: 600;
+}
+.title {
+  color: #23262f;
+  font-weight: 600;
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 12px;
+  }
+}
+.border {
+  border-bottom: 2px solid #23262f;
+}
+.greenBorder {
+  border-bottom: 2px solid #38cb89;
+}
+.greenText {
+  color: #38cb89;
+}

@@ -55,6 +55,9 @@ import MainCategory from "./pages/MainCategory";
 import SubCategory from "./pages/SubCategory";
 import SubSubCategory from "./pages/SubSubCategory";
 import CartSidebar from "./components/cart/cartSidebar/CartSidebar";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import CompleteOrder from "./pages/CompleteOrder";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -79,8 +82,7 @@ const App = () => {
     }
   }, [i18n.language]);
   // cart details
-  const openCart = useSelector((state) => state.cartSlice.openCart);
-  const items = useSelector((state) => state.cartSlice.cartItems);
+  const { isCartOpen, cartItems } = useSelector((state) => state.cartSlice);
   const { isLogin } = useSelector((state) => state.authSlice);
 
   return (
@@ -93,14 +95,14 @@ const App = () => {
       <CategoriesHeader data={categories} />
       <MobileHeader
         data={categories}
-        cartItemsLength={items.length}
+        cartItemsLength={cartItems.length}
         isLogin={isLogin}
       />
-      *{" "}
+
       <CartSidebar
-        openCart={openCart}
-        cartItemsLength={items.length}
-        cartItems={items}
+        isCartOpen={isCartOpen}
+        cartItemsLength={cartItems.length}
+        cartItems={cartItems}
       />
       {/**home*/}
       <Routes>
@@ -176,6 +178,16 @@ const App = () => {
           path="/cat/:title/:subTitle/:subSubTitle"
           element={<SubSubCategory data={categories} />}
         />
+      </Routes>
+      {/**checkout pages*/}
+      <Routes>
+        <Route path="/cart" element={<Cart data={cartItems} />} />
+      </Routes>
+      <Routes>
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+      <Routes>
+        <Route path="/complete" element={<CompleteOrder />} />
       </Routes>
       <Footer
         categories={categories}

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 const initialState = {
   cartItems: JSON.parse(window.localStorage.getItem("cart")) || [],
-  openCart: false,
+  isCartOpen: false,
 };
 const cartSlice = createSlice({
   initialState,
@@ -10,11 +10,11 @@ const cartSlice = createSlice({
   reducers: {
     // open cart
     openCart: (state) => {
-      state.openCart = true;
+      state.isCartOpen = true;
     },
     // close cart
     closeCart: (state) => {
-      state.openCart = false;
+      state.isCartOpen = false;
     },
     // add to cart
     addToCart: (state, action) => {

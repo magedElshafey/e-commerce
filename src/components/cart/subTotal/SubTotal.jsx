@@ -3,9 +3,10 @@ import style from "./subTotal.module.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { closeCart } from "../../../Redux/cart";
+import { useTranslation } from "react-i18next";
 const SubTotal = ({ items }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isLogin } = useSelector((state) => state.authSlice);
   const navigate = useNavigate();
   const totalPrice = items.reduce((acc, product) => {
     acc += product.disscount
@@ -14,23 +15,24 @@ const SubTotal = ({ items }) => {
     return acc;
   }, 0);
   const handleCheckout = () => {
-    if (isLogin) {
-      navigate("/checkout");
-    } else {
-      navigate("/login");
-    }
+    navigate("/cart");
     dispatch(closeCart());
   };
   return (
     <div className={style.subTotalContainer}>
       <div className="p-2">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <p className="m-0 p-0 fw-bold">إجمالي العربة : </p>
-          <p className="m-0 p-0 fw-bold">{totalPrice} جنيه</p>
+          <p className="m-0 p-0 fw-bold">{t("sub")} : </p>
+          <p className="m-0 p-0 fw-bold">
+            {totalPrice}
+            {t("le")}
+          </p>
         </div>
-        <button onClick={handleCheckout} className={style.btn}>
-          إستكمال الطلب
-        </button>
+        <div className="d-flex justify-content-center">
+          <button onClick={handleCheckout} className="newBtn">
+            {t("checkout")}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,20 +1,8 @@
-.mainContainer {
-  border-bottom: 1px solid #e8ecef;
-}
 .img {
   width: 80px;
   height: 80px;
 }
-.title {
-  font-weight: 600;
-  font-size: 14px;
-  color: #141718;
-}
-@media screen and (max-width: 767px) {
-  .title {
-    width: 80%;
-  }
-}
+
 .color {
   color: #6c7275;
   font-size: 12px;
@@ -42,11 +30,34 @@
   font-weight: 600;
 }
 .close {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
-.price {
-  font-size: 14px;
-  color: #121212;
+.total {
   font-weight: 600;
+}
+.remove {
+  color: #6c7275;
+  font-weight: 600;
+  font-size: 14px;
+}
+.removeContainer {
+  width: fit-content;
+}
+.cellWidth {
+  width: 40% !important;
+}
+.smallCellWidth {
+  width: 20%;
+}
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #141718;
+  width: 150% !important;
+}
+@media screen and (max-width: 992px) {
+  .title {
+    width: 100% !important;
+  }
 }

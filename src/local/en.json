@@ -55,5 +55,19 @@
   "clientFaqs": "Customer questions",
   "msg": "message",
   "send": "send",
-  "faq": "Most frequently asked questions"
+  "faq": "Most frequently asked questions",
+  "products": "products",
+  "cart1": "your shopping cart ",
+  "emptyCart": "No products on the cart",
+  "color1": "color",
+  "black": "black",
+  "sub": "sub total",
+  "checkout": "check out",
+  "checkoutD": "checkout Details",
+  "order": "order complete",
+  "product": "product",
+  "qty": "quantity",
+  "price": "price",
+  "subTotal": "sub Total",
+  "remove": "remove"
 }
