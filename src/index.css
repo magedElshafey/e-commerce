@@ -169,7 +169,7 @@ body {
   background-color: #e8ecef;
 }
 .fw500 {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 .error {
   color: var(--redColor);
@@ -178,6 +178,36 @@ body {
 @media screen and (max-width: 767px) {
   .inp,
   .area {
+    width: 100%;
+  }
+}
+.table-container {
+  overflow-x: auto;
+}
+
+.checkInp {
+  border: 1px solid #CBCBCB;
+  width: 100%;
+  padding: 7px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.checkInp:focus {
+  outline: none;
+}
+.formContainer , .paymentContainer {
+  width: 85%;
+  
+}
+.formContainer {
+   border: 1px solid #6C7275;
+}
+@media screen and (max-width : 767px) {
+  .formContainer , .paymentContainer {
     width: 100%;
   }
 }

@@ -3,8 +3,10 @@ import style from "./blogCard.module.css";
 import useTruncateString from "../../hooks/useTruncateString";
 import { useTranslation } from "react-i18next";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 const BlogCard = ({ data }) => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   return (
     <div className={style.card}>
       <div className="d-flex justify-content-center">
@@ -15,7 +17,10 @@ const BlogCard = ({ data }) => {
       </p>
       <p className={`m-0 p-0 ${style.desc}`}>{useTruncateString(data.desc)}</p>
 
-      <button className={style.btn}>
+      <button
+        onClick={() => navigate(`/blog/${data.id}`)}
+        className={style.btn}
+      >
         <span>{t("more")}</span>
         {i18n.language === "en" ? (
           <FaArrowRightLong size={15} />

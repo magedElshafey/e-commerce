@@ -6,7 +6,12 @@ import CartItems from "../cartItems/CartItems";
 import CartCounter from "../cartCounter/CartCounter";
 import SubTotal from "../subTotal/SubTotal";
 import CartEmpty from "../cartEmpty/CartEmpty";
-const CartSidebar = ({ isCartOpen, cartItemsLength, cartItems }) => {
+const CartSidebar = ({
+  isCartOpen,
+  cartItemsLength,
+  cartItems,
+  totalPrice,
+}) => {
   const sidebarRef = useRef(null);
   const dispatch = useDispatch();
   const handleClickOutside = (event) => {
@@ -32,7 +37,7 @@ const CartSidebar = ({ isCartOpen, cartItemsLength, cartItems }) => {
           <CartCounter cartItems={cartItemsLength} />
         </div>
         {cartItemsLength ? <CartItems cartItems={cartItems} /> : <CartEmpty />}
-        {cartItemsLength ? <SubTotal items={cartItems} /> : null}
+        {cartItemsLength ? <SubTotal totalPrice={totalPrice} /> : null}
       </div>
       <div
         className={`${style.overlay} ${isCartOpen ? style.show : style.hide} `}

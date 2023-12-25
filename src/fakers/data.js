@@ -80,6 +80,12 @@ import aboutus1 from "../assets/aboutus-01.jpg";
 import aboutus2 from "../assets/aboutus-02.jpg";
 // faq
 import faqImg from "../assets/faq.jpg";
+// payment
+import wallet from "../assets/icons8-wallet-48.png";
+import voda from "../assets/icons8-vodafone-48.png";
+import etisalat from "../assets/icons8-etisalat-48.png";
+import visa from "../assets/icons8-visa-48.png";
+import primum from "../assets/takset-05.webp";
 // shared layou3
 export const takset = [
   {
@@ -20360,7 +20366,6 @@ export const importantLinks = {
       title: "الاسئلة الأكثر شيوعا",
       path: "/faqs",
     },
-  
   ],
 };
 export const account = {
@@ -21198,6 +21203,7 @@ export const blogs = [
       "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
     desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
     btnText: "read more",
+    id: 1,
   },
   {
     img: blog,
@@ -21205,6 +21211,7 @@ export const blogs = [
       "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
     desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
     btnText: "read more",
+    id: 2,
   },
   {
     img: blog,
@@ -21212,6 +21219,79 @@ export const blogs = [
       "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
     desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
     btnText: "read more",
+    id: 3,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 4,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 5,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 6,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 7,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 8,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 9,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 10,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 11,
+  },
+  {
+    img: blog,
+    title:
+      "Praesent fringilla erat a lacinia egestas donec vehicula tempor libero et cursus.",
+    desc: "Suspendisse iaculis, mi nec suscipit aliquet, ante lectus eleifend dui, in viverra magna purus ac dia suspendie potenti acenas ornare.",
+    btnText: "read more",
+    id: 12,
   },
 ];
 export const payment = [
@@ -21239,4 +21319,110 @@ export const about2 = {
     "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق  (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل  (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.",
   enDesc:
     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+};
+
+export const address = [
+  // {
+  //   name: "megz",
+  //   phone: "01022153359",
+  //   governemt: "el-dkahly",
+  //   city: "talkha",
+  //   country: "egypt",
+  //   id: 1,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "megoo",
+  //   phone: "01019846513",
+  //   governemt: "alexandria",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 2,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 3,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 4,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 5,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 6,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 7,
+  //   st: "qanat el-swees",
+  // },
+  // {
+  //   name: "esraa",
+  //   phone: "01011111",
+  //   governemt: "fayoum",
+  //   city: "smoha",
+  //   country: "egypt",
+  //   id: 8,
+  //   st: "qanat el-swees",
+  // },
+];
+export const paymentMethods = [
+  {
+    title: "الدفع عند الإستلام",
+    enTitle: "Paiement when recieving",
+    imgs: [wallet],
+    id: 1,
+  },
+  {
+    title: "الدفع بالمحفظة",
+    enTitle: "Wallet payment",
+    imgs: [voda, etisalat],
+    id: 2,
+  },
+  {
+    title: "كارت بريميوم",
+    enTitle: "premium card",
+    imgs: [primum],
+    id: 3,
+  },
+  {
+    title: "بطاقات الدفع الإلكتروني",
+    enTitle: "visa",
+    imgs: [visa],
+    id: 4,
+  },
+];
+export const orderDetails = {
+  code: "102254634",
+  date: "25 Jan , 2024",
+  method: "credit card",
 };

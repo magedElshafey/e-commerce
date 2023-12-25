@@ -1,19 +1,14 @@
 import React from "react";
 import style from "./subTotal.module.css";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { closeCart } from "../../../Redux/cart";
 import { useTranslation } from "react-i18next";
-const SubTotal = ({ items }) => {
+const SubTotal = ({ totalPrice }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const totalPrice = items.reduce((acc, product) => {
-    acc += product.disscount
-      ? (+product.orignalPrice - +product.disscount) * +product.quantity
-      : product.orignalPrice * product.quantity;
-    return acc;
-  }, 0);
+
   const handleCheckout = () => {
     navigate("/cart");
     dispatch(closeCart());

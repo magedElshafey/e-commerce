@@ -1,0 +1,33 @@
+.title {
+    font-weight: 600;
+    color: #141718;
+}
+.coponContainer {
+    width: 320px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(108, 114, 117, 0.50);
+    height: 52px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.inp {
+    display: inline-block;
+    width: 90% !important;
+    border: none;
+    background-color: transparent;
+}
+.inp:focus {
+    outline: none;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: #141718;
+}

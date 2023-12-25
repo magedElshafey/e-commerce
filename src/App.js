@@ -35,6 +35,9 @@ import {
   takset,
   about1,
   about2,
+  address,
+  paymentMethods,
+  orderDetails,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -58,6 +61,8 @@ import CartSidebar from "./components/cart/cartSidebar/CartSidebar";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import CompleteOrder from "./pages/CompleteOrder";
+import Blogs from "./pages/Blogs";
+import Blog from "./pages/Blog";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -84,7 +89,12 @@ const App = () => {
   // cart details
   const { isCartOpen, cartItems } = useSelector((state) => state.cartSlice);
   const { isLogin } = useSelector((state) => state.authSlice);
-
+  const totalPrice = cartItems.reduce((acc, product) => {
+    acc += product.disscount
+      ? (+product.orignalPrice - +product.disscount) * +product.quantity
+      : product.orignalPrice * product.quantity;
+    return acc;
+  }, 0);
   return (
     <Router>
       <ScrollToTopAfterChangePage />
@@ -103,6 +113,7 @@ const App = () => {
         isCartOpen={isCartOpen}
         cartItemsLength={cartItems.length}
         cartItems={cartItems}
+        totalPrice={totalPrice}
       />
       {/**home*/}
       <Routes>
@@ -144,6 +155,12 @@ const App = () => {
       <Routes>
         <Route path="/faqs" element={<FAQ data={faqs} />} />
       </Routes>
+      <Routes>
+        <Route path="/blogs" element={<Blogs data={blogs} />} />
+      </Routes>
+      <Routes>
+        <Route path="/blog/:id" element={<Blog data={blogs} />} />
+      </Routes>
       {/**shop , offer , product*/}
       <Routes>
         <Route
@@ -181,13 +198,35 @@ const App = () => {
       </Routes>
       {/**checkout pages*/}
       <Routes>
-        <Route path="/cart" element={<Cart data={cartItems} />} />
+        <Route
+          path="/cart"
+          element={<Cart data={cartItems} totalPrice={totalPrice} />}
+        />
       </Routes>
       <Routes>
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              address={address}
+              totalPrice={totalPrice}
+              paymentMethods={paymentMethods}
+              cartItems={cartItems}
+            />
+          }
+        />
       </Routes>
       <Routes>
-        <Route path="/complete" element={<CompleteOrder />} />
+        <Route
+          path="/complete"
+          element={
+            <CompleteOrder
+              cartItems={cartItems}
+              orderDetails={orderDetails}
+              totalPrice={totalPrice}
+            />
+          }
+        />
       </Routes>
       <Footer
         categories={categories}
