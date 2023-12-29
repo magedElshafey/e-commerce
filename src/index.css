@@ -211,3 +211,28 @@ body {
     width: 100%;
   }
 }
+.filterBtnTitle {
+  color: #6C7275;
+}
+.filterBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  padding: 8px 16px;
+  border: 2px solid #6C7275;
+  background-color: transparent;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.filterInp {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+.filterInp:focus {
+  outline: none;
+}

@@ -95,5 +95,12 @@
   "rec": "Your order has been received",
   "orderCode": "order Code",
   "date": "date",
-  "continue": "continue shopping"
+  "continue": "continue shopping",
+  "offers": "El-Tnatawi offers",
+  "offerDesc": "Let’s design the place you always imagined.",
+  "cat": "categories",
+  "allPrice": "كل الأسعار",
+  "allCat": "all categories",
+  "shopNow": "shop Now",
+  "browseAll": "browse All products"
 }

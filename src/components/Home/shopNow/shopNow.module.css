@@ -1,0 +1,23 @@
+.mainDiv {
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: var(--sectionColor);
+}
+.shop {
+    color: #191C1F;
+    font-weight: 600;
+    font-size: 24px;
+}
+.btn {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: var(--redColor);
+}
+.mainImg {
+    max-width: 100%;
+    height: 716px;
+  
+}

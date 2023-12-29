@@ -11,6 +11,7 @@ import ProductSlider from "../components/utils/productSlider/ProductSlider";
 import HeroBox from "../components/utils/heroBox/HeroBox";
 import Banner from "../components/utils/banner/Banner";
 import Blogs from "../components/Home/blogs/Blogs";
+import ShopNow from "../components/Home/shopNow/ShopNow.jsx";
 const Home = ({
   bannerSlider,
   weoffer,
@@ -19,6 +20,7 @@ const Home = ({
   rooms,
   bestSaller,
   blogs,
+  allProducts,
 }) => {
   return (
     <div className="py-4 mt-4 mt-md-0">
@@ -32,6 +34,7 @@ const Home = ({
         img1={banner1}
         img2={banner2}
       />
+      <ShopNow data={allProducts} />
       <ProductSlider data={flashsale} />
       <HeroBox
         title="غرف مريحة يصعب عليك تركها"

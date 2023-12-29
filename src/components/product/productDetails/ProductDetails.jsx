@@ -20,14 +20,15 @@ const ProductDetails = ({ data, content }) => {
   const [modal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
   const handleAddToCart = (product) => {
-    if (data.color && !selectedColor) {
-      toast.error(t("cartError"));
-      setShowError(true);
-      return;
-    } else {
-      setShowError(false);
-      dispatch(addToCart(product));
-    }
+    dispatch(addToCart(product));
+    // if (data.color && !selectedColor) {
+    //   toast.error(t("cartError"));
+    //   setShowError(true);
+    //   return;
+    // } else {
+    //   setShowError(false);
+
+    // }
   };
   return (
     <div className="container mb-4">

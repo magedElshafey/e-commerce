@@ -9,7 +9,7 @@ const FlashSale = ({ data }) => {
   return (
     <div className="container mb-4">
       <h3 className={`text-center mb-3 fw-bolder ${style.title}`}>
-        {t("offer")}
+        {t("offers")}
       </h3>
       <Intro />
       <div className="row">

@@ -107,12 +107,7 @@ const ProductCard = ({ data }) => {
           <div className={style.circule}>
             <AiOutlineHeart className={style.icon} />
           </div>
-          <div
-            onClick={() => dispatch(addToCart(data))}
-            className={style.circule}
-          >
-            <BsCart className={style.icon} />
-          </div>
+
           <div
             onClick={() => navigateProductDetails(data.id)}
             className={style.circule}

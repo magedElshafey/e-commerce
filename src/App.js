@@ -63,6 +63,8 @@ import Checkout from "./pages/Checkout";
 import CompleteOrder from "./pages/CompleteOrder";
 import Blogs from "./pages/Blogs";
 import Blog from "./pages/Blog";
+import Offer from "./pages/Offer";
+import Shop from "./pages/Shop";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -128,6 +130,7 @@ const App = () => {
               rooms={rooms}
               bestSaller={bestSaller}
               blogs={blogs}
+              allProducts={allProducts}
             />
           }
         />
@@ -175,6 +178,18 @@ const App = () => {
               takset={takset}
             />
           }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/offer"
+          element={<Offer categories={categories} allProducts={allProducts} />}
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/shop"
+          element={<Shop categories={categories} allProducts={allProducts} />}
         />
       </Routes>
       {/**categories*/}
