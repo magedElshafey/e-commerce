@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 // react router dom
 import {
@@ -38,6 +38,7 @@ import {
   address,
   paymentMethods,
   orderDetails,
+  dashboardSidebarDetails,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -65,6 +66,10 @@ import Blogs from "./pages/Blogs";
 import Blog from "./pages/Blog";
 import Offer from "./pages/Offer";
 import Shop from "./pages/Shop";
+import MyAccount from "./pages/MyAccount";
+import Orders from "./pages/Orders";
+import Returns from "./pages/Returns";
+import Whishlist from "./pages/Whishlist";
 const App = () => {
   // handle scroll to top after change any page
   function ScrollToTopAfterChangePage() {
@@ -97,6 +102,8 @@ const App = () => {
       : product.orignalPrice * product.quantity;
     return acc;
   }, 0);
+  // handle active index for dashboard side bar
+  const [activeIndex, setActiveIndex] = useState(null);
   return (
     <Router>
       <ScrollToTopAfterChangePage />
@@ -239,6 +246,55 @@ const App = () => {
               cartItems={cartItems}
               orderDetails={orderDetails}
               totalPrice={totalPrice}
+            />
+          }
+        />
+      </Routes>
+      {/**user dashobard*/}
+      <Routes>
+        <Route
+          path="/accountDetails"
+          element={
+            <MyAccount
+              dashboardSidebarDetails={dashboardSidebarDetails}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            />
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/orders"
+          element={
+            <Orders
+              dashboardSidebarDetails={dashboardSidebarDetails}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            />
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/returns"
+          element={
+            <Returns
+              dashboardSidebarDetails={dashboardSidebarDetails}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            />
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/wishlist"
+          element={
+            <Whishlist
+              dashboardSidebarDetails={dashboardSidebarDetails}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
             />
           }
         />

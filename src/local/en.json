@@ -102,5 +102,10 @@
   "allPrice": "كل الأسعار",
   "allCat": "all categories",
   "shopNow": "shop Now",
-  "browseAll": "browse All products"
+  "browseAll": "browse All products",
+  "accDetails": "account details",
+  "oldPass": "old password",
+  "newPass": "new Password",
+  "orders": "my orders",
+  "returns": "returns"
 }

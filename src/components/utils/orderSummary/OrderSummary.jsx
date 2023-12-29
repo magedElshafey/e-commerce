@@ -9,7 +9,7 @@ import close from "../../../assets/Line.svg";
 import { useDispatch } from "react-redux";
 import { increaseQTY, removeFromCart, decreaseQTY } from "../../../Redux/cart";
 const OrderSummary = ({ totalPrice, cartItems, action }) => {
-  const [showItems, setShowItems] = useState(true);
+  const [showItems, setShowItems] = useState(false);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();

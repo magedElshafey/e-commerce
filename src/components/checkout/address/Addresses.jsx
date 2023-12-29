@@ -26,7 +26,7 @@ const Addresses = ({ address }) => {
               <p className="m-0 p-0 ">{item.phone}</p>
               <p className="m-0 p-0 ">{item.city}</p>
               <p className="m-0 p-0 ">{item.country}</p>
-              <div className="d-flex align-items-center justify-content-between gap-5">
+              <div className="d-flex align-items-center flex-column justify-content-between gap-2 mt-3">
                 {activeAddress !== item.id && (
                   <>
                     <button

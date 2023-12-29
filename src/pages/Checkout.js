@@ -18,11 +18,11 @@ const Checkout = ({ address, totalPrice, paymentMethods, cartItems }) => {
         <h3 className="fw-bolder m-0 p-0 mb-4 text-center">{t("checkoutD")}</h3>
         <CheckoutProgress />
         <div className="row">
-          <div className="col-12 col-md-7 mb-3 mb-md-0">
+          <div className="col-12 col-md-8 mb-3 mb-md-0">
             {address.length ? <Addresses address={address} /> : <AddressForm />}
             <Payment paymentMethods={paymentMethods} />
           </div>
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-4">
             <OrderSummary
               totalPrice={totalPrice}
               cartItems={cartItems}

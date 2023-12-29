@@ -18,8 +18,8 @@ import mainBlog from "../assets/blogMain.png";
 import blogSub from "../assets/blogSub-01.png";
 import blogSub2 from "../assets/blogSub-02.png";
 import blog3 from "../assets/blog-03.png";
-import user from "../assets/user-circle.svg" ; 
-import date from "../assets/calendar.svg"
+import user from "../assets/user-circle.svg";
+import date from "../assets/calendar.svg";
 // products
 import pro1 from "../assets/products/pro-01.webp";
 import pro2 from "../assets/products/pro-02.webp";
@@ -92,6 +92,8 @@ import voda from "../assets/icons8-vodafone-48.png";
 import etisalat from "../assets/icons8-etisalat-48.png";
 import visa from "../assets/icons8-visa-48.png";
 import primum from "../assets/takset-05.webp";
+// my account
+import avatar from "../assets/avatar.png";
 // shared layou3
 export const takset = [
   {
@@ -21664,78 +21666,78 @@ export const about2 = {
 };
 
 export const address = [
-  // {
-  //   name: "megz",
-  //   phone: "01022153359",
-  //   governemt: "el-dkahly",
-  //   city: "talkha",
-  //   country: "egypt",
-  //   id: 1,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "megoo",
-  //   phone: "01019846513",
-  //   governemt: "alexandria",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 2,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 3,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 4,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 5,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 6,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 7,
-  //   st: "qanat el-swees",
-  // },
-  // {
-  //   name: "esraa",
-  //   phone: "01011111",
-  //   governemt: "fayoum",
-  //   city: "smoha",
-  //   country: "egypt",
-  //   id: 8,
-  //   st: "qanat el-swees",
-  // },
+  {
+    name: "megz",
+    phone: "01022153359",
+    governemt: "el-dkahly",
+    city: "talkha",
+    country: "egypt",
+    id: 1,
+    st: "qanat el-swees",
+  },
+  {
+    name: "megoo",
+    phone: "01019846513",
+    governemt: "alexandria",
+    city: "smoha",
+    country: "egypt",
+    id: 2,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 3,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 4,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 5,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 6,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 7,
+    st: "qanat el-swees",
+  },
+  {
+    name: "esraa",
+    phone: "01011111",
+    governemt: "fayoum",
+    city: "smoha",
+    country: "egypt",
+    id: 8,
+    st: "qanat el-swees",
+  },
 ];
 export const paymentMethods = [
   {
@@ -21767,4 +21769,36 @@ export const orderDetails = {
   code: "102254634",
   date: "25 Jan , 2024",
   method: "credit card",
+};
+export const dashboardSidebarDetails = {
+  img: avatar,
+  name: "megz",
+  details: [
+    {
+      enTitle: "my Account",
+      arTitle: "حسابي",
+      path: "/accountDetails",
+    },
+
+    {
+      enTitle: "orders",
+      arTitle: "طلباتي",
+      path: "/orders",
+    },
+    {
+      enTitle: "whislist",
+      arTitle: "المفضلة",
+      path: "/wishlist",
+    },
+    {
+      enTitle: "return",
+      arTitle: "مرتحعاتي",
+      path: "/returns",
+    },
+    {
+      enTitle: "log out",
+      arTitle: "تسجيل الخروج",
+      path: "/",
+    },
+  ],
 };
