@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./mobileHeader.module.css";
 import { useTranslation } from "react-i18next";
 import ClickOutsideWrapper from "../../hooks/useClickOutside";
-import logo from "../../../assets/logo-ar.png";
+import logo from "../../../assets/redLogo.png";
 import { useDispatch } from "react-redux";
 import {
   AiOutlineMenu,

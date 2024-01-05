@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./mainHeader.module.css";
 import { GoSearch } from "react-icons/go";
-import logo from "../../../assets/logo-ar.png";
+import logo from "../../../assets/whiteLogo.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { closeCart, openCart } from "../../../Redux/cart";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const MainHeader = ({ isLogin }) => {
   const { isCartOpen } = useSelector((state) => state.cartSlice);
   console.log("is cart open ? ", isCartOpen);
@@ -19,10 +20,9 @@ const MainHeader = ({ isLogin }) => {
       <div className="container">
         <div className="d-flex align-items-center justify-content-between">
           {/*logo container*/}
-
-          <h1 className="m-0 p-0 text-white fw-bolder">
-            {i18n.language === "ar" ? "لوجو" : "Logo"}
-          </h1>
+          <Link to="/">
+            <img alt="logo-img" src={logo} className={style.logo} />
+          </Link>
 
           {/*search container*/}
           <div className={style.searchContainer}>

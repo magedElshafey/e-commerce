@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./footer.module.css";
 import { useTranslation } from "react-i18next";
+import logo from "../../../assets/whiteLogo.png";
 import { Link } from "react-router-dom";
 const Footer = ({
   categories,
@@ -16,9 +17,7 @@ const Footer = ({
       <div className="container pt-2">
         <div className="row justify-content-center">
           <div className="col-6 col-md-3 mb-3">
-            <h1 className="m-0 p-0 text-white fw-bolder mb-3">
-              {i18n.language === "ar" ? "لوجو" : "Logo"}
-            </h1>
+            <img alt="logo" className={style.logo} src={logo} />
             <p className="m-0 p-0 mb-3 text-white-50">{t("slogan")}</p>
             <h3 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h3>
             <div className="d-flex align-items-center gap-2 flex-wrap">

@@ -3,6 +3,9 @@
   background-color: #000;
   overflow-x: hidden !important;
 }
+.logo {
+  width: 200px;
+}
 .socialIcon {
   width: 24px;
   height: 24px;

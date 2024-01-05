@@ -1,5 +1,5 @@
 // social media icons
-import facebook from "../assets/facebook.svg";
+import facebook from "../assets/icons8-facebook-64.png";
 import insta from "../assets/instagram.svg";
 import youtube from "../assets/youtube.svg";
 import whats from "../assets/whats.png";
