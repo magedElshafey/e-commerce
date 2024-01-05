@@ -1,3 +1,25 @@
+/* fonts */
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('./fonts/GE SS Two Light.woff') format('woff') , 
+      url('./fonts/GE SS Two Light.woff2') format('woff2') ; 
+      font-weight: 300; /* Light */
+       font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('./fonts/GE SS Two Medium.woff2') format('woff2'),
+       url('./fonts/GE SS Two Medium.woff') format('woff');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('./fonts/GE SS Two Bold.woff2') format('woff2'),
+       url('./fonts/GE SS Two Bold.woff') format('woff');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,7 +37,8 @@ html {
 }
 body {
   overflow-x: hidden !important;
-  font-family: "Tajawal", sans-serif;
+  font-family: 'GE SS Two', sans-serif;
+  font-weight: 400;
   text-transform: capitalize;
 }
 :root {
