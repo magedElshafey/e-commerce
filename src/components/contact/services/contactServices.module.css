@@ -1,0 +1,19 @@
+.mainDiv {
+    width: 100vw;
+    padding: 16px 0;
+    background-color: #F3F5F7;
+}
+.img {
+    width: 48px;
+height: 48px;
+}
+.title {
+    font-size: 20px;
+    color: #141718;
+     font-weight: 500;
+}
+.desc {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6C7275;
+}

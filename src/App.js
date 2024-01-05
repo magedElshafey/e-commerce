@@ -39,6 +39,8 @@ import {
   paymentMethods,
   orderDetails,
   dashboardSidebarDetails,
+  contactDetails,
+  contactServices,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -154,7 +156,15 @@ const App = () => {
         <Route path="/branches" element={<Branches data={branches} />} />
       </Routes>
       <Routes>
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/contact"
+          element={
+            <Contact
+              contactDetails={contactDetails}
+              contactServices={contactServices}
+            />
+          }
+        />
       </Routes>
       <Routes>
         <Route

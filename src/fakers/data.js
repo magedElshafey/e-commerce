@@ -94,6 +94,15 @@ import visa from "../assets/icons8-visa-48.png";
 import primum from "../assets/takset-05.webp";
 // my account
 import avatar from "../assets/avatar.png";
+// contact details
+import add from "../assets/address.svg";
+import call from "../assets/call.svg";
+import mail from "../assets/mail.svg";
+// contact services
+import delivery from "../assets/delivery.svg";
+import money from "../assets/money.svg";
+import lock from "../assets/lock 01.svg";
+import contactPhone from "../assets/contact-phone.svg";
 // shared layou3
 export const takset = [
   {
@@ -21802,3 +21811,53 @@ export const dashboardSidebarDetails = {
     },
   ],
 };
+export const contactDetails = [
+  {
+    img: add,
+    enTitle: "Address",
+    arTitle: "العنوان",
+    data: "234 Hai Trieu, Ho Chi Minh City,Viet Nam",
+  },
+  {
+    img: call,
+    enTitle: "contact us",
+    arTitle: "تواصل معنا",
+    data: "+201022153359",
+  },
+  {
+    img: mail,
+    enTitle: "Email",
+    arTitle: "البريد الإلكتروني",
+    data: "megzz@gmail.com",
+  },
+];
+export const contactServices = [
+  {
+    img: delivery,
+    enTitle: "Free Shipping",
+    arTitle: "ًالشحن مجانا",
+    enDesc: "Order above $200",
+    arDesc: "الطلب فوق 200 دولار",
+  },
+  {
+    img: money,
+    enTitle: "Money-back",
+    arTitle: "إرجاع النقود",
+    enDesc: "30 days guarantee",
+    arDesc: "ضمان 30 يومًا",
+  },
+  {
+    img: lock,
+    enTitle: "Secure Payments",
+    arTitle: "المدفوعات الآمنة",
+    enDesc: "Secured by Stripe",
+    arDesc: "مؤمن بواسطة الشريط",
+  },
+  {
+    img: contactPhone,
+    enTitle: "24/7 Support",
+    arTitle: "دعم 24/7",
+    enDesc: "Phone and Email support",
+    arDesc: "الدعم عبر الهاتف والبريد الإلكتروني",
+  },
+];
