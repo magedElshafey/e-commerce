@@ -213,11 +213,12 @@ const App = () => {
           {/**categories*/}
           <Routes>
             <Route
-              path="/cat/:title"
+              path="/cat/:id/:title"
               element={<MainCategory data={categories} />}
             />
           </Routes>
-          <Routes>
+          {/**
+                 *    <Routes>
             <Route
               path="/cat/:title/:subTitle"
               element={<SubCategory data={categories} />}
@@ -229,6 +230,7 @@ const App = () => {
               element={<SubSubCategory data={categories} />}
             />
           </Routes>
+                 */}
           {/**checkout pages*/}
           <Routes>
             <Route

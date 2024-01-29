@@ -4,12 +4,50 @@ import CategorySlider from "../components/utils/categorySlider/CategorySlider";
 import { useTranslation } from "react-i18next";
 import ProductSlider from "../components/utils/productSlider/ProductSlider";
 import ProductCard from "../components/utils/productCard/ProductCard";
-const MainCategory = ({ data }) => {
+import { useQuery } from "react-query";
+import { request } from "../components/utils/axios";
+import Spinner from "../components/utils/spinner/Spinner";
+const MainCategory = () => {
   const { i18n } = useTranslation();
   const params = useParams();
-  const specialData = data.filter((item) => item.path === params.title);
+  const fetchData = (id) => {
+    return request({ url: `/get-categories/${id}` });
+  };
+  const { isLoading, data } = useQuery(
+    ["main-categories"],
+    () => fetchData(params.id),
+    {
+      onSuccess: (data) => {
+        console.log("main categories data", data?.data?.data);
+      },
+    }
+  );
+
   return (
-    <div className="py-4 mt-4 mt-md-0">
+    <div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className="py-4 mt-5 mt-md-0">
+          <div className="container">
+            <h3 className="fw-bolder fs-4 m-0 p-0 mb-4">{params.title}</h3>
+            {data?.data?.data?.categories.length && (
+              <CategorySlider
+                data={data?.data?.data.categories}
+                path={`/cat/${params.title}`}
+              />
+            )}
+            <div className="my-4"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MainCategory;
+/**
+ *  <div className="py-4 mt-4 mt-md-0">
       <div className="container">
         <h3 className="fw-bolder fs-4 m-0 p-0 mb-4">
           {i18n.language === "ar"
@@ -41,7 +79,4 @@ const MainCategory = ({ data }) => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default MainCategory;
+ */

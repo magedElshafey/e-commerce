@@ -16,7 +16,10 @@ const CategoriesHeader = ({ data }) => {
             </li>
             {data.map((item, index) => (
               <li className={style.bg} key={index}>
-                <Link className={style.link} to={`/cat/${item.name}`}>
+                <Link
+                  className={style.link}
+                  to={`/cat/${item.id}/${item.name}`}
+                >
                   {item.name}
                 </Link>
               </li>
