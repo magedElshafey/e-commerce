@@ -93,7 +93,38 @@ const Footer = ({
             </ul>
           </div>
         </div>
-        <div className="mt-4 mb-3 mainLine"></div>
+        <div className={`pt-3 ${style.lowerFooter}`}>
+          <div className="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-white gap-2 gap-md-0">
+            <p className="m-0 p-0">
+              {i18n.language === "en"
+                ? `Copyright © ${currentYear} ${
+                    i18n.language === "ar" ? "القمة" : "Al- Qema"
+                  } . All rights reserved`
+                : `جميع الحقوق محفوظة لشركة ${
+                    i18n.language === "ar" ? "القمة" : "Al- Qema"
+                  }  ${currentYear}`}
+            </p>
+            <div className="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+              {payment.map((item, index) => (
+                <div className={style.paymentContainer} key={index}>
+                  <img
+                    alt="payment/img"
+                    src={item}
+                    className={style.paymentImg}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
+/**
+ * <div className="mt-4 mb-3 mainLine"></div>
         <div className="d-flex justify-content-between align-items-center flex-column flex-md-row gap-2 gap-md-0 text-white pb-3">
           <p className="m-0 p-0">
             {i18n.language === "en"
@@ -116,9 +147,4 @@ const Footer = ({
             ))}
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default Footer;
+ */
