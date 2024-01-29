@@ -1,26 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import CategorySlider from "../components/utils/categorySlider/CategorySlider";
-import { useTranslation } from "react-i18next";
 import ProductSlider from "../components/utils/productSlider/ProductSlider";
 import ProductCard from "../components/utils/productCard/ProductCard";
 import { useQuery } from "react-query";
 import { request } from "../components/utils/axios";
 import Spinner from "../components/utils/spinner/Spinner";
 const MainCategory = () => {
-  const { i18n } = useTranslation();
   const params = useParams();
   const fetchData = (id) => {
     return request({ url: `/get-categories/${id}` });
   };
-  const { isLoading, data } = useQuery(
-    ["main-categories"],
-    () => fetchData(params.id),
-    {
-      onSuccess: (data) => {
-        console.log("main categories data", data?.data?.data);
-      },
-    }
+  const { isLoading, data } = useQuery(["main-categories", params.id], () =>
+    fetchData(params.id)
   );
 
   return (
@@ -33,7 +25,7 @@ const MainCategory = () => {
             <h3 className="fw-bolder fs-4 m-0 p-0 mb-4">{params.title}</h3>
             {data?.data?.data?.categories.length && (
               <CategorySlider
-                data={data?.data?.data.categories}
+                data={data?.data?.data?.categories}
                 path={`/cat/${params.title}`}
               />
             )}

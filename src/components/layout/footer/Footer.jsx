@@ -66,7 +66,7 @@ const Footer = ({
               {categories.map((category, index) => (
                 <li key={index} className="mb-2 p-0">
                   <Link
-                    to={`/cat/${category.name}`}
+                    to={`/cat/${category.id}/${category.name}`}
                     className={`text-white-50 ${style.link}`}
                   >
                     {category.name}

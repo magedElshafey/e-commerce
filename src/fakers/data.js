@@ -20382,6 +20382,14 @@ export const importantLinks = {
       title: "الاسئلة الأكثر شيوعا",
       path: "/faqs",
     },
+    {
+      title: "الشروط و الأحكام",
+      path: "/terms",
+    },
+    {
+      title: "سياسة الخصوصية",
+      path: "/privacy",
+    },
   ],
 };
 export const account = {

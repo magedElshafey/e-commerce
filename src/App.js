@@ -60,6 +60,8 @@ import Spinner from "./components/utils/spinner/Spinner";
 import { request } from "./components/utils/axios";
 import { useQuery } from "react-query";
 import Meta from "./components/utils/Meta";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 const App = () => {
   // lang
   useEffect(() => {
@@ -90,10 +92,10 @@ const App = () => {
   const fetchData = () => {
     return request({ url: "/home" });
   };
-  const { isLoading, data } = useQuery("home-page", fetchData);
+  const { isLoading: loadingHomePage, data } = useQuery("home-page", fetchData);
   return (
     <>
-      {isLoading ? (
+      {loadingHomePage ? (
         <Spinner />
       ) : (
         <>
@@ -177,6 +179,12 @@ const App = () => {
           </Routes>
           <Routes>
             <Route path="/blog/:id" element={<Blog />} />
+          </Routes>
+          <Routes>
+            <Route path="/terms" element={<Terms />} />
+          </Routes>
+          <Routes>
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
           {/**shop , offer , product*/}
           <Routes>
