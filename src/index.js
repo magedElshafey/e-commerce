@@ -12,12 +12,23 @@ import { Toaster } from "react-hot-toast";
 import "./index.css";
 // i18next
 import "./i18n";
+// react query
+import { QueryClientProvider, QueryClient } from "react-query";
+import ScrollToTopAfterChangePage from "./components/utils/ScrollToTopAfterChangePage";
+import { BrowserRouter as Router } from "react-router-dom";
+
+const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Toaster position="top-center" reverseOrder={false} />
     <Provider store={store}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ScrollToTopAfterChangePage />
+          <App />
+        </Router>
+      </QueryClientProvider>
     </Provider>
   </React.StrictMode>
 );

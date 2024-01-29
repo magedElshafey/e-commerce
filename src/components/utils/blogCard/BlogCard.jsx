@@ -10,12 +10,14 @@ const BlogCard = ({ data }) => {
   return (
     <div className={style.card}>
       <div className="d-flex justify-content-center">
-        <img alt="blog/img" className={style.mainImg} src={data.img} />
+        <img alt="blog/img" className={style.mainImg} src={data.image} />
       </div>
       <p className={`m-0 p-0 mt-2 ${style.title}`}>
         {useTruncateString(data.title)}
       </p>
-      <p className={`m-0 p-0 ${style.desc}`}>{useTruncateString(data.desc)}</p>
+      <p className={`m-0 p-0 ${style.desc}`}>
+        {useTruncateString(data.description)}
+      </p>
 
       <button
         onClick={() => navigate(`/blog/${data.id}`)}

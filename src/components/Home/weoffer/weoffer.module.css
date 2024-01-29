@@ -1,11 +1,9 @@
-.mainDiv {
-    width: 100vw;
-    background-color: var(--sectionColor);
-    height: 98px;
-}
-@media screen and (max-width : 992px) {
-    .mainDiv {
-      
-        height: auto;
-    }
+.card {
+    background-color: #F3F5F7;
+   
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }

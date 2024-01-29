@@ -29,9 +29,7 @@
   background-color: white;
 }
 .link {
-  color: black !important;
+  color: var(--redColor) !important;
   font-weight: 600;
 }
-.bg:hover .link {
-  color: var(--textColor) !important;
-}
+

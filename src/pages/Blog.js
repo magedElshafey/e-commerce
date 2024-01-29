@@ -3,18 +3,33 @@ import { useParams } from "react-router-dom";
 import FirstArticle from "../components/blog/firstArticle/FirstArticle";
 import SecondArticle from "../components/blog/secondArticle/SecondArticle";
 import ThirdArticle from "../components/blog/thirdArticle/ThirdArticle";
-const Blog = ({ data }) => {
+import { useQuery } from "react-query";
+import Spinner from "../components/utils/spinner/Spinner";
+import { request } from "../components/utils/axios";
+const Blog = () => {
   const { id } = useParams();
-  const dataAsArr = data.filter((item) => item.id === +id);
+
+  const fetchBlog = (id) => {
+    return request({ url: `/blogs/${id}` });
+  };
+  const { isLoading, data } = useQuery(["blog-details"], () => fetchBlog(id));
   return (
-    <div className="py-4 mt-4 mt-md-0">
-      <div className="container">
-        <FirstArticle data={dataAsArr[0]} />
-        <SecondArticle data={dataAsArr[0]} />
-        <ThirdArticle data={dataAsArr[0]} />
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className="py-4 mt-4 mt-md-0">
+          <div className="container">
+            <FirstArticle data={data?.data?.data?.blog} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
 export default Blog;
+/**
+ * <SecondArticle data={dataAsArr[0]} />
+            <ThirdArticle data={dataAsArr[0]} />
+ */

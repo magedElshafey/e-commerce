@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "../../utils/productCard/ProductCard";
-import shopBanner from "../../../assets/shopNow.png";
-const ShopNow = ({ data }) => {
+// import shopBanner from "../../../assets/shopNow.png";
+const ShopNow = ({ data, banner }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const handleNavigate = () => navigate("/shop");
@@ -30,14 +30,14 @@ const ShopNow = ({ data }) => {
             </div>
             <div className="row">
               {data.slice(0, 8).map((item, index) => (
-                <div key={index} className="col-12 col-md-6 col-lg-3 mb-3">
+                <div key={index} className="col-6 col-lg-4 col-xl-3 mb-3">
                   <ProductCard data={item} />
                 </div>
               ))}
             </div>
           </div>
           <div className="col-12 col-md-4 mb-4 mb-md-0 d-flex justify-content-end">
-            <img alt="shop-banner" src={shopBanner} className={style.mainImg} />
+            <img alt="shop-banner" src={banner} className={style.mainImg} />
           </div>
         </div>
       </div>

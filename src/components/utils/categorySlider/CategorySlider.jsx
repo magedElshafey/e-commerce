@@ -4,17 +4,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CategoryCard from "../categoryCard/CategoryCard";
-import ProductCard from "../productCard/ProductCard";
+
 const CategorySlider = ({ data, path }) => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     arrows: false,
     autoplay: true, // Enable autoplay
     speed: 500,
     autoplaySpeed: 3000,
-    slidesToShow: data.length >= 6 ? 6 : data.length > 5 ? 5 : 5,
-
+    slidesToShow: 5,
+    verical: false,
     slidesToScroll: 1,
     initialSlide: 0,
     cssEase: "linear",
@@ -43,26 +43,11 @@ const CategorySlider = ({ data, path }) => {
   };
   return (
     <>
-      {data.length < 4 ? (
-        <div className="row">
-          <div className="row">
-            {data.map((item, index) => (
-              <div
-                className="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0"
-                key={index}
-              >
-                <ProductCard key={item} />
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <Slider {...settings} className={style.slider}>
-          {data.map((item, index) => (
-            <CategoryCard key={index} data={item} path={path} />
-          ))}
-        </Slider>
-      )}
+      <Slider {...settings} className={style.slider}>
+        {data.map((item, index) => (
+          <CategoryCard key={index} data={item} path={path} />
+        ))}
+      </Slider>
     </>
   );
 };

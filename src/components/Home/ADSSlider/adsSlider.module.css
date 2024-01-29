@@ -1,6 +1,8 @@
 .mainImg {
-  width: 100vw;
-  height: 470px;
+  width: 100vw; 
+   height: 470px; 
+
+
 }
 @media screen and (max-width: 767px) {
   .mainImg {

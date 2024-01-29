@@ -13,7 +13,7 @@ const ShopWithCategory = ({ data }) => {
             <p className={`${style.shop} m-0 p-0 mb-4 text-center`}>
               {t("shopWith")}
             </p>
-            <CategorySlider length={6} data={data} path="/cat" />
+            <CategorySlider data={data} path="/cat" />
           </div>
         </div>
       </div>

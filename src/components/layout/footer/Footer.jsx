@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./footer.module.css";
 import { useTranslation } from "react-i18next";
-import logo from "../../../assets/whiteLogo.png";
+
 import { Link } from "react-router-dom";
 const Footer = ({
   categories,
@@ -9,6 +9,7 @@ const Footer = ({
   socialMedia,
   account,
   payment,
+  logo,
 }) => {
   const { i18n, t } = useTranslation();
   const currentYear = new Date().getFullYear();
@@ -17,9 +18,11 @@ const Footer = ({
       <div className="container pt-2">
         <div className="row justify-content-center">
           <div className="col-6 col-md-3 mb-3">
-            <img alt="logo" className={style.logo} src={logo} />
+            <Link to="/">
+              <img alt="logo" className={style.logo} src={logo} />
+            </Link>
             <p className="m-0 p-0 mb-3 text-white-50">{t("slogan")}</p>
-            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h3>
+            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h5>
             <div className="d-flex align-items-center gap-2 flex-wrap">
               {socialMedia.links.map((item, index) => (
                 <a
@@ -38,9 +41,9 @@ const Footer = ({
             </div>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("importantLinks")}
-            </h3>
+            </h5>
             <ul className="m-0 p-0">
               {importantLinks.links.map((link, index) => (
                 <li key={index} className="mb-2 p-0">
@@ -55,27 +58,27 @@ const Footer = ({
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("categories")}
-            </h3>
+            </h5>
 
             <ul className="m-0 p-0">
               {categories.map((category, index) => (
                 <li key={index} className="mb-2 p-0">
                   <Link
-                    to={`/cat/${category.path}`}
+                    to={`/cat/${category.name}`}
                     className={`text-white-50 ${style.link}`}
                   >
-                    {category.mainCategory}
+                    {category.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h3 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
               {t("account")}
-            </h3>
+            </h5>
             <ul className="m-0 p-0">
               {account.links.map((link, index) => (
                 <li key={index} className="mb-2 p-0">
@@ -94,8 +97,12 @@ const Footer = ({
         <div className="d-flex justify-content-between align-items-center flex-column flex-md-row gap-2 gap-md-0 text-white pb-3">
           <p className="m-0 p-0">
             {i18n.language === "en"
-              ? `Copyright © ${currentYear} TechMarvel. All rights reserved`
-              : `جميع الحقوق محفوظة لشركة TechMarvel ${currentYear}`}
+              ? `Copyright © ${currentYear} ${
+                  i18n.language === "ar" ? "القمة" : "Al- Qema"
+                } . All rights reserved`
+              : `جميع الحقوق محفوظة لشركة ${
+                  i18n.language === "ar" ? "القمة" : "Al- Qema"
+                }  ${currentYear}`}
           </p>
           <div className="d-flex align-items-center justify-content-center gap-2 flex-wrap">
             {payment.map((item, index) => (

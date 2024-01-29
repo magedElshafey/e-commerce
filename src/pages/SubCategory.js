@@ -13,7 +13,7 @@ const SubCategory = ({ data }) => {
   const subCategoryData = mainCategoryData[0]?.subCategories?.filter(
     (item) => item.path === params.subTitle
   );
-  console.log("subCategoryData", subCategoryData);
+
   return (
     <div className="py-4 mt-4 mt-md-0">
       <div className="container">
@@ -51,9 +51,5 @@ const SubCategory = ({ data }) => {
 };
 export default SubCategory;
 /**
- * <div className="container">
-       
-        
-       
-      </div>
+ *
  */

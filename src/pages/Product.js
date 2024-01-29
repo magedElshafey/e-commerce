@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import ProductDetails from "../components/product/productDetails/ProductDetails";
 import TaksetDetails from "../components/product/taksetDetails/TaksetDetails";
-import StaticContent from "../components/product/staticContent/StaticContent";
+// import StaticContent from "../components/product/staticContent/StaticContent";
 import ProductSlider from "../components/utils/productSlider/ProductSlider";
 import MoreDesc from "../components/product/moreDesc/MoreDesc";
 import ClientFAQS from "../components/product/clientFaqs/ClientFAQS";

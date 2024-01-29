@@ -1,14 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
-import style from "./MenuSidebar.module.css"
+import style from "./MenuSidebar.module.css";
 import { AiOutlineClose } from "react-icons/ai";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
 // react router dom
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
   const menuRef = useRef(null);
+  const navigate = useNavigate();
   const [showCategories, setShowCategories] = useState(true);
   const [showAccount, setShowAccount] = useState(false);
   const [activeMainCategoryIndex, setActiveMainCategoryIndex] = useState(null);
@@ -27,6 +28,10 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  const handleNavigate = (path) => {
+    navigate(`/${path}`);
+    setShowMenu(false);
+  };
   return (
     <div ref={menuRef} className={`menu ${showMenu ? "show" : "hide"}`}>
       <div className="p-3 position-relative">
@@ -56,17 +61,17 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
           </button>
         </div>
         {showCategories && (
-          <ul className="p-0 mt-5">
+          <ul className="m-0 p-0 mt-4">
             {data.map((mainCategory, index) => (
               <>
                 <li
-                  className="pb-2 borderBottom mb-3 d-flex align-items-center justify-content-between"
                   key={index}
+                  className="pb-2 borderBottom mb-3 d-flex align-items-center justify-content-between"
                 >
-                  <Link className={style.link} to={`/cat/${mainCategory.path}`}>
-                    {mainCategory.mainCategory}
+                  <Link className={style.link} to={`/cat/${mainCategory.name}`}>
+                    {mainCategory.name}
                   </Link>
-                  {mainCategory.subCategories !== null ? (
+                  {mainCategory.children.length ? (
                     activeMainCategoryIndex === index ? (
                       <MdOutlineKeyboardArrowUp
                         size={30}
@@ -84,13 +89,13 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                 </li>
                 <ul
                   className={`position-relative ${style.subCategoryContainer} ${
-                    mainCategory.subCategories !== null &&
+                    mainCategory.children.length &&
                     activeMainCategoryIndex === index
                       ? style.show
                       : style.hide
                   }`}
                 >
-                  {mainCategory.subCategories?.map((subCategory, index) => (
+                  {mainCategory.children?.map((subCategory, index) => (
                     <>
                       <li
                         key={index}
@@ -98,11 +103,11 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                       >
                         <Link
                           className={style.link}
-                          to={`/cat/${mainCategory.path}/${subCategory.enTitle}`}
+                          to={`/cat/${mainCategory.name}/${subCategory.name}`}
                         >
-                          {subCategory.title}
+                          {subCategory.name}
                         </Link>
-                        {subCategory.categories !== null ? (
+                        {subCategory.children.length ? (
                           activeSubCategoryIndex === index ? (
                             <MdOutlineKeyboardArrowUp
                               size={30}
@@ -122,74 +127,46 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                         className={`position-relative ${
                           style.subCategoryContainer
                         } ${
-                          subCategory.categories !== null &&
+                          subCategory.children.length &&
                           activeSubCategoryIndex === index
                             ? style.show
                             : style.hide
                         }`}
                       >
-                        {subCategory.categories?.map(
-                          (subSubCategory, index) => (
-                            <>
-                              <li
-                                key={index}
-                                className="pb-2 borderBottom d-flex align-items-center justify-content-between my-4"
+                        {subCategory.children.map((subSubCategory, index) => (
+                          <>
+                            <li
+                              key={index}
+                              className="pb-2 borderBottom d-flex align-items-center justify-content-between my-4"
+                            >
+                              <Link
+                                className={style.link}
+                                to={`/cat/${mainCategory.name}/${subCategory.name}/${subSubCategory.name}`}
                               >
-                                <Link
-                                  className={style.link}
-                                  to={`/cat/${mainCategory.path}/${subCategory.enTitle}/${subSubCategory.enTitle}`}
-                                >
-                                  {subSubCategory.title}
-                                </Link>
-                                {subSubCategory.categories !== null ? (
-                                  activeSubSubCategoriesIndex === index ? (
-                                    <MdOutlineKeyboardArrowUp
-                                      size={30}
-                                      className="pointer icon"
-                                      onClick={() =>
-                                        setActiveSubSubCategoriesIndex(null)
-                                      }
-                                    />
-                                  ) : (
-                                    <MdOutlineKeyboardArrowDown
-                                      size={30}
-                                      className="pointer icon"
-                                      onClick={() =>
-                                        setActiveSubSubCategoriesIndex(index)
-                                      }
-                                    />
-                                  )
-                                ) : null}
-                              </li>
-                              <ul
-                                className={`position-relative ${
-                                  style.subCategoryContainer
-                                } ${
-                                  subSubCategory.categories !== null &&
-                                  activeSubSubCategoriesIndex === index
-                                    ? style.show
-                                    : style.hide
-                                }`}
-                              >
-                                {subSubCategory.categories?.map(
-                                  (subSubSubCategory, index) => (
-                                    <li
-                                      key={index}
-                                      className="pb-2 borderBottom my-4 d-flex align-items-center justify-content-between"
-                                    >
-                                      <Link
-                                        className={style.link}
-                                        to={`/cat/${mainCategory.path}/${subCategory.enTitle}/${subSubCategory.enTitle}/${subSubSubCategory.enTitle}`}
-                                      >
-                                        {subSubSubCategory.title}
-                                      </Link>
-                                    </li>
-                                  )
-                                )}
-                              </ul>
-                            </>
-                          )
-                        )}
+                                {subSubCategory.name}
+                              </Link>
+                              {subSubCategory.children.length ? (
+                                activeSubSubCategoriesIndex === index ? (
+                                  <MdOutlineKeyboardArrowUp
+                                    size={30}
+                                    className="pointer icon"
+                                    onClick={() =>
+                                      setActiveSubSubCategoriesIndex(null)
+                                    }
+                                  />
+                                ) : (
+                                  <MdOutlineKeyboardArrowDown
+                                    size={30}
+                                    className="pointer icon"
+                                    onClick={() =>
+                                      setActiveSubSubCategoriesIndex(index)
+                                    }
+                                  />
+                                )
+                              ) : null}
+                            </li>
+                          </>
+                        ))}
                       </ul>
                     </>
                   ))}
@@ -200,20 +177,23 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
         )}
         {showAccount && (
           <ul className="mt-5">
-            <li className="pb-3 borderBottom my-4">
-              <Link className={style.link} to="/login">
-                تسجيل دخول
-              </Link>
+            <li
+              onClick={() => handleNavigate("login")}
+              className={`pb-3 borderBottom my-4 ${style.link}`}
+            >
+              تسجيل دخول
             </li>
-            <li className="pb-3 borderBottom my-4">
-              <Link className={style.link} to="/reg">
-                إنشاء حساب
-              </Link>
+            <li
+              onClick={() => handleNavigate("reg")}
+              className={`pb-3 borderBottom my-4 ${style.link}`}
+            >
+              إنشاء حساب
             </li>
-            <li className="pb-3  my-4">
-              <Link className={style.link} to="/help">
-                المساعدة و الاعدادات
-              </Link>
+            <li
+              onClick={() => handleNavigate("faqs")}
+              className={`pb-3 borderBottom my-4 ${style.link}`}
+            >
+              المساعدة و الاعدادات
             </li>
           </ul>
         )}
@@ -223,3 +203,99 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
 };
 
 export default MenuSidebar;
+/**
+ * <div ref={menuRef} className={`menu ${showMenu ? "show" : "hide"}`}>
+      <div className="p-3 position-relative">
+    
+        {showCategories && (
+          <ul className="p-0 mt-5">
+            {data.map((mainCategory, index) => (
+              <>
+              <ul
+                  className={`position-relative ${style.subCategoryContainer} ${
+                    mainCategory.children.length &&
+                    activeMainCategoryIndex === index
+                      ? style.show
+                      : style.hide
+                  }`}
+                >
+                  {mainCategory.children?.map((subCategory, index) => (
+                    <>
+                     
+                      <ul
+                        className={`position-relative ${
+                          style.subCategoryContainer
+                        } ${
+                          subCategory.categories.length &&
+                          activeSubCategoryIndex === index
+                            ? style.show
+                            : style.hide
+                        }`}
+                      >
+                        {subCategory.children?.map((subSubCategory, index) => (
+                          <>
+                            <li
+                              key={index}
+                              className="pb-2 borderBottom d-flex align-items-center justify-content-between my-4"
+                            >
+                             
+                              {subSubCategory.children.length ? (
+                                activeSubSubCategoriesIndex === index ? (
+                                  <MdOutlineKeyboardArrowUp
+                                    size={30}
+                                    className="pointer icon"
+                                    onClick={() =>
+                                      setActiveSubSubCategoriesIndex(null)
+                                    }
+                                  />
+                                ) : (
+                                  <MdOutlineKeyboardArrowDown
+                                    size={30}
+                                    className="pointer icon"
+                                    onClick={() =>
+                                      setActiveSubSubCategoriesIndex(index)
+                                    }
+                                  />
+                                )
+                              ) : null}
+                            </li>
+                            <ul
+                              className={`position-relative ${
+                                style.subCategoryContainer
+                              } ${
+                                subSubCategory.children.length &&
+                                activeSubSubCategoriesIndex === index
+                                  ? style.show
+                                  : style.hide
+                              }`}
+                            >
+                              {subSubCategory.children?.map(
+                                (subSubSubCategory, index) => (
+                                  <li
+                                    key={index}
+                                    className="pb-2 borderBottom my-4 d-flex align-items-center justify-content-between"
+                                  >
+                                    <Link
+                                      className={style.link}
+                                      to={`/cat/${mainCategory.name}/${subCategory.name}/${subSubCategory.name}/${subSubSubCategory.name}`}
+                                    >
+                                      {subSubSubCategory.name}
+                                    </Link>
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          </>
+                        ))}
+                      </ul>
+                    </>
+                  ))}
+                </ul>
+              </>
+            ))}
+          </ul>
+        )}
+     
+      </div>
+    </div>
+ */

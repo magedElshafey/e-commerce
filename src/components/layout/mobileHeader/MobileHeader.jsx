@@ -17,7 +17,7 @@ import { BsFacebook } from "react-icons/bs";
 import { FaPinterestP } from "react-icons/fa";
 import { BiLogoYoutube } from "react-icons/bi";
 import { GoSearch } from "react-icons/go";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuSidebar from "../menuSidebar/MenuSidebar";
 import { openCart } from "../../../Redux/cart";
 const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
@@ -36,10 +36,9 @@ const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
       <div className={style.navContainer}>
         <div className="container">
           <div className="d-flex align-items-center justify-content-between">
-            {/*logo container*/}
-            <div className="d-flex align-items-center gap-1">
+            <Link to="/">
               <img alt="logo/img" src={logo} className={style.logo} />
-            </div>
+            </Link>
             <div className="d-flex align-items-center gap-1">
               <AiOutlineShoppingCart
                 onClick={() => dispatch(openCart())}
@@ -83,3 +82,20 @@ const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
 };
 
 export default MobileHeader;
+/**
+ *  <div className="d-md-none">
+      <div className={style.navContainer}>
+        <div className="container">
+          <div className="d-flex align-items-center justify-content-between">
+            
+
+          
+
+           
+          </div>
+         
+        </div>
+      </div>
+     
+    </div>
+ */

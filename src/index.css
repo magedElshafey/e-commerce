@@ -262,3 +262,9 @@ body {
 .fs20 {
   font-size: 20px;
 }
+.dropdown-toggle::after {
+  margin: 0 8px !important;
+}
+.dropdown-menu.show {
+  text-align: start !important;
+}

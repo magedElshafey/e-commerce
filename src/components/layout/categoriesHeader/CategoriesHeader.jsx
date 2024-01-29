@@ -9,12 +9,15 @@ const CategoriesHeader = ({ data }) => {
       <div className={`${style.content}`}>
         <div className="container">
           <ul className="m-0 p-0  d-flex align-items-center gap-3">
+            <li className={style.bg}>
+              <Link className={style.link} to="/offer">
+                {i18n.language === "ar" ? "عروض الطنطاوي" : "El-Tantawy offers"}
+              </Link>
+            </li>
             {data.map((item, index) => (
               <li className={style.bg} key={index}>
-                <Link className={style.link} to={`/cat/${item.path}`}>
-                  {i18n.language === "ar"
-                    ? item.mainCategory
-                    : item.mainCategoryEn}
+                <Link className={style.link} to={`/cat/${item.name}`}>
+                  {item.name}
                 </Link>
               </li>
             ))}

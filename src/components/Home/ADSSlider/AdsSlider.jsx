@@ -42,10 +42,10 @@ const AdsSlider = ({ data }) => {
       )}
       <Slider ref={sliderRef} {...settings}>
         {data.map((item, index) => (
-          <Link key={index} to={item.path}>
+          <Link key={index} to={item.id}>
             <img
               loading="lazy"
-              src={item.img}
+              src={item.image}
               alt="banner/img"
               className={style.mainImg}
             />

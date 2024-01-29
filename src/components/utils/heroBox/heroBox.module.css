@@ -5,10 +5,9 @@
   border: 1px solid #eee;
 }
 .mainImg {
-  width: 60%;
+  width: 80%;
 
-  height: 80px;
-  object-fit: cover;
+ 
 }
 .linkContainer {
   width: fit-content;

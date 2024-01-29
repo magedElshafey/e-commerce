@@ -1,7 +1,7 @@
 {
   "test": "test",
   "contact": "contact us",
-  "welcome": "welcome to El-Tantawi Mall",
+  "welcome": "welcome to El-Tantawy Mall",
   "follow": "follow us :",
   "shop": "shop now",
   "up": "up to",
@@ -107,5 +107,8 @@
   "oldPass": "old password",
   "newPass": "new Password",
   "orders": "my orders",
-  "returns": "returns"
+  "returns": "returns",
+  "customized": "Customized products for you",
+  "best": "best saller",
+  "commonQuestions": "common Questions"
 }

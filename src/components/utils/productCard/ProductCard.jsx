@@ -2,22 +2,20 @@ import React from "react";
 import style from "./productCard.module.css";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { addToCart } from "../../../Redux/cart";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 const ProductCard = ({ data }) => {
   const dispatch = useDispatch();
+  const { i18n } = useTranslation();
   const navigate = useNavigate();
   const navigateProductDetails = (id) => navigate(`/product/${id}`);
   return (
     <div className={`pb-3 ${style.card}`}>
       {/**img */}
       <div className="d-flex justify-content-center my-3">
-        <img
-          alt="product/img"
-          className={style.mainImg}
-          src={data.img || data.mainImg}
-        />
+        <img alt="product/img" className={style.mainImg} src={data.image} />
       </div>
       {/*reveiw*/}
       <div className="d-flex align-items-center gap-1 mb-2">
@@ -86,21 +84,47 @@ const ProductCard = ({ data }) => {
         <p className={`m-0 p-0 ${style.rev}`}>(4.6)</p>
       </div>
       {/* title*/}
-      <p className={`m-0 p-0 mb-2 ${style.title}`}>{data.title}</p>
+      <Link
+        to={`/product/${data.id}`}
+        className={`m-0 p-0 d-inline-block mb-2 ${style.title}`}
+      >
+        {data.name}
+      </Link>
       {/*price*/}
       <div className="d-flex mb-4 justify-content-between align-items-center flex-wrap">
         <p className="fw-bolder m-0 p-0  ">
-          {data.disscount
-            ? data.orignalPrice - data.disscount
-            : data.orignalPrice}
+          {data.disscount ? data.price_after_discount : data.price}
           .00 جنيه
         </p>
-        {data.disscount && (
-          <del className="red m-0 p-0 px-2">{data.orignalPrice}.00 جنية</del>
+        {data.discount && (
+          <del className="red m-0 p-0 px-2">{data.price}.00 جنية</del>
         )}
       </div>
-      {/**overlay*/}
-      <div className={style.overlay}>
+      <div
+        className={`${style.iconContainer} ${
+          i18n.language === "ar" ? style.right : style.left
+        }  d-flex align-items-center justify-content-center gap-2 flex-wrap`}
+      >
+        <div className={style.circule}>
+          <BsCart className={style.icon} />
+        </div>
+        <div className={style.circule2}>
+          <AiOutlineHeart className={style.icon} />
+        </div>
+        <div
+          onClick={() => navigateProductDetails(data.id)}
+          className={style.circule3}
+        >
+          <AiOutlineEye className={style.icon} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
+/**
+ * <div className={style.overlay}>
         <div
           className={`d-flex align-items-center gap-1 ${style.productDetails}`}
         >
@@ -116,8 +140,4 @@ const ProductCard = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default ProductCard;
+ */

@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./mainHeader.module.css";
 import { GoSearch } from "react-icons/go";
-import logo from "../../../assets/whiteLogo.png";
+// import logo from "../../../assets/whiteLogo.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { closeCart, openCart } from "../../../Redux/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-const MainHeader = ({ isLogin }) => {
+const MainHeader = ({ isLogin, logo }) => {
   const { isCartOpen } = useSelector((state) => state.cartSlice);
   console.log("is cart open ? ", isCartOpen);
   const dispatch = useDispatch();

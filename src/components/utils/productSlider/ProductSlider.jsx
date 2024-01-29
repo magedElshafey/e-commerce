@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 import Slider from "react-slick";
 import ProductCard from "../productCard/ProductCard";
-const ProductSlider = ({ data }) => {
+const ProductSlider = ({ data, title }) => {
+  console.log("data from home", data);
   const { i18n } = useTranslation();
   const sliderRef = useRef(null);
   const slickNext = () => {
@@ -20,7 +21,7 @@ const ProductSlider = ({ data }) => {
   };
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     arrows: false,
 
     speed: 500,
@@ -28,7 +29,7 @@ const ProductSlider = ({ data }) => {
     slidesToShow: 6,
     slidesToScroll: 1,
     initialSlide: 0,
-
+    verical: false,
     responsive: [
       {
         breakpoint: 1224,
@@ -52,9 +53,9 @@ const ProductSlider = ({ data }) => {
     ],
   };
   return (
-    <div className="container mb-4">
-      <h3 className={`m-0 p-0 mb-3 fs-4 fw-bolder`}>{data.title}</h3>
-      {data.products.length && (
+    <div className="container my-4">
+      {title && <h3 className={`m-0 p-0 mb-3 fs-4 fw-bolder`}>{title}</h3>}
+      {data.length && (
         <div className={`${style.slickControls} mb-3`}>
           <button onClick={slickPrev}>
             {i18n.language === "ar" ? <FaChevronRight /> : <FaChevronLeft />}
@@ -65,7 +66,7 @@ const ProductSlider = ({ data }) => {
         </div>
       )}
       <Slider ref={sliderRef} {...settings}>
-        {data.products.map((item, index) => (
+        {data.map((item, index) => (
           <ProductCard data={item} key={index} />
         ))}
       </Slider>
@@ -74,3 +75,10 @@ const ProductSlider = ({ data }) => {
 };
 
 export default ProductSlider;
+/**
+ * <div className="container mb-4">
+      <h3 className={`m-0 p-0 mb-3 fs-4 fw-bolder`}>{data.title}</h3>
+     
+     
+    </div>
+ */

@@ -1,11 +1,11 @@
-.card {
+/* .card {
     background-color: #fff;
     padding: 8px;
     display: flex;
     align-items: center;
     gap: 16px;
    
-}
+} */
 .mainImg {
     width: 35px;
     height: 35px;
@@ -14,7 +14,7 @@
 .title {
 color: #191C1F;
 font-size: 14px;
-font-weight: 500;
+
 text-transform: uppercase;
 }
 .desc {

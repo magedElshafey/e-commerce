@@ -1,35 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 // react router dom
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   categories,
   importantLinks,
   account,
   socialMedia,
-  servicesOffers,
-  bannerSlider,
   specialProducts,
   bestSaller,
-  dashboardLinks,
-  faqs,
   allProducts,
-  cookingHome,
-  kitchenHome,
-  kidsHome,
-  allAppliances,
   rooms,
   productStaticContent,
   clientFaqs,
-  shopWithCategory,
-  weoffer,
-  blogs,
   payment,
   branches,
   takset,
@@ -72,15 +56,11 @@ import MyAccount from "./pages/MyAccount";
 import Orders from "./pages/Orders";
 import Returns from "./pages/Returns";
 import Whishlist from "./pages/Whishlist";
+import Spinner from "./components/utils/spinner/Spinner";
+import { request } from "./components/utils/axios";
+import { useQuery } from "react-query";
+import Meta from "./components/utils/Meta";
 const App = () => {
-  // handle scroll to top after change any page
-  function ScrollToTopAfterChangePage() {
-    const { pathname } = useLocation();
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-    return null;
-  }
   // lang
   useEffect(() => {
     localStorage.setItem("lang", JSON.stringify(i18n.language));
@@ -106,217 +86,241 @@ const App = () => {
   }, 0);
   // handle active index for dashboard side bar
   const [activeIndex, setActiveIndex] = useState(null);
+  // fetching common data
+  const fetchData = () => {
+    return request({ url: "/home" });
+  };
+  const { isLoading, data } = useQuery("home-page", fetchData);
   return (
-    <Router>
-      <ScrollToTopAfterChangePage />
-      <FixedBtn />
-      <Widget />
-      <SettingsHeader />
-      <MainHeader isLogin={isLogin} />
-      <CategoriesHeader data={categories} />
-      <MobileHeader
-        data={categories}
-        cartItemsLength={cartItems.length}
-        isLogin={isLogin}
-      />
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <Meta
+            title={data?.data?.data?.site?.title}
+            desc={data?.data?.data?.site?.description}
+            fav={data?.data?.data?.site?.icon}
+          />
+          <FixedBtn />
+          <Widget />
+          <SettingsHeader />
+          <MainHeader isLogin={isLogin} logo={data?.data?.data?.site?.logo} />
+          <CategoriesHeader data={data?.data?.data?.categories} />
+          <MobileHeader
+            data={data?.data?.data?.categories}
+            cartItemsLength={cartItems.length}
+            isLogin={isLogin}
+          />
 
-      <CartSidebar
-        isCartOpen={isCartOpen}
-        cartItemsLength={cartItems.length}
-        cartItems={cartItems}
-        totalPrice={totalPrice}
-      />
-      {/**home*/}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              bannerSlider={bannerSlider}
-              weoffer={weoffer}
-              flashsale={specialProducts}
-              shopWithCategory={shopWithCategory}
-              rooms={rooms}
-              bestSaller={bestSaller}
-              blogs={blogs}
-              allProducts={allProducts}
+          <CartSidebar
+            isCartOpen={isCartOpen}
+            cartItemsLength={cartItems.length}
+            cartItems={cartItems}
+            totalPrice={totalPrice}
+          />
+          {/**home*/}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  bannerSlider={data?.data?.data?.banners}
+                  weoffer={data?.data?.data?.features}
+                  flashsale={data?.data?.data?.tantawiOffers}
+                  shopWithCategory={data?.data?.data?.categories}
+                  banner1={data?.data?.data.ads?.Ad1}
+                  banner2={data?.data?.data.ads?.Ad2}
+                  banner3={data?.data?.data.ads?.Ad3}
+                  banner4={data?.data?.data?.ads?.Ad4}
+                  mainCategory={data?.data?.data?.mainCategory}
+                  shop={data?.data?.data?.shippingProducts}
+                  productsForYou={data?.data?.data?.productsForYou}
+                  bestSaller={data?.data?.data?.maxOrderProducts}
+                />
+              }
             />
-          }
-        />
-      </Routes>
-      {/**auth*/}
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Routes>
-        <Route path="/reg" element={<Reg />} />
-      </Routes>
-      {/**static pages*/}
-      <Routes>
-        <Route path="/branches" element={<Branches data={branches} />} />
-      </Routes>
-      <Routes>
-        <Route
-          path="/contact"
-          element={
-            <Contact
-              contactDetails={contactDetails}
-              contactServices={contactServices}
+          </Routes>
+          {/**auth*/}
+          <Routes>
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          <Routes>
+            <Route path="/reg" element={<Reg />} />
+          </Routes>
+          {/**static pages*/}
+          <Routes>
+            <Route path="/branches" element={<Branches data={branches} />} />
+          </Routes>
+          <Routes>
+            <Route
+              path="/contact"
+              element={
+                <Contact
+                  contactDetails={contactDetails}
+                  contactServices={contactServices}
+                />
+              }
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/about"
-          element={<About about1={about1} about2={about2} />}
-        />
-      </Routes>
-      <Routes>
-        <Route path="/faqs" element={<FAQ data={faqs} />} />
-      </Routes>
-      <Routes>
-        <Route path="/blogs" element={<Blogs data={blogs} />} />
-      </Routes>
-      <Routes>
-        <Route path="/blog/:id" element={<Blog data={blogs} />} />
-      </Routes>
-      {/**shop , offer , product*/}
-      <Routes>
-        <Route
-          path="/product/:id"
-          element={
-            <Product
-              data={allProducts}
-              content={productStaticContent}
-              specialProducts={specialProducts}
-              bestSaller={bestSaller}
-              clientFaqs={clientFaqs}
-              takset={takset}
+          </Routes>
+          <Routes>
+            <Route
+              path="/about"
+              element={<About about1={about1} about2={about2} />}
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/offer"
-          element={<Offer categories={categories} allProducts={allProducts} />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/shop"
-          element={<Shop categories={categories} allProducts={allProducts} />}
-        />
-      </Routes>
-      {/**categories*/}
-      <Routes>
-        <Route
-          path="/cat/:title"
-          element={<MainCategory data={categories} />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/cat/:title/:subTitle"
-          element={<SubCategory data={categories} />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/cat/:title/:subTitle/:subSubTitle"
-          element={<SubSubCategory data={categories} />}
-        />
-      </Routes>
-      {/**checkout pages*/}
-      <Routes>
-        <Route
-          path="/cart"
-          element={<Cart data={cartItems} totalPrice={totalPrice} />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/checkout"
-          element={
-            <Checkout
-              address={address}
-              totalPrice={totalPrice}
-              paymentMethods={paymentMethods}
-              cartItems={cartItems}
+          </Routes>
+          <Routes>
+            <Route path="/faqs" element={<FAQ />} />
+          </Routes>
+          <Routes>
+            <Route path="/blogs" element={<Blogs />} />
+          </Routes>
+          <Routes>
+            <Route path="/blog/:id" element={<Blog />} />
+          </Routes>
+          {/**shop , offer , product*/}
+          <Routes>
+            <Route
+              path="/product/:id"
+              element={
+                <Product
+                  data={allProducts}
+                  content={productStaticContent}
+                  specialProducts={specialProducts}
+                  bestSaller={bestSaller}
+                  clientFaqs={clientFaqs}
+                  takset={takset}
+                />
+              }
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/complete"
-          element={
-            <CompleteOrder
-              cartItems={cartItems}
-              orderDetails={orderDetails}
-              totalPrice={totalPrice}
+          </Routes>
+          <Routes>
+            <Route
+              path="/offer"
+              element={
+                <Offer categories={categories} allProducts={allProducts} />
+              }
             />
-          }
-        />
-      </Routes>
-      {/**user dashobard*/}
-      <Routes>
-        <Route
-          path="/accountDetails"
-          element={
-            <MyAccount
-              dashboardSidebarDetails={dashboardSidebarDetails}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+          </Routes>
+          <Routes>
+            <Route
+              path="/shop"
+              element={
+                <Shop categories={categories} allProducts={allProducts} />
+              }
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/orders"
-          element={
-            <Orders
-              dashboardSidebarDetails={dashboardSidebarDetails}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+          </Routes>
+          {/**categories*/}
+          <Routes>
+            <Route
+              path="/cat/:title"
+              element={<MainCategory data={categories} />}
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/returns"
-          element={
-            <Returns
-              dashboardSidebarDetails={dashboardSidebarDetails}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+          </Routes>
+          <Routes>
+            <Route
+              path="/cat/:title/:subTitle"
+              element={<SubCategory data={categories} />}
             />
-          }
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path="/wishlist"
-          element={
-            <Whishlist
-              dashboardSidebarDetails={dashboardSidebarDetails}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+          </Routes>
+          <Routes>
+            <Route
+              path="/cat/:title/:subTitle/:subSubTitle"
+              element={<SubSubCategory data={categories} />}
             />
-          }
-        />
-      </Routes>
-      <Footer
-        categories={categories}
-        importantLinks={importantLinks}
-        socialMedia={socialMedia}
-        account={account}
-        payment={payment}
-      />
-    </Router>
+          </Routes>
+          {/**checkout pages*/}
+          <Routes>
+            <Route
+              path="/cart"
+              element={<Cart data={cartItems} totalPrice={totalPrice} />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  address={address}
+                  totalPrice={totalPrice}
+                  paymentMethods={paymentMethods}
+                  cartItems={cartItems}
+                />
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/complete"
+              element={
+                <CompleteOrder
+                  cartItems={cartItems}
+                  orderDetails={orderDetails}
+                  totalPrice={totalPrice}
+                />
+              }
+            />
+          </Routes>
+          {/**user dashobard*/}
+          <Routes>
+            <Route
+              path="/accountDetails"
+              element={
+                <MyAccount
+                  dashboardSidebarDetails={dashboardSidebarDetails}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                />
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/orders"
+              element={
+                <Orders
+                  dashboardSidebarDetails={dashboardSidebarDetails}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                />
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/returns"
+              element={
+                <Returns
+                  dashboardSidebarDetails={dashboardSidebarDetails}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                />
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/wishlist"
+              element={
+                <Whishlist
+                  dashboardSidebarDetails={dashboardSidebarDetails}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                />
+              }
+            />
+          </Routes>
+          <Footer
+            categories={data?.data?.data?.categories}
+            importantLinks={importantLinks}
+            socialMedia={socialMedia}
+            account={account}
+            payment={payment}
+            logo={data?.data?.data?.site?.logo}
+          />
+        </>
+      )}
+    </>
   );
 };
 
