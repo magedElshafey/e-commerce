@@ -18,8 +18,8 @@ const Blog = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="py-4 mt-4 mt-md-0">
-          <div className="container">
+        <div className="pb-4 mt-5 pt-5 mt-md-0">
+          <div className="container mt-5 mt-md-0">
             <FirstArticle data={data?.data?.data?.blog} />
           </div>
         </div>

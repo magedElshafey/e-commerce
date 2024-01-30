@@ -268,3 +268,9 @@ body {
 .dropdown-menu.show {
   text-align: start !important;
 }
+.bb:not(:last-of-type) {
+  border-bottom: 1px solid #ccc;
+}
+.h-400 {
+  height: 460px;
+}

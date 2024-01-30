@@ -24,10 +24,13 @@ const Blogs = ({ data }) => {
               )}
             </Link>
           </div>
-          <div className="row justify-content-center">
+          <div className="row">
             {data.slice(0, 3).map((item, index) => (
-              <div key={index} className="col-12 col-md-4 mb-3 mb-md-0">
-                <BlogCard data={item} />
+              <div
+                key={index}
+                className="col-12 col-md-6 col-lg-4 mb-3 mb-lg-0"
+              >
+                <BlogCard isHome={true} data={item} />
               </div>
             ))}
           </div>
