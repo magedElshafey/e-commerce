@@ -66,9 +66,13 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
               <>
                 <li
                   key={index}
-                  className="pb-2 borderBottom mb-3 d-flex align-items-center justify-content-between"
+                  className={`pb-2 borderBottom mb-3 d-flex align-items-center justify-content-between`}
                 >
-                  <Link className={style.link} to={`/cat/${mainCategory.name}`}>
+                  <Link
+                    onClick={() => setShowMenu(false)}
+                    className={style.link}
+                    to={`/cat/${mainCategory.id}/${mainCategory.name}`}
+                  >
                     {mainCategory.name}
                   </Link>
                   {mainCategory.children.length ? (

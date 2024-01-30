@@ -21019,68 +21019,68 @@ export const branches = [
 //     color: ["احمر", "اخضر", "ازرق"],
 //   },
 // ];
-export const rooms = [
-  {
-    name: "غرفة المعيشة",
-    img: room1,
-    id: 26,
-  },
-  {
-    name: "غرفة النوم",
-    img: room2,
-    id: 27,
-  },
-  {
-    name: "غرفة الطعام",
-    img: room3,
-    id: 28,
-  },
-  {
-    name: "وحدات تخزين",
-    img: room4,
-    id: 29,
-  },
-  {
-    name: "ديكور المنزل",
-    img: room5,
-    id: 30,
-  },
-  {
-    name: "أثاث خارجي",
-    img: room6,
-    id: 31,
-  },
-  {
-    name: "أثاث المكتب",
-    img: room7,
-    id: 32,
-  },
-  {
-    name: "الإضاءة",
-    img: room8,
-    id: 33,
-  },
-  {
-    name: "كنبة ركنة",
-    img: room9,
-    id: 34,
-  },
-  {
-    name: "مرايات",
-    img: room10,
-    id: 35,
-  },
-  {
-    name: "براويز",
-    img: room11,
-    id: 36,
-  },
-  {
-    name: "سجاد",
-    img: room12,
-    id: 37,
-  },
-];
+// export const rooms = [
+//   {
+//     name: "غرفة المعيشة",
+//     img: room1,
+//     id: 26,
+//   },
+//   {
+//     name: "غرفة النوم",
+//     img: room2,
+//     id: 27,
+//   },
+//   {
+//     name: "غرفة الطعام",
+//     img: room3,
+//     id: 28,
+//   },
+//   {
+//     name: "وحدات تخزين",
+//     img: room4,
+//     id: 29,
+//   },
+//   {
+//     name: "ديكور المنزل",
+//     img: room5,
+//     id: 30,
+//   },
+//   {
+//     name: "أثاث خارجي",
+//     img: room6,
+//     id: 31,
+//   },
+//   {
+//     name: "أثاث المكتب",
+//     img: room7,
+//     id: 32,
+//   },
+//   {
+//     name: "الإضاءة",
+//     img: room8,
+//     id: 33,
+//   },
+//   {
+//     name: "كنبة ركنة",
+//     img: room9,
+//     id: 34,
+//   },
+//   {
+//     name: "مرايات",
+//     img: room10,
+//     id: 35,
+//   },
+//   {
+//     name: "براويز",
+//     img: room11,
+//     id: 36,
+//   },
+//   {
+//     name: "سجاد",
+//     img: room12,
+//     id: 37,
+//   },
+// ];
 export const productStaticContent = [
   {
     question: "ارجاع مجاني",
@@ -21662,24 +21662,24 @@ export const payment = [
   payment5,
   payment6,
 ];
-export const about1 = {
-  img: aboutus1,
-  arTitle: "حكايتنا",
-  enTitle: "our story",
-  arDesc:
-    "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق  (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل  (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.",
-  enDesc:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-};
-export const about2 = {
-  img: aboutus2,
-  arTitle: "مهمتنا",
-  enTitle: "our mission",
-  arDesc:
-    "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق  (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل  (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.",
-  enDesc:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-};
+// export const about1 = {
+//   img: aboutus1,
+//   arTitle: "حكايتنا",
+//   enTitle: "our story",
+//   arDesc:
+//     "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق  (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل  (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.",
+//   enDesc:
+//     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+// };
+// export const about2 = {
+//   img: aboutus2,
+//   arTitle: "مهمتنا",
+//   enTitle: "our mission",
+//   arDesc:
+//     "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق  (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل  (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.",
+//   enDesc:
+//     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+// };
 
 export const address = [
   {

@@ -37,8 +37,9 @@ const FixedBtn = () => {
       <div className={style.faceContainer}>
         <a
           target="_blank"
-          href="www.facebook.com"
+          href="https://www.facebook.com"
           className="d-inline-block m-0 p-2 text-white"
+          rel="noreferrer"
         >
           {t("contact")}
         </a>

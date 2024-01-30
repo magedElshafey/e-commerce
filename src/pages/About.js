@@ -1,13 +1,25 @@
 import React from "react";
 import AboutDetails from "../components/about/AboutDetails";
-const About = ({ about1, about2 }) => {
+import { useQuery } from "react-query";
+import { request } from "../components/utils/axios";
+import Spinner from "../components/utils/spinner/Spinner";
+const About = () => {
+  const fetchData = () => {
+    return request({ url: "/about-us" });
+  };
+  const { isLoading, data } = useQuery("about-us", fetchData);
   return (
-    <div className="py-4 mt-4 mt-md-0">
-      <div className="container">
-        <AboutDetails data={about1} isReversed={false} />
-        <AboutDetails data={about2} isReversed={true} />
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className="py-4 mt-4 mt-md-0">
+          <div className="container">
+            <AboutDetails data={data?.data?.data?.aboutUs} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

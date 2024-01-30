@@ -11,14 +11,11 @@ import {
   specialProducts,
   bestSaller,
   allProducts,
-  rooms,
   productStaticContent,
   clientFaqs,
   payment,
   branches,
   takset,
-  about1,
-  about2,
   address,
   paymentMethods,
   orderDetails,
@@ -166,10 +163,7 @@ const App = () => {
             />
           </Routes>
           <Routes>
-            <Route
-              path="/about"
-              element={<About about1={about1} about2={about2} />}
-            />
+            <Route path="/about" element={<About />} />
           </Routes>
           <Routes>
             <Route path="/faqs" element={<FAQ />} />
