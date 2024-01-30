@@ -19,10 +19,8 @@ const Offer = ({ categories, allProducts }) => {
                 {t("allCat")}
               </option>
               {categories.map((item, index) => (
-                <option value={item.path} key={index}>
-                  {i18n.language === "ar"
-                    ? item.mainCategory
-                    : item.mainCategoryEn}
+                <option value={item.id} key={index}>
+                  {item.name}
                 </option>
               ))}
             </select>

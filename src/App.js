@@ -4,13 +4,9 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
-  categories,
   importantLinks,
   account,
   socialMedia,
-  specialProducts,
-  bestSaller,
-  allProducts,
   productStaticContent,
   clientFaqs,
   payment,
@@ -110,6 +106,7 @@ const App = () => {
             data={data?.data?.data?.categories}
             cartItemsLength={cartItems.length}
             isLogin={isLogin}
+            logo={data?.data?.data?.site?.mobileLogo}
           />
 
           <CartSidebar
@@ -186,10 +183,10 @@ const App = () => {
               path="/product/:id"
               element={
                 <Product
-                  data={allProducts}
+                  data={data?.data?.data?.maxOrderProducts}
                   content={productStaticContent}
-                  specialProducts={specialProducts}
-                  bestSaller={bestSaller}
+                  specialProducts={data?.data?.data?.maxOrderProducts}
+                  bestSaller={data?.data?.data?.maxOrderProducts}
                   clientFaqs={clientFaqs}
                   takset={takset}
                 />
@@ -200,7 +197,10 @@ const App = () => {
             <Route
               path="/offer"
               element={
-                <Offer categories={categories} allProducts={allProducts} />
+                <Offer
+                  categories={data?.data?.data?.categories}
+                  allProducts={data?.data?.data?.maxOrderProducts}
+                />
               }
             />
           </Routes>
@@ -208,28 +208,28 @@ const App = () => {
             <Route
               path="/shop"
               element={
-                <Shop categories={categories} allProducts={allProducts} />
+                <Shop
+                  categories={data?.data?.data?.categories}
+                  allProducts={data?.data?.data?.maxOrderProducts}
+                />
               }
             />
           </Routes>
           {/**categories*/}
           <Routes>
-            <Route
-              path="/cat/:id/:title"
-              element={<MainCategory data={categories} />}
-            />
+            <Route path="/cat/:id/:title" element={<MainCategory />} />
           </Routes>
           {/**
                  *    <Routes>
             <Route
               path="/cat/:title/:subTitle"
-              element={<SubCategory data={categories} />}
+              element={<SubCategory  />}
             />
           </Routes>
           <Routes>
             <Route
               path="/cat/:title/:subTitle/:subSubTitle"
-              element={<SubSubCategory data={categories} />}
+              element={<SubSubCategory  />}
             />
           </Routes>
                  */}

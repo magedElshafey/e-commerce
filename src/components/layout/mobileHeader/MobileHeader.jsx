@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./mobileHeader.module.css";
 import { useTranslation } from "react-i18next";
 import ClickOutsideWrapper from "../../hooks/useClickOutside";
-import logo from "../../../assets/redLogo.png";
+
 import { useDispatch } from "react-redux";
 import {
   AiOutlineMenu,
@@ -20,7 +20,7 @@ import { GoSearch } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
 import MenuSidebar from "../menuSidebar/MenuSidebar";
 import { openCart } from "../../../Redux/cart";
-const MobileHeader = ({ data, cartItemsLength, isLogin }) => {
+const MobileHeader = ({ data, logo, isLogin }) => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
