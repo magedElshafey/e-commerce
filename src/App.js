@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import {
   importantLinks,
   account,
-  socialMedia,
   productStaticContent,
   clientFaqs,
   payment,
@@ -152,7 +151,7 @@ const App = () => {
               path="/contact"
               element={
                 <Contact
-                  contactDetails={contactDetails}
+                  contactDetails={data?.data?.data?.contactus}
                   weoffer={data?.data?.data?.features}
                 />
               }
@@ -316,7 +315,7 @@ const App = () => {
           <Footer
             categories={data?.data?.data?.categories}
             importantLinks={importantLinks}
-            socialMedia={socialMedia}
+            socialMedia={data?.data?.data?.followUs}
             account={account}
             payment={payment}
             logo={data?.data?.data?.site?.logo}

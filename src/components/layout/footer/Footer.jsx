@@ -1,7 +1,12 @@
 import React from "react";
 import style from "./footer.module.css";
 import { useTranslation } from "react-i18next";
+import facebook from "../../../assets/icons8-facebook-64.png";
+import insta from "../../../assets/instagram.svg";
 
+import whats from "../../../assets/whats.png";
+import tiktok from "../../../assets/tiktok.png";
+import snap from "../../../assets/snap.png";
 import { Link } from "react-router-dom";
 const Footer = ({
   categories,
@@ -24,20 +29,59 @@ const Footer = ({
             <p className="m-0 p-0 mb-3 text-white-50">{t("slogan")}</p>
             <h5 className="text-white m-0 p-0 mb-3 fw-bolder">{t("social")}</h5>
             <div className="d-flex align-items-center gap-2 flex-wrap">
-              {socialMedia.links.map((item, index) => (
+              {socialMedia.facebook && (
+                <a href={socialMedia.facebook} target="_blank" rel="noreferrer">
+                  <img
+                    alt="social/img"
+                    src={facebook}
+                    className={style.socialIcon}
+                  />
+                </a>
+              )}
+              {socialMedia.instagram && (
                 <a
-                  key={index}
-                  href={item.path}
+                  href={socialMedia.instagram}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
                     alt="social/img"
-                    src={item.img}
+                    src={insta}
                     className={style.socialIcon}
                   />
                 </a>
-              ))}
+              )}
+              {socialMedia.whatsapp && (
+                <a
+                  href={`https://wa.me/+20${socialMedia.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    alt="social/img"
+                    src={whats}
+                    className={style.socialIcon}
+                  />
+                </a>
+              )}
+              {socialMedia.tiktok && (
+                <a href={socialMedia.tiktok} target="_blank" rel="noreferrer">
+                  <img
+                    alt="social/img"
+                    src={tiktok}
+                    className={style.socialIcon}
+                  />
+                </a>
+              )}
+              {socialMedia.snapchat && (
+                <a href={socialMedia.snapchat} target="_blank" rel="noreferrer">
+                  <img
+                    alt="social/img"
+                    src={snap}
+                    className={style.socialIcon}
+                  />
+                </a>
+              )}
             </div>
           </div>
           <div className="col-6 col-md-3 mb-3">

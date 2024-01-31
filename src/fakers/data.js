@@ -1,10 +1,3 @@
-// social media icons
-import facebook from "../assets/icons8-facebook-64.png";
-import insta from "../assets/instagram.svg";
-import youtube from "../assets/youtube.svg";
-import whats from "../assets/whats.png";
-import tiktok from "../assets/tiktok.png";
-import snap from "../assets/snap.png";
 // takseet
 import takset1 from "../assets/takset-01.webp";
 import takset2 from "../assets/takset-02.webp";
@@ -12,7 +5,6 @@ import takset3 from "../assets/takset-03.webp";
 import takset4 from "../assets/takset-04.webp";
 import takset5 from "../assets/takset-05.webp";
 // about
-
 // payment
 import payment1 from "../assets/payment-01.svg";
 import payment2 from "../assets/payment-02.svg";
@@ -27,11 +19,6 @@ import visa from "../assets/icons8-visa-48.png";
 import primum from "../assets/takset-05.webp";
 // my account
 import avatar from "../assets/avatar.png";
-// contact details
-import add from "../assets/address.svg";
-import call from "../assets/call.svg";
-import mail from "../assets/mail.svg";
-
 // shared layou3
 export const takset = [
   {
@@ -180,7 +167,6 @@ export const takset = [
     ],
   },
 ];
-
 export const importantLinks = {
   mainTitle: "روابط مهمة",
   links: [
@@ -239,36 +225,6 @@ export const account = {
     },
   ],
 };
-export const socialMedia = {
-  mainTitle: "وسائل التواصل",
-  links: [
-    {
-      img: facebook,
-      path: "https://www.facebook.com",
-    },
-    {
-      img: insta,
-      path: "https://www.instagram.com",
-    },
-    {
-      img: whats,
-      path: "https://wa.me/+201022153359",
-    },
-    {
-      img: tiktok,
-      path: "https://www.tiktok.com",
-    },
-    {
-      img: youtube,
-      path: "https://www.youtube.com",
-    },
-    {
-      img: snap,
-      path: "https://www.snapchat.com",
-    },
-  ],
-};
-
 export const branches = [
   {
     title: "الطناطوي- تقسيم بهاء",
@@ -525,27 +481,6 @@ export const dashboardSidebarDetails = {
     },
   ],
 };
-export const contactDetails = [
-  {
-    img: add,
-    enTitle: "Address",
-    arTitle: "العنوان",
-    data: "234 Hai Trieu, Ho Chi Minh City,Viet Nam",
-  },
-  {
-    img: call,
-    enTitle: "contact us",
-    arTitle: "تواصل معنا",
-    data: "+201022153359",
-  },
-  {
-    img: mail,
-    enTitle: "Email",
-    arTitle: "البريد الإلكتروني",
-    data: "megzz@gmail.com",
-  },
-];
-
 export const payment = [
   payment1,
   payment2,
