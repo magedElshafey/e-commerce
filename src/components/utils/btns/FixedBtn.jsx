@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./fixedBtn.module.css";
 import { BsArrowUp } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
-const FixedBtn = () => {
+const FixedBtn = ({ facebook }) => {
   const { t } = useTranslation();
   const [showArrow, setShowArrow] = useState(false);
   useEffect(() => {
@@ -37,7 +37,7 @@ const FixedBtn = () => {
       <div className={style.faceContainer}>
         <a
           target="_blank"
-          href="https://www.facebook.com"
+          href={facebook}
           className="d-inline-block m-0 p-2 text-white"
           rel="noreferrer"
         >

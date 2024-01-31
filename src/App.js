@@ -95,7 +95,7 @@ const App = () => {
             desc={data?.data?.data?.site?.description}
             fav={data?.data?.data?.site?.icon}
           />
-          <FixedBtn />
+          <FixedBtn facebook={data?.data?.data?.followUs.facebook} />
           <Widget />
           <SettingsHeader />
           <MainHeader isLogin={isLogin} logo={data?.data?.data?.site?.logo} />
