@@ -274,3 +274,6 @@ body {
 .h-400 {
   height: 460px;
 }
+.slick-dots  {
+  bottom: -30px !important;
+}

@@ -110,5 +110,10 @@
   "returns": "returns",
   "customized": "Customized products for you",
   "best": "best saller",
-  "commonQuestions": "common Questions"
+  "commonQuestions": "common Questions",
+  "req": "all fields are required",
+  "sending": "sending",
+  "nameError": "Name should only contain alphabetic characters",
+  "emailError": "invalid email",
+  "phoneError": "Phone number must contain 11 digits and only numbers."
 }

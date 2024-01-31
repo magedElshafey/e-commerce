@@ -6,11 +6,11 @@ const BranchesDetails = ({ data }) => {
   return (
     <div className={`mb-4 ${data.isReversed ? "row flex-row-reverse" : "row"}`}>
       <div
-        className={`col-6 col-md-5 p-0 m-0 ${style.box} ${
+        className={`col-12 col-md-5 p-0 m-0 ${style.box} ${
           data.isReversed ? style.bgSection : style.bgGray
         }`}
       >
-        <div className="p-3 d-flex flex-column align-items-start align-items-md-center gap-1">
+        <div className="p-3 d-flex flex-column  align-items-center gap-1">
           <div>
             <p className="m-0 p-0">
               {t("city")} : {i18n.language === "ar" ? data.city : data.enCity}
@@ -45,7 +45,7 @@ const BranchesDetails = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="p-0 m-0 col-6 col-md-7">
+      <div className="p-0 m-0 col-12 col-md-7">
         <iframe
           title="Map"
           width="100%"

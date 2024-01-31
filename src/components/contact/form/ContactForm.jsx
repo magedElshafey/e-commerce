@@ -3,24 +3,45 @@ import style from "./contactForm.module.css";
 import { useTranslation } from "react-i18next";
 import { useMutation } from "react-query";
 import { request } from "../../utils/axios";
-import Spinner from "../../utils/spinner/Spinner";
+import toast from "react-hot-toast";
+import useNameValidation from "../../hooks/validation/useNameValidation";
+import useEmailValidation from "../../hooks/validation/useEmailValidation";
+import usePhoneNumberValidator from "../../hooks/validation/usePhoneNumberValidator";
+import LoadingBtn from "../../utils/loadingBtn/LoadingBtn";
 const ContactForm = () => {
   const { t } = useTranslation();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const { name, error: nameError, handleNameChange } = useNameValidation();
+  const { email, emailError, handleEmailChange } = useEmailValidation();
+  const { phoneNumber, phoneError, handlePhoneChange } =
+    usePhoneNumberValidator();
   const [msg, setMsg] = useState("");
   const sendData = (data) => {
-    return request({ url: "/send-message", method: "post", data });
+    return request({ url: "/contact-us", method: "post", data });
   };
   const { isLoading, mutate } = useMutation(sendData, {
     onSuccess: (data) => {
-      console.log(data?.data);
+      console.log("contact msg", data);
+      toast.success(data?.data?.message);
+      handleNameChange("");
+      handlePhoneChange("");
+      setMsg("");
+      handleEmailChange("");
     },
-    onError: (data) => {},
+    onError: (data) => {
+      toast.error(data?.data?.data?.message);
+    },
   });
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!name.trim() || !phoneNumber.trim() || !msg.trim() || !email.trim()) {
+      toast.error(t("req"));
+    } else if (nameError || emailError || phoneError) {
+      return;
+    } else {
+      const user_message = { name, email, phone: phoneNumber, message: msg };
+      console.log("user", user_message);
+      mutate(user_message);
+    }
   };
   return (
     <div>
@@ -35,11 +56,13 @@ const ContactForm = () => {
           </label>
           <input
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleNameChange(e.target.value)}
             type="text"
             className="inp"
             id="name"
+            required
           />
+          {nameError && <p className="error my-1">{nameError}</p>}
         </div>
         <div className="mb-2">
           <label
@@ -50,11 +73,13 @@ const ContactForm = () => {
           </label>
           <input
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => handleEmailChange(e.target.value)}
             type="email"
             className="inp"
             id="email"
+            required
           />
+          {emailError && <p className="error my-1">{emailError}</p>}
         </div>
         <div className="mb-2">
           <label
@@ -64,12 +89,14 @@ const ContactForm = () => {
             {t("phone")}
           </label>
           <input
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            type="number"
+            value={phoneNumber}
+            onChange={(e) => handlePhoneChange(e.target.value)}
+            type="text"
             className="inp"
             id="phone"
+            required
           />
+          {phoneError && <p className="error my-1">{phoneError}</p>}
         </div>
         <div className="mb-2">
           <label
@@ -82,14 +109,19 @@ const ContactForm = () => {
             value={msg}
             onChange={(e) => setMsg(e.target.value)}
             className="area"
+            required
           ></textarea>
         </div>
         <div
           className={`d-flex justify-content-center mb-3 ${style.forgetContainer}`}
         >
-          <button type="submit" className={`newBtn`}>
-            {t("send")}
-          </button>
+          {isLoading ? (
+            <LoadingBtn text={t("sending")} />
+          ) : (
+            <button type="submit" className={`newBtn`}>
+              {t("send")}
+            </button>
+          )}
         </div>
       </form>
     </div>

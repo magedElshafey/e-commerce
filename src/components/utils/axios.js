@@ -9,6 +9,7 @@ const client = axios.create({
     "Content-Type": "application/json",
     lang,
     "Accept-Language": lang,
+    "Access-Control-Allow-Credentials": true,
   },
 });
 export const request = ({ ...options }) => {

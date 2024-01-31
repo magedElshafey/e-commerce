@@ -19,5 +19,10 @@
 .mainImg {
     max-width: 100%;
     height: 716px;
-  
+}
+@media screen and (max-width : 767px) {
+    .mainImg {
+       width: 100%;
+       height: 700px;
+    }
 }

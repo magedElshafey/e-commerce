@@ -31,11 +31,7 @@ import avatar from "../assets/avatar.png";
 import add from "../assets/address.svg";
 import call from "../assets/call.svg";
 import mail from "../assets/mail.svg";
-// contact services
-import delivery from "../assets/delivery.svg";
-import money from "../assets/money.svg";
-import lock from "../assets/lock 01.svg";
-import contactPhone from "../assets/contact-phone.svg";
+
 // shared layou3
 export const takset = [
   {
@@ -549,36 +545,7 @@ export const contactDetails = [
     data: "megzz@gmail.com",
   },
 ];
-export const contactServices = [
-  {
-    img: delivery,
-    enTitle: "Free Shipping",
-    arTitle: "ًالشحن مجانا",
-    enDesc: "Order above $200",
-    arDesc: "الطلب فوق 200 دولار",
-  },
-  {
-    img: money,
-    enTitle: "Money-back",
-    arTitle: "إرجاع النقود",
-    enDesc: "30 days guarantee",
-    arDesc: "ضمان 30 يومًا",
-  },
-  {
-    img: lock,
-    enTitle: "Secure Payments",
-    arTitle: "المدفوعات الآمنة",
-    enDesc: "Secured by Stripe",
-    arDesc: "مؤمن بواسطة الشريط",
-  },
-  {
-    img: contactPhone,
-    enTitle: "24/7 Support",
-    arTitle: "دعم 24/7",
-    enDesc: "Phone and Email support",
-    arDesc: "الدعم عبر الهاتف والبريد الإلكتروني",
-  },
-];
+
 export const payment = [
   payment1,
   payment2,

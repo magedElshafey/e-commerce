@@ -3,7 +3,7 @@ import BranchesDetails from "../components/branches/BranchesDetails";
 
 const Branches = ({ data }) => {
   return (
-    <div className="pt-4 mt-5 mt-md-0 overflow-x-hidden">
+    <div className="pb-4 pt-5 mt-5 mt-md-0 overflow-x-hidden">
       {data.map((item, index) => (
         <BranchesDetails data={item} key={index} />
       ))}

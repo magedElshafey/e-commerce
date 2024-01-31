@@ -17,7 +17,6 @@ import {
   orderDetails,
   dashboardSidebarDetails,
   contactDetails,
-  contactServices,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -154,7 +153,7 @@ const App = () => {
               element={
                 <Contact
                   contactDetails={contactDetails}
-                  contactServices={contactServices}
+                  weoffer={data?.data?.data?.features}
                 />
               }
             />

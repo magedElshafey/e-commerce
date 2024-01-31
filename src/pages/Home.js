@@ -33,9 +33,9 @@ const Home = ({
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="py-4 mt-5 mt-md-0">
-          <AdsSlider data={bannerSlider} />
-          <Weoffer data={weoffer} />
+        <div className="py-4 mt-4 mt-md-0">
+          {bannerSlider && <AdsSlider data={bannerSlider} />}
+          {weoffer.length && <Weoffer data={weoffer} />}
           <FlashSale data={flashsale} />
           <ShopWithCategory data={shopWithCategory} />
           <DoubleBanner

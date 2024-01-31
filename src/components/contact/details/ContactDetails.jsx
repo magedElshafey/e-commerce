@@ -11,7 +11,7 @@ const ContactDetails = ({ data }) => {
       <p className={`${style.title} text-uppercase m-0 p-0`}>
         {i18n.language === "ar" ? data.arTitle : data.enTitle}
       </p>
-      <p className={`${style.desc} m-0 p-0`}>{data.data}</p>
+      <p className={`${style.desc} m-0 p-0 text-lowercase`}>{data.data}</p>
     </div>
   );
 };

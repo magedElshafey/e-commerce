@@ -12,7 +12,7 @@ const ShopNow = ({ data, banner }) => {
   return (
     <div className={`mb-3 ${style.mainDiv}`}>
       <div className="container py-3">
-        <div className="row align-items-center justify-content-center">
+        <div className="row  align-items-center justify-content-center">
           <div className="col-12 col-md-8 mb-4 mb-md-0">
             <div className="d-flex align-items-center justify-content-between mb-3">
               <p className={`m-0 p-0 ${style.shop}`}>{t("shopNow")}</p>

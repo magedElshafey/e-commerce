@@ -2,8 +2,8 @@ import React from "react";
 import BgImg from "../components/login/bgImg/BgImg";
 import ContactForm from "../components/contact/form/ContactForm";
 import ContactDetails from "../components/contact/details/ContactDetails";
-import ContactServices from "../components/contact/services/ContactServices";
-const Contact = ({ contactDetails, contactServices }) => {
+import Weoffer from "../components/Home/weoffer/Weoffer";
+const Contact = ({ contactDetails, weoffer }) => {
   return (
     <div className="py-4 mt-4 mt-md-0 overflow-x-hidden">
       <div className="container">
@@ -25,7 +25,7 @@ const Contact = ({ contactDetails, contactServices }) => {
           </div>
         </div>
       </div>
-      <ContactServices data={contactServices} />
+      <Weoffer data={weoffer} />
     </div>
   );
 };
