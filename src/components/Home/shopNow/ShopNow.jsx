@@ -10,8 +10,8 @@ const ShopNow = ({ data, banner }) => {
   const navigate = useNavigate();
   const handleNavigate = () => navigate("/shop");
   return (
-    <div className={`mb-3 ${style.mainDiv}`}>
-      <div className="container py-3">
+    <div className={`mb-3 bg-section d-flex items-center py-3`}>
+      <div className="container">
         <div className="row  align-items-center justify-content-center">
           <div className="col-12 col-md-8 mb-4 mb-md-0">
             <div className="d-flex align-items-center justify-content-between mb-3">

@@ -8,11 +8,14 @@ import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 const ProductCard = ({ data }) => {
   const dispatch = useDispatch();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const navigateProductDetails = (id) => navigate(`/product/${id}`);
   return (
-    <div className={`pb-3 ${style.card}`}>
+    <div
+      className={`pb-3 ${style.card} `}
+      style={{ direction: i18n.language === "ar" ? "rtl" : "ltr" }}
+    >
       {/**img */}
       <div className="d-flex justify-content-center my-3">
         <img alt="product/img" className={style.mainImg} src={data.image} />
@@ -86,18 +89,20 @@ const ProductCard = ({ data }) => {
       {/* title*/}
       <Link
         to={`/product/${data.id}`}
-        className={`m-0 p-0 d-inline-block mb-2 ${style.title}`}
+        className={`m-0 p-0  mb-2 ${style.title}`}
       >
-        {data.name}
+        {data.name.substr(0, 25)}...
       </Link>
       {/*price*/}
-      <div className="d-flex mb-4 justify-content-between align-items-center flex-wrap">
+      <div className="mb-4">
         <p className="fw-bolder m-0 p-0  ">
           {data.disscount ? data.price_after_discount : data.price}
-          .00 جنيه
+          .00 {t("le")}
         </p>
         {data.discount && (
-          <del className="red m-0 p-0 px-2">{data.price}.00 جنية</del>
+          <del className="red m-0 p-0">
+            {data.price}.00 {t("le")}
+          </del>
         )}
       </div>
       <div
@@ -121,23 +126,4 @@ const ProductCard = ({ data }) => {
     </div>
   );
 };
-
 export default ProductCard;
-/**
- * <div className={style.overlay}>
-        <div
-          className={`d-flex align-items-center gap-1 ${style.productDetails}`}
-        >
-          <div className={style.circule}>
-            <AiOutlineHeart className={style.icon} />
-          </div>
-
-          <div
-            onClick={() => navigateProductDetails(data.id)}
-            className={style.circule}
-          >
-            <AiOutlineEye className={style.icon} />
-          </div>
-        </div>
-      </div>
- */

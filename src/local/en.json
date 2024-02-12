@@ -115,5 +115,8 @@
   "sending": "sending",
   "nameError": "Name should only contain alphabetic characters",
   "emailError": "invalid email",
-  "phoneError": "Phone number must contain 11 digits and only numbers."
+  "phoneError": "Phone number must contain 11 digits and only numbers.",
+  "menu": "menu",
+  "get": "get in touch with us",
+  "rated": "Top rated products"
 }

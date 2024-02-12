@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import style from "./adsSlider.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,20 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import useSliderControls from "../../hooks/slider/useSliderControls";
 const AdsSlider = ({ data }) => {
   const { i18n } = useTranslation();
-  const sliderRef = useRef(null);
-  const slickNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
+  const { sliderRef, slickNext, slickPrev } = useSliderControls();
 
-  const slickPrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
   const settings = {
     dots: false,
     infinite: true,
@@ -42,14 +33,14 @@ const AdsSlider = ({ data }) => {
       )}
       <Slider ref={sliderRef} {...settings}>
         {data.map((item, index) => (
-          <Link key={index} to={item.id}>
+        
             <img
               loading="lazy"
-              src={item.image}
+              src={item}
               alt="banner/img"
               className={style.mainImg}
             />
-          </Link>
+        
         ))}
       </Slider>
     </div>

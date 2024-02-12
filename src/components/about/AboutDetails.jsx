@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import style from "./about.module.css";
 const AboutDetails = ({ data }) => {
   const { i18n } = useTranslation();
+  console.log("data from about" , data)
   return (
     <>
       {data.map((item, index) => (

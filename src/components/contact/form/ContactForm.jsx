@@ -20,7 +20,6 @@ const ContactForm = () => {
   };
   const { isLoading, mutate } = useMutation(sendData, {
     onSuccess: (data) => {
-      console.log("contact msg", data);
       toast.success(data?.data?.message);
       handleNameChange("");
       handlePhoneChange("");
@@ -45,8 +44,7 @@ const ContactForm = () => {
   };
   return (
     <div>
-      <p className="fw-bold m-0 p-0 mb-2 fs-5">{t("contact")}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="w-100 contact-form">
         <div className="mb-2">
           <label
             className="d-block m-0 mb-1 p-0 text-black-50 label"
@@ -58,7 +56,7 @@ const ContactForm = () => {
             value={name}
             onChange={(e) => handleNameChange(e.target.value)}
             type="text"
-            className="inp"
+            className="inp w-100"
             id="name"
             required
           />
@@ -75,7 +73,7 @@ const ContactForm = () => {
             value={email}
             onChange={(e) => handleEmailChange(e.target.value)}
             type="email"
-            className="inp"
+            className="inp w-100"
             id="email"
             required
           />
@@ -92,7 +90,7 @@ const ContactForm = () => {
             value={phoneNumber}
             onChange={(e) => handlePhoneChange(e.target.value)}
             type="text"
-            className="inp"
+            className="inp w-100"
             id="phone"
             required
           />
@@ -108,12 +106,12 @@ const ContactForm = () => {
           <textarea
             value={msg}
             onChange={(e) => setMsg(e.target.value)}
-            className="area"
+            className="area w-100"
             required
           ></textarea>
         </div>
         <div
-          className={`d-flex justify-content-center mb-3 ${style.forgetContainer}`}
+          className={`d-flex justify-content-center  ${style.forgetContainer}`}
         >
           {isLoading ? (
             <LoadingBtn text={t("sending")} />

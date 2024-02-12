@@ -8,26 +8,6 @@
 }
 
 .mainImg {
-  max-height: 500px;
+  max-height: 300px;
 }
 
-.subImg {
-  width: 548px;
-  height: 729px;
-  margin: auto !important;
-}
-@media screen and (max-width: 662px) {
-  .subImg {
-    width: 311px;
-    height: 407px;
-  }
-}
-.thirdBlog {
-  width: 100%;
-  max-height: 729px;
-}
-@media screen and (max-width: 600px) {
-  .thirdBlog {
-    max-height: 407px;
-  }
-}

@@ -5,7 +5,7 @@ import { BsFacebook } from "react-icons/bs";
 import { FaPinterestP } from "react-icons/fa";
 import { BiLogoYoutube } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
-const SettingsHeader = () => {
+const SettingsHeader = ({socialMedia}) => {
   const { t, i18n } = useTranslation();
   // handle change language
   const changeLanguage = (lng) => {
@@ -27,15 +27,17 @@ const SettingsHeader = () => {
               {t("follow")}
             </p>
 
-            <AiOutlineTwitter className="text-white pointer" size={15} />
+            {
+              socialMedia.length ? <div className="d-flex items-center gap-1 flex-wrap">
+                {
+                  socialMedia.map((item , index) => <a key={index} href= {item.link} rel = "noreferrer">
+                      <img alt = "social-media-icon" src = {item.icon} className= {style.socialIcon} />
 
-            <BsFacebook className="text-white pointer" size={15} />
+                  </a>)
+                }
 
-            <FaPinterestP className="text-white pointer" size={15} />
-
-            <BiLogoYoutube className="text-white pointer" size={15} />
-
-            <AiOutlineInstagram className="text-white pointer" size={15} />
+              </div> : null
+            }
             <p className={`text-white m-0 px-4 ${style.line}`}>|</p>
             {/*settings sections*/}
             <div className="d-flex align-items-center gap-4">

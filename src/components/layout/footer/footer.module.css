@@ -42,8 +42,8 @@
 }
 .paymentContainer {
   background-color: white;
-  width: 60px;
-  height: 30px;
+  width: 35px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,10 +54,15 @@
   -o-border-radius: 2px;
 }
 .paymentImg {
-  width: 41px;
+  width: 21px;
   height: 15px;
-  object-fit: contain;
+ 
 }
 .lowerFooter {
   border-top: 1px solid white;
+}
+.socialIcon {
+  width: 34px;
+  height: 34px;
+  transition: 0.4s;
 }

@@ -8,7 +8,7 @@ const Offer = ({ categories, allProducts }) => {
   return (
     <div className="py-4 mt-4 mt-md-0 container">
       <OfferBanner img={banner} />
-      <div className="d-flex align-items-center justify-content-center my-3 gap-5">
+      <div className="d-flex align-items-center justify-content-center my-3 gap-3 gap-md-5">
         <div>
           <p className="filterBtnTitle text-uppercase m-0 p-0 mb-1">
             {t("cat")}
@@ -65,7 +65,7 @@ const Offer = ({ categories, allProducts }) => {
       </div>
       <div className="row">
         {allProducts.map((item, index) => (
-          <div className="col-12 col-md-6 col-lg-3 col-xl-2 mb-3" key={index}>
+          <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-3" key={index}>
             <ProductCard data={item} />
           </div>
         ))}

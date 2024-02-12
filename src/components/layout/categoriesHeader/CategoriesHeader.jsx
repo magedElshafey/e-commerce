@@ -18,7 +18,7 @@ const CategoriesHeader = ({ data }) => {
               <li className={style.bg} key={index}>
                 <Link
                   className={style.link}
-                  to={`/cat/${item.id}/${item.name}`}
+                  to={`/cat/${item.name}/${item.id}`}
                 >
                   {item.name}
                 </Link>

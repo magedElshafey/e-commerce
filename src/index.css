@@ -5,6 +5,9 @@
       url('./fonts/GE SS Two Light.woff2') format('woff2') ; 
       font-weight: 300; /* Light */
        font-style: normal;
+        font-feature-settings: 'lnum';
+          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
+   -moz-font-feature-settings: 'lnum'; /* Firefox */
 }
 @font-face {
   font-family: 'GE SS Two';
@@ -12,6 +15,9 @@
        url('./fonts/GE SS Two Medium.woff') format('woff');
   font-weight: 500; /* Medium */
   font-style: normal;
+    font-feature-settings: 'lnum';
+          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
+   -moz-font-feature-settings: 'lnum'; /* Firefox */
 }
 @font-face {
   font-family: 'GE SS Two';
@@ -19,6 +25,9 @@
        url('./fonts/GE SS Two Bold.woff') format('woff');
   font-weight: 700; /* Bold */
   font-style: normal;
+    font-feature-settings: 'lnum';
+          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
+   -moz-font-feature-settings: 'lnum'; /* Firefox */
 }
 * {
   box-sizing: border-box;
@@ -32,14 +41,21 @@ li {
 a {
   text-decoration: none;
 }
+
+body {
+   overflow-x: hidden !important;
+   font-family: 'GE SS Two', sans-serif;
+ 
+   font-weight: 400;
+   text-transform: capitalize;
+  
+  
+}
 html {
   scroll-behavior: smooth;
-}
-body {
-  overflow-x: hidden !important;
-  font-family: 'GE SS Two', sans-serif;
-  font-weight: 400;
-  text-transform: capitalize;
+  font-feature-settings: 'lnum';
+  -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
+  -moz-font-feature-settings: 'lnum'; /* Firefox */
 }
 :root {
   --redColor: #ac0200;
@@ -49,6 +65,7 @@ body {
   --textColor: #555;
   --sectionColor: rgba(252, 200, 199, 0.3);
   --darkColor: #191c1f;
+  --graySection : rgba(232, 232, 232, 0.4) ;
 }
 .pointer {
   cursor: pointer;
@@ -123,6 +140,9 @@ body {
   background-color: white;
   width: 100vw;
   height: 1px;
+}
+.red-color {
+  color: var(--redColor);
 }
 .inp,
 .area {
@@ -241,9 +261,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
+  width: 140px;
   padding: 8px 16px;
-  border: 2px solid #6C7275;
+  border: 1px solid var(--redColor);
   background-color: transparent;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -272,8 +292,39 @@ body {
   border-bottom: 1px solid #ccc;
 }
 .h-400 {
-  height: 460px;
+  height: 530px;
 }
 .slick-dots  {
   bottom: -30px !important;
+}
+.main-section {
+  background-color: rgba(240, 240, 240, 0.44);
+  width: 100vw;
+ display: flex;
+ align-items: center;
+}
+.offer-card {
+ 
+    background-color: #F3F5F7;
+   
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+}
+.contact-form {
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+.bg-section {
+  background-color: var(--graySection);
 }

@@ -6,7 +6,7 @@ const ShopWithCategory = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={`mb-4 ${style.mainDiv}`}>
+    <div className={`mb-4 bg-section d-flex items-center py-3`}>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12">

@@ -14,7 +14,7 @@ const FaqDetails = ({ data, img }) => {
         <div className="col-12 col-md-6 mb-3 mb-md-0">
           <p className="m-0 p-0 fs-4 mb-4 text-center fw-bolder">{t("faq")}</p>
           <div className={style.faqContainer}>
-            {data.map((item, index) => (
+            {data.fqss.map((item, index) => (
               <div key={index}>
                 <div className=" d-flex align-items-center justify-content-between">
                   <p className={`m-0 p-3 fw-bold red`}>{item.question}</p>

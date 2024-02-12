@@ -3,11 +3,13 @@ import AboutDetails from "../components/about/AboutDetails";
 import { useQuery } from "react-query";
 import { request } from "../components/utils/axios";
 import Spinner from "../components/utils/spinner/Spinner";
+
 const About = () => {
   const fetchData = () => {
-    return request({ url: "/about-us" });
+    return request({ url: "/about" });
   };
-  const { isLoading, data } = useQuery("about-us", fetchData);
+  const { isLoading, data } = useQuery("about-us", fetchData );
+  
   return (
     <>
       {isLoading ? (
@@ -15,7 +17,7 @@ const About = () => {
       ) : (
         <div className="py-4 mt-4 mt-md-0">
           <div className="container">
-            <AboutDetails data={data?.data?.data?.aboutUs} />
+            <AboutDetails data={data?.data?.data?.about} />
           </div>
         </div>
       )}

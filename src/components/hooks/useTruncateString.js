@@ -4,8 +4,8 @@ const useTruncateString = (initialString) => {
   const [truncatedString, setTruncatedString] = useState(initialString);
 
   useEffect(() => {
-    if (initialString.length > 75) {
-      const truncated = initialString.substring(0, 95) + "...";
+    if (initialString.length > 95) {
+      const truncated = initialString.substring(0, 220) + "...";
       setTruncatedString(truncated);
     } else {
       setTruncatedString(initialString);

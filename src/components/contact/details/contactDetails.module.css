@@ -11,6 +11,11 @@ height: 32px;
     color: #6C7275;
 }
 .desc {
-    color: #141718;
+    color: #6C7275;
     font-weight: 600;
+    font-size: 18px;
+}
+.socialIcon {
+    width: 20px;
+    height: 20px;
 }

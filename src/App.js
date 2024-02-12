@@ -15,7 +15,6 @@ import {
   paymentMethods,
   orderDetails,
   dashboardSidebarDetails,
-  contactDetails,
 } from "./fakers/data";
 import Widget from "./components/layout/Widget/Widget";
 import SettingsHeader from "./components/layout/settingsHeader/SettingsHeader";
@@ -53,6 +52,7 @@ import { useQuery } from "react-query";
 import Meta from "./components/utils/Meta";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import SubSubSubCategory from "./pages/SubSubSubCategory";
 const App = () => {
   // lang
   useEffect(() => {
@@ -91,29 +91,27 @@ const App = () => {
       ) : (
         <>
           <Meta
-            title={data?.data?.data?.site?.title}
+            title={data?.data?.data?.site?.name}
             desc={data?.data?.data?.site?.description}
-            fav={data?.data?.data?.site?.icon}
+            fav={data?.data?.data?.site?.fav_icon}
           />
-          <FixedBtn facebook={data?.data?.data?.followUs.facebook} />
           <Widget />
-          <SettingsHeader />
+          <SettingsHeader socialMedia={data?.data?.data?.socials} />
           <MainHeader isLogin={isLogin} logo={data?.data?.data?.site?.logo} />
           <CategoriesHeader data={data?.data?.data?.categories} />
           <MobileHeader
             data={data?.data?.data?.categories}
             cartItemsLength={cartItems.length}
             isLogin={isLogin}
-            logo={data?.data?.data?.site?.mobileLogo}
+            logo={data?.data?.data?.site?.mobile_logo}
           />
-
           <CartSidebar
             isCartOpen={isCartOpen}
             cartItemsLength={cartItems.length}
             cartItems={cartItems}
             totalPrice={totalPrice}
           />
-          {/**home*/}
+          {/*home page*/}
           <Routes>
             <Route
               path="/"
@@ -135,33 +133,29 @@ const App = () => {
               }
             />
           </Routes>
-          {/**auth*/}
+          {/*auth*/}
           <Routes>
             <Route path="/login" element={<Login />} />
           </Routes>
           <Routes>
             <Route path="/reg" element={<Reg />} />
           </Routes>
-          {/**static pages*/}
+
           <Routes>
             <Route path="/branches" element={<Branches data={branches} />} />
           </Routes>
+          {/**static pages */}
           <Routes>
-            <Route
-              path="/contact"
-              element={
-                <Contact
-                  contactDetails={data?.data?.data?.contactus}
-                  weoffer={data?.data?.data?.features}
-                />
-              }
-            />
+            <Route path="/faqs" element={<FAQ />} />
           </Routes>
           <Routes>
             <Route path="/about" element={<About />} />
           </Routes>
           <Routes>
-            <Route path="/faqs" element={<FAQ />} />
+            <Route path="/terms" element={<Terms />} />
+          </Routes>
+          <Routes>
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
           <Routes>
             <Route path="/blogs" element={<Blogs />} />
@@ -170,12 +164,42 @@ const App = () => {
             <Route path="/blog/:id" element={<Blog />} />
           </Routes>
           <Routes>
-            <Route path="/terms" element={<Terms />} />
+            <Route
+              path="/contact"
+              element={
+                <Contact
+                  phone={data?.data?.data?.site?.phone}
+                  email={data?.data?.data?.site?.email}
+                  address={data?.data?.data?.site?.address}
+                  weoffer={data?.data?.data?.features}
+                  socialMedia={data?.data?.data?.socials}
+                />
+              }
+            />
+          </Routes>
+          {/* categories */}
+          <Routes>
+            <Route path="/cat/:title/:id" element={<MainCategory />} />
           </Routes>
           <Routes>
-            <Route path="/privacy" element={<Privacy />} />
+            <Route
+              path="/cat/:mainCategoryTitle/:mainCategoryId/:subCategoryTitle/:subCategoryId"
+              element={<SubCategory />}
+            />
           </Routes>
-          {/**shop , offer , product*/}
+          <Routes>
+            <Route
+              path="/cat/:mainCategoryTitle/:mainCategoryId/:subCategoryTitle/:subCategoryId/:subSubCategoryTitle/:subSubCategoryId"
+              element={<SubSubCategory />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/cat/:mainCategoryTitle/:mainCategoryId/:subCategoryTitle/:subCategoryId/:subSubCategoryTitle/:subSubCategoryId/:subSubSubCategoryTitle/:subSubSubCategoryId"
+              element={<SubSubSubCategory />}
+            />
+          </Routes>
+          {/**shop , offers , product details pages*/}
           <Routes>
             <Route
               path="/product/:id"
@@ -213,25 +237,45 @@ const App = () => {
               }
             />
           </Routes>
-          {/**categories*/}
-          <Routes>
-            <Route path="/cat/:id/:title" element={<MainCategory />} />
-          </Routes>
-          {/**
-                 *    <Routes>
-            <Route
-              path="/cat/:title/:subTitle"
-              element={<SubCategory  />}
-            />
-          </Routes>
-          <Routes>
-            <Route
-              path="/cat/:title/:subTitle/:subSubTitle"
-              element={<SubSubCategory  />}
-            />
-          </Routes>
-                 */}
-          {/**checkout pages*/}
+          <Footer
+            categories={data?.data?.data?.categories}
+            importantLinks={importantLinks}
+            socialMedia={data?.data?.data?.socials}
+            account={account}
+            payment={payment}
+            logo={data?.data?.data?.site?.logo}
+          />
+        </>
+      )}
+    </>
+  );
+};
+
+export default App;
+/**
+ *  <FixedBtn facebook={data?.data?.data?.followUs?.facebook} />
+ *   <>
+         
+
+         
+         
+         
+         
+        
+         
+        
+        
+        
+       
+         
+        
+         
+        
+         
+           
+         
+               
+          
           <Routes>
             <Route
               path="/cart"
@@ -263,7 +307,7 @@ const App = () => {
               }
             />
           </Routes>
-          {/**user dashobard*/}
+       
           <Routes>
             <Route
               path="/accountDetails"
@@ -312,18 +356,6 @@ const App = () => {
               }
             />
           </Routes>
-          <Footer
-            categories={data?.data?.data?.categories}
-            importantLinks={importantLinks}
-            socialMedia={data?.data?.data?.followUs}
-            account={account}
-            payment={payment}
-            logo={data?.data?.data?.site?.logo}
-          />
+        
         </>
-      )}
-    </>
-  );
-};
-
-export default App;
+ */

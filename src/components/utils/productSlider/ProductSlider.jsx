@@ -1,24 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import style from "./productSlider.module.css";
 import { useTranslation } from "react-i18next";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 import Slider from "react-slick";
 import ProductCard from "../productCard/ProductCard";
+import useSliderControls from "../../hooks/slider/useSliderControls";
 const ProductSlider = ({ data, title }) => {
-  console.log("data from home", data);
   const { i18n } = useTranslation();
-  const sliderRef = useRef(null);
-  const slickNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
-
-  const slickPrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
+  const { sliderRef, slickNext, slickPrev } = useSliderControls();
   const settings = {
     dots: true,
     infinite: false,

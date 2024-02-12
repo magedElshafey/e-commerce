@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./FirstArticle.module.css";
 import icon from "../../../assets/user-circle.svg";
+
 const FirstArticle = ({ data }) => {
   return (
     <div>

@@ -11,11 +11,11 @@ const Blogs = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="pb-4 pt-5 mt-5 mt-md-0">
+        <div className="pb-4 pt-5 pt-md-0 mt-5 mt-md-0">
+          <Banner alt="banner/img" img={banner3} />
           <div className="container">
-            <Banner alt="banner/img" img={banner3} />
             {data?.data?.data?.blogs.map((item, index) => (
-              <div key={index} className="pt-2 pb-4 bb mb-3">
+              <div key={index} className="pt-2 pb-4  mb-3">
                 <BlogCard data={item} isHome={false} />
               </div>
             ))}

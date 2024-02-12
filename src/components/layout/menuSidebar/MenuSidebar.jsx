@@ -7,7 +7,9 @@ import {
 } from "react-icons/md";
 // react router dom
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
+  const { t } = useTranslation();
   const menuRef = useRef(null);
   const navigate = useNavigate();
   const [showCategories, setShowCategories] = useState(true);
@@ -48,7 +50,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
               setShowAccount(false);
             }}
           >
-            القائمة
+            {t("menu")}
           </button>
           <button
             className={`${style.btn} ${showAccount ? style.active : null}`}
@@ -57,7 +59,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
               setShowAccount(true);
             }}
           >
-            الحساب
+            {t("account")}
           </button>
         </div>
         {showCategories && (
@@ -93,7 +95,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                 </li>
                 <ul
                   className={`position-relative ${style.subCategoryContainer} ${
-                    mainCategory.children.length &&
+                    mainCategory?.children?.length &&
                     activeMainCategoryIndex === index
                       ? style.show
                       : style.hide
@@ -111,7 +113,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                         >
                           {subCategory.name}
                         </Link>
-                        {subCategory.children.length ? (
+                        {subCategory.children?.length ? (
                           activeSubCategoryIndex === index ? (
                             <MdOutlineKeyboardArrowUp
                               size={30}
@@ -127,17 +129,17 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                           )
                         ) : null}
                       </li>
-                      <ul
+                     <ul
                         className={`position-relative ${
                           style.subCategoryContainer
                         } ${
-                          subCategory.children.length &&
+                          subCategory?.children?.length &&
                           activeSubCategoryIndex === index
                             ? style.show
                             : style.hide
                         }`}
                       >
-                        {subCategory.children.map((subSubCategory, index) => (
+                        {subCategory?.children?.map((subSubCategory, index) => (
                           <>
                             <li
                               key={index}
@@ -149,7 +151,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                               >
                                 {subSubCategory.name}
                               </Link>
-                              {subSubCategory.children.length ? (
+                              {subSubCategory?.children?.length ? (
                                 activeSubSubCategoriesIndex === index ? (
                                   <MdOutlineKeyboardArrowUp
                                     size={30}
@@ -172,6 +174,7 @@ const MenuSidebar = ({ data, showMenu, setShowMenu }) => {
                           </>
                         ))}
                       </ul>
+                       
                     </>
                   ))}
                 </ul>

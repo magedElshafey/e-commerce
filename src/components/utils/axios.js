@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang")
   ? JSON.parse(localStorage.getItem("lang"))
   : "ar";
 const client = axios.create({
-  baseURL: "https://admin.eltantawyy.com/api",
+  baseURL: "https://store.eltantawyy.com/api",
   headers: {
     "Content-Type": "application/json",
     lang,

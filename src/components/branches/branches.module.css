@@ -1,3 +1,7 @@
+.box {
+  height: 150px 
+  !important;
+}
 .bgSection {
   background-color: var(--sectionColor);
 }

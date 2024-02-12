@@ -8,7 +8,7 @@ const Blogs = ({ data }) => {
   const { t, i18n } = useTranslation();
   return (
     <div>
-      <div className={`mt-5 p-0 ${style.mainDiv}`}>
+      <div className={`mt-5 p-0 bg-section d-flex items-center py-3`}>
         <div className="container py-3">
           <div className="d-flex align-items-center justify-content-between mb-4">
             <p className={`m-0 p-0 ${style.title}`}>{t("news")}</p>

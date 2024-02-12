@@ -65,7 +65,7 @@ const Shop = ({ categories, allProducts }) => {
       </div>
       <div className="row">
         {allProducts.map((item, index) => (
-          <div className="col-12 col-md-6 col-lg-3 col-xl-2 mb-3" key={index}>
+          <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-3" key={index}>
             <ProductCard data={item} />
           </div>
         ))}
