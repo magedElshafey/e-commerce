@@ -13,30 +13,30 @@ const CategorySlider = ({ data, path }) => {
     autoplay: true, // Enable autoplay
     speed: 500,
     autoplaySpeed: 3000,
-    slidesToShow: 5,
+    slidesToShow: 6,
     verical: false,
     slidesToScroll: 1,
     initialSlide: 0,
     cssEase: "linear",
-
+    verticalSwiping: false,
     responsive: [
       {
         breakpoint: 1224,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 6,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
 
       {
         breakpoint: 540,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         },
       },
     ],

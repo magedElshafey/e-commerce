@@ -10,7 +10,7 @@ const Offer = ({ categories, allProducts }) => {
       <OfferBanner img={banner} />
       <div className="d-flex align-items-center justify-content-center my-3 gap-3 gap-md-5">
         <div>
-          <p className="filterBtnTitle text-uppercase m-0 p-0 mb-1">
+          <p className="filterBtnTitle text-uppercase m-0 p-0 mb-1 text-center">
             {t("cat")}
           </p>
           <button className="filterBtn">
@@ -27,13 +27,13 @@ const Offer = ({ categories, allProducts }) => {
           </button>
         </div>
         <div>
-          <p className="filterBtnTitle text-uppercase m-0 p-0 mb-1">
+          <p className="filterBtnTitle text-uppercase m-0 p-0 mb-1 text-center">
             {t("price")}
           </p>
           <button className="filterBtn">
             <select className="filterInp">
               <option className="text-capitalize" value="">
-                {t("allPrice")}
+                {t("allPrices")}
               </option>
               <option>
                 2500 {t("le")} - 8000 {t("le")}

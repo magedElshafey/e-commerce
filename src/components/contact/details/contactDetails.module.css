@@ -1,21 +1,21 @@
 .card {
-    padding: 16px 32px;
-    background-color: #F3F5F7;
+  padding: 16px 32px;
+  background-color: #f3f5f7;
 }
 .img {
-    width: 32px;
-height: 32px;
+  width: 32px;
+  height: 32px;
 }
 .title {
-    font-weight: 700;
-    color: #6C7275;
+  font-weight: 700;
+  color: #6c7275;
 }
 .desc {
-    color: #6C7275;
-    font-weight: 600;
-    font-size: 18px;
+  color: black !important;
+
+  font-size: 18px;
 }
 .socialIcon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }

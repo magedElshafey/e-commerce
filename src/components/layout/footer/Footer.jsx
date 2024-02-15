@@ -1,11 +1,6 @@
 import React from "react";
 import style from "./footer.module.css";
 import { useTranslation } from "react-i18next";
-import facebook from "../../../assets/icons8-facebook-64.png";
-import insta from "../../../assets/instagram.svg";
-import whats from "../../../assets/whats.png";
-import tiktok from "../../../assets/tiktok.png";
-import snap from "../../../assets/snap.png";
 import { Link } from "react-router-dom";
 const Footer = ({
   categories,
@@ -17,49 +12,52 @@ const Footer = ({
 }) => {
   const { i18n, t } = useTranslation();
   const currentYear = new Date().getFullYear();
- 
+
   return (
     <div className={style.mainDiv}>
-      <div className="container pt-2">
+      <div className="container pt-3">
         <div className="row justify-content-center">
           <div className="col-6 col-md-3 mb-3">
             <Link to="/">
               <img alt="logo" className={style.logo} src={logo} />
             </Link>
-            <p className="m-0 p-0 mb-3 text-white-50">{t("slogan")}</p>
-            {
-              socialMedia.length ? <div className="d-flex items-center gap-2 flex-wrap">
-
-              {
-                socialMedia.map((item , index) => <a key={index} href= {item.link} target="_blank" rel="noreferrer">
-                  <img alt = "social-media-icon" src = {item.icon} className= {style.socialIcon} /> 
-
-                </a>)
-              }
-
-              </div> : null
-            }
-           
+            <p className="m-0 p-0 mb-3">{t("slogan")}</p>
+            {socialMedia.length ? (
+              <div className="d-flex items-center gap-2 flex-wrap">
+                {socialMedia.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      alt="social-media-icon"
+                      src={item.icon}
+                      className={style.socialIcon}
+                    />
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
-              {t("importantLinks")}
-            </h5>
+            <h5 className=" m-0 p-0 mb-3 fw-bolder">{t("importantLinks")}</h5>
             <ul className="m-0 p-0">
               {importantLinks.links.map((link, index) => (
                 <li key={index} className="mb-2 p-0">
                   <Link
                     to={link.path}
-                    className={`text-white-50 ${style.link}`}
+                    className={`text-black-50 ${style.link}`}
                   >
-                    {link.title}
+                    {i18n.language === "ar" ? link.title : link.enTitle}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h5 className="text-black m-0 p-0 mb-3 fw-bolder">
               {t("categories")}
             </h5>
 
@@ -68,7 +66,7 @@ const Footer = ({
                 <li key={index} className="mb-2 p-0">
                   <Link
                     to={`/cat/${category.name}/${category.id}`}
-                    className={`text-white-50 ${style.link}`}
+                    className={`text-black-50 ${style.link}`}
                   >
                     {category.name}
                   </Link>
@@ -77,7 +75,7 @@ const Footer = ({
             </ul>
           </div>
           <div className="col-6 col-md-3 mb-3">
-            <h5 className="text-white m-0 p-0 mb-3 fw-bolder">
+            <h5 className="text-black m-0 p-0 mb-3 fw-bolder">
               {t("account")}
             </h5>
             <ul className="m-0 p-0">
@@ -85,22 +83,22 @@ const Footer = ({
                 <li key={index} className="mb-2 p-0">
                   <Link
                     to={link.path}
-                    className={`text-white-50 ${style.link}`}
+                    className={`text-black-50 ${style.link}`}
                   >
-                    {link.title}
+                    {i18n.language === "ar" ? link.title : link.enTitle}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className={`pt-3 ${style.lowerFooter}`}>
-          <div className="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-white gap-2 gap-md-0">
+        <div className={`${style.lowerFooter} text-center text-black-50`}>
+          <div className="my-2">
             <a
               href="https://www.facebook.com/profile.php?id=61555335491116"
               target="_blank"
               rel="noreferrer"
-              className="m-0 p-0 text-white"
+              className="m-0 p-0 text-black-50"
             >
               {i18n.language === "en"
                 ? `Copyright © ${currentYear} ${
@@ -110,17 +108,6 @@ const Footer = ({
                     i18n.language === "ar" ? "القمة" : "Al- Qema"
                   }  ${currentYear}`}
             </a>
-            <div className="d-flex align-items-center justify-content-center gap-2 flex-wrap">
-              {payment.map((item, index) => (
-                <div className={style.paymentContainer} key={index}>
-                  <img
-                    alt="payment/img"
-                    src={item}
-                    className={style.paymentImg}
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

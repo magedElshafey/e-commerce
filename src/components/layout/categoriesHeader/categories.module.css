@@ -1,8 +1,9 @@
 .mainDiv {
   width: 100vw;
   height: 50px;
-  background-color: var(--grayColor);
+  background-color: var(--darkColor);
   position: relative;
+  color: white !important;
 }
 .content {
   position: absolute;
@@ -27,9 +28,13 @@
 }
 .bg:hover {
   background-color: white;
+  color: black !important;
 }
 .link {
-  color: var(--redColor) !important;
+  color: white !important;
   font-weight: 600;
 }
 
+.bg:hover .link {
+  color: black !important;
+}

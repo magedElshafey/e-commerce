@@ -1,16 +1,14 @@
 .mainDiv {
   width: 100vw;
-  background-color: #000;
+  background-color: var(--grayColor);
   overflow-x: hidden !important;
 }
 .logo {
-  width: 200px;
-  height: 100px;
- 
+  height: 50px;
 }
 .socialIcon {
-  width: 24px;
-  height: 24px;
+  /* width: 24px;
+  height: 24px; */
   transition: 0.4s;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
@@ -56,10 +54,9 @@
 .paymentImg {
   width: 21px;
   height: 15px;
- 
 }
 .lowerFooter {
-  border-top: 1px solid white;
+  border-top: 1px solid var(--textColor);
 }
 .socialIcon {
   width: 34px;

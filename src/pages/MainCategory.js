@@ -27,12 +27,12 @@ const MainCategory = () => {
             <div className="container">
 
             <h3 className="fw-bolder fs-4 m-0 p-0 mb-4">{params.title}</h3>
-            {data?.data?.data?.categories.length && (
+            {data?.data?.data?.categories.length ?
               <CategorySlider
                 data={data?.data?.data?.categories}
                 path={`/cat/${params.title}/${params.id}`}
               />
-            )}
+             : null}
             </div>
            
             {data?.data?.data?.productsForYou.length ? (

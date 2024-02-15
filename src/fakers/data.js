@@ -172,35 +172,43 @@ export const importantLinks = {
   links: [
     {
       title: "من نحن",
+      enTitle : "about us" , 
       path: "/about",
     },
     {
       title: "تواصل معنا",
       path: "/contact",
+      enTitle : "contact us" ,
     },
     {
       title: "فروعنا",
       path: "/branches",
+      enTitle : "branches" ,
     },
     {
       title: "المدونة",
       path: "/blogs",
+      enTitle : "blogs" ,
     },
     {
       title: "عروض الطنطاوي",
       path: "/offer",
+      enTitle : "offers" ,
     },
     {
       title: "الاسئلة الأكثر شيوعا",
       path: "/faqs",
+      enTitle : "faqs" ,
     },
     {
       title: "الشروط و الأحكام",
       path: "/terms",
+      enTitle : "terms and conditions" ,
     },
     {
       title: "سياسة الخصوصية",
       path: "/privacy",
+      enTitle : "privacy policy" ,
     },
   ],
 };
@@ -210,18 +218,22 @@ export const account = {
     {
       title: "بيانات الحساب",
       path: "/accountDetails",
+      enTitle : "account details" ,
     },
     {
       title: "طلباتي",
       path: "/orders",
+      enTitle : "orders" ,
     },
     {
       title: "المفضلة",
       path: "/wishlist",
+      enTitle : "wishlist" ,
     },
     {
       title: "مرتجعاتي",
       path: "/returns",
+      enTitle : "returns" ,
     },
   ],
 };

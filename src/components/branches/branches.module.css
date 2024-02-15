@@ -1,10 +1,12 @@
 .box {
-  height: 150px 
-  !important;
+  height: 150px !important;
 }
 .bgSection {
   background-color: var(--sectionColor);
 }
 .bgGray {
+  background-color: var(--grayColor);
+}
+.card {
   background-color: var(--grayColor);
 }

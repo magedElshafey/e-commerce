@@ -9,37 +9,46 @@ import Spinner from "../components/utils/spinner/Spinner";
 import CategorySlider from "../components/utils/categorySlider/CategorySlider";
 const SubSubCategory = () => {
   const { t } = useTranslation();
-  const { mainCategoryTitle, mainCategoryId, subCategoryTitle, subCategoryId, subSubCategoryTitle, subSubCategoryId } = useParams();
+  const {
+    mainCategoryTitle,
+    mainCategoryId,
+    subCategoryTitle,
+    subCategoryId,
+    subSubCategoryTitle,
+    subSubCategoryId,
+  } = useParams();
   const fetchData = (id) => {
     return request({ url: `/categories/${id}` });
   };
-  const { isLoading, data } = useQuery(["sub-sub-categories", subSubCategoryId], () =>
-    fetchData(subSubCategoryId)
+  const { isLoading, data } = useQuery(
+    ["sub-sub-categories", subSubCategoryId],
+    () => fetchData(subSubCategoryId)
   );
   return (
     <>
-    {
-      isLoading ? <Spinner /> :  <div className="py-4 mt-4 mt-md-0">
-      <div >
-        <div className="container">
-        <div className="d-flex items-center gap-1 mb-3">
-          <p className=" text-black-50">{mainCategoryTitle}</p>
-          <p className=" text-black-50"> {`=>`} </p>
-        <p className=" text-black-50">{subCategoryTitle}</p>
-        <p className=" text-black-50"> {`=>`} </p>
-        <p className=" text-black-50">{subSubCategoryTitle}</p>
-        </div>
-        {data?.data?.data?.categories.length && (
-              <CategorySlider
-                data={data?.data?.data?.categories}
-                path={`/cat/${mainCategoryTitle}/${mainCategoryId}/${subCategoryTitle}/${subCategoryId}/${subSubCategoryTitle}/${subSubCategoryId}`}
-              />
-            )}
-        </div>
-        
-        
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className="py-4 mt-4 mt-md-0">
+          <div>
+            <div className="container">
+              <div className="d-flex items-center gap-1 ">
+                <p className=" text-black-50">{mainCategoryTitle}</p>
+                <p className=" text-black-50"> {`=>`} </p>
+                <p className=" text-black-50">{subCategoryTitle}</p>
+                <p className=" text-black-50"> {`=>`} </p>
+                <p className=" text-black-50">{subSubCategoryTitle}</p>
+              </div>
+              {data?.data?.data?.categories.length ? (
+                <CategorySlider
+                  data={data?.data?.data?.categories}
+                  path={`/cat/${mainCategoryTitle}/${mainCategoryId}/${subCategoryTitle}/${subCategoryId}/${subSubCategoryTitle}/${subSubCategoryId}`}
+                />
+              ) : null}
+            </div>
+
             {data?.data?.data?.productsForYou.length ? (
-              <div className="my-5 bg-section d-flex items-center py-3">
+              <div className="my-3 bg-section d-flex items-center py-3">
                 <ProductSlider
                   data={data?.data?.data?.productsForYou}
                   title={t("customized")}
@@ -64,20 +73,19 @@ const SubSubCategory = () => {
             ) : null}
             {data?.data?.data?.randomProducts.length ? (
               <div className="mt-5  container">
-                 <div className="row">
-                {data?.data?.data?.randomProducts.map((item, index) => (
-                  <div key={index} className="col-6 col-md-3 col-lg-2 mb-3">
-                    <ProductCard data={item} />
-                  </div>
-                ))}
+                <div className="row">
+                  {data?.data?.data?.randomProducts.map((item, index) => (
+                    <div key={index} className="col-6 col-md-3 col-lg-2 mb-3">
+                      <ProductCard data={item} />
+                    </div>
+                  ))}
+                </div>
               </div>
-              </div>
-             
             ) : null}
-      </div>
-    </div>
-    }
-   </>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

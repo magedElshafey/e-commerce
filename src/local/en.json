@@ -118,5 +118,8 @@
   "phoneError": "Phone number must contain 11 digits and only numbers.",
   "menu": "menu",
   "get": "get in touch with us",
-  "rated": "Top rated products"
+  "rated": "Top rated products",
+  "allPrices": "all Prices",
+  "location": "location",
+  "branches": "our branches"
 }

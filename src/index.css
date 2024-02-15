@@ -1,33 +1,33 @@
 /* fonts */
 @font-face {
-  font-family: 'GE SS Two';
-  src: url('./fonts/GE SS Two Light.woff') format('woff') , 
-      url('./fonts/GE SS Two Light.woff2') format('woff2') ; 
-      font-weight: 300; /* Light */
-       font-style: normal;
-        font-feature-settings: 'lnum';
-          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
-   -moz-font-feature-settings: 'lnum'; /* Firefox */
+  font-family: "GE SS Two";
+  src: url("./fonts/GE SS Two Light.woff") format("woff"),
+    url("./fonts/GE SS Two Light.woff2") format("woff2");
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum"; /* Firefox */
 }
 @font-face {
-  font-family: 'GE SS Two';
-  src: url('./fonts/GE SS Two Medium.woff2') format('woff2'),
-       url('./fonts/GE SS Two Medium.woff') format('woff');
+  font-family: "GE SS Two";
+  src: url("./fonts/GE SS Two Medium.woff2") format("woff2"),
+    url("./fonts/GE SS Two Medium.woff") format("woff");
   font-weight: 500; /* Medium */
   font-style: normal;
-    font-feature-settings: 'lnum';
-          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
-   -moz-font-feature-settings: 'lnum'; /* Firefox */
+  font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum"; /* Firefox */
 }
 @font-face {
-  font-family: 'GE SS Two';
-  src: url('./fonts/GE SS Two Bold.woff2') format('woff2'),
-       url('./fonts/GE SS Two Bold.woff') format('woff');
+  font-family: "GE SS Two";
+  src: url("./fonts/GE SS Two Bold.woff2") format("woff2"),
+    url("./fonts/GE SS Two Bold.woff") format("woff");
   font-weight: 700; /* Bold */
   font-style: normal;
-    font-feature-settings: 'lnum';
-          -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
-   -moz-font-feature-settings: 'lnum'; /* Firefox */
+  font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum"; /* Firefox */
 }
 * {
   box-sizing: border-box;
@@ -43,29 +43,27 @@ a {
 }
 
 body {
-   overflow-x: hidden !important;
-   font-family: 'GE SS Two', sans-serif;
- 
-   font-weight: 400;
-   text-transform: capitalize;
-  
-  
+  overflow-x: hidden !important;
+  /* font-family: 'GE SS Two', sans-serif; */
+
+  font-weight: 400;
+  text-transform: capitalize;
 }
 html {
   scroll-behavior: smooth;
-  font-feature-settings: 'lnum';
-  -webkit-font-feature-settings: 'lnum'; /* Safari/Chrome */
-  -moz-font-feature-settings: 'lnum'; /* Firefox */
+  font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum"; /* Firefox */
 }
 :root {
-  --redColor: #ac0200;
+  --redColor: #de111b;
   --blackColor: #000;
   --yellowColor: #f3de6d;
-  --grayColor: #e8e8e8;
+  --grayColor: #fafafa;
   --textColor: #555;
   --sectionColor: rgba(252, 200, 199, 0.3);
   --darkColor: #191c1f;
-  --graySection : rgba(232, 232, 232, 0.4) ;
+  --graySection: #fafafa;
 }
 .pointer {
   cursor: pointer;
@@ -229,7 +227,7 @@ html {
 }
 
 .checkInp {
-  border: 1px solid #CBCBCB;
+  border: 1px solid #cbcbcb;
   width: 100%;
   padding: 7px;
   border-radius: 6px;
@@ -242,20 +240,21 @@ html {
 .checkInp:focus {
   outline: none;
 }
-.formContainer , .paymentContainer {
+.formContainer,
+.paymentContainer {
   width: 85%;
-  
 }
 .formContainer {
-   border: 1px solid #6C7275;
+  border: 1px solid #6c7275;
 }
-@media screen and (max-width : 767px) {
-  .formContainer , .paymentContainer {
+@media screen and (max-width: 767px) {
+  .formContainer,
+  .paymentContainer {
     width: 100%;
   }
 }
 .filterBtnTitle {
-  color: #6C7275;
+  color: #6c7275;
 }
 .filterBtn {
   display: flex;
@@ -294,25 +293,23 @@ html {
 .h-400 {
   height: 530px;
 }
-.slick-dots  {
+.slick-dots {
   bottom: -30px !important;
 }
 .main-section {
   background-color: rgba(240, 240, 240, 0.44);
   width: 100vw;
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 }
 .offer-card {
- 
-    background-color: #F3F5F7;
-   
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+  background-color: #f3f5f7;
 
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 .contact-form {
   width: 100%;
@@ -327,4 +324,8 @@ html {
 }
 .bg-section {
   background-color: var(--graySection);
+}
+.slick-dots li button:before {
+  font-size: 10px !important;
+  margin-top: 15px !important;
 }

@@ -8,24 +8,45 @@ import contactUsImg from "../assets/contact-us.avif";
 import Banner from "../components/utils/banner/Banner";
 import OfferCard from "../components/utils/offerCard/OfferCard";
 import { useTranslation } from "react-i18next";
-const Contact = ({ phone , 
-  email, address ,  weoffer, socialMedia }) => {
+const Contact = ({ phone, email, address, weoffer, socialMedia }) => {
   const { t } = useTranslation();
   return (
     <div className="py-4 pt-md-0 mt-4 mt-md-0 overflow-x-hidden">
+      <div className="container">
+        <div className="my-4">
+          <ContactForm />
+        </div>
+        <div className="my-4 my-md-5">
+          <ContactDetails
+            phone={phone}
+            email={email}
+            socialMedia={socialMedia}
+            address={address}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
+/**
+ *  <div className="py-4 pt-md-0 mt-4 mt-md-0 overflow-x-hidden">
       <Banner alt="contact-us" img={contactUsImg} />
       <div className="main-section mb-5 py-3">
         <div className="container">
-          <p className="fs-3 m-0 p-0 font-bolder  red-color text-center mb-4">
-            {t("get")}
-          </p>
+        
           <div className="row  align-items-center">
             <div className="col-12 col-md-6 mb-5 mb-md-0">
               <ContactForm />
             </div>
             <div className="col-12 col-md-6">
-              <ContactDetails phone = {phone}
-email = {email} socialMedia={socialMedia} address = {address} />
+              <ContactDetails
+                phone={phone}
+                email={email}
+                socialMedia={socialMedia}
+                address={address}
+              />
             </div>
           </div>
         </div>
@@ -43,7 +64,4 @@ email = {email} socialMedia={socialMedia} address = {address} />
         </div>
       </div>
     </div>
-  );
-};
-
-export default Contact;
+ */

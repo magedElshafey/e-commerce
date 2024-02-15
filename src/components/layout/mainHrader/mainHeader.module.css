@@ -1,13 +1,12 @@
 .mainDiv {
   width: 100vw;
-  background-color: var(--blackColor);
+  background-color: var(--grayColor);
   display: flex;
   align-items: center;
   padding: 8px 116px;
 }
 .logo {
- width: 200px;
- height: 100px;
+  height: 50px;
 }
 .tecno {
   font-size: 20px;
@@ -15,17 +14,14 @@
   letter-spacing: -0.64px;
 }
 .searchContainer {
+  border: 1px solid var(--redColor);
   background-color: white;
   padding: 9px 15px;
   flex-grow: 1;
   margin: 0 75px;
   position: relative;
   box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  border-radius: 8px !important;
 }
 .inp {
   border: none;
@@ -46,7 +42,7 @@
   height: 17px;
   position: absolute;
   top: 50%;
-  
+
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -54,7 +50,7 @@
   -o-transform: translateY(-50%);
 }
 .icon.ltr {
-right: 25px;
+  right: 25px;
 }
 .icon.rtl {
   left: 25px;
