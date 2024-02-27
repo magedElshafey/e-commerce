@@ -1,10 +1,11 @@
 .mainDiv {
   width: 100vw;
   height: 50px;
-  background-color: var(--darkColor);
+  background-color: var(--redColor);
   position: relative;
   color: white !important;
 }
+
 .content {
   position: absolute;
   top: 50%;
@@ -15,9 +16,11 @@
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
 }
+
 .bg {
   padding: 10px;
 }
+
 .bg,
 .link {
   transition: var(--mainTransition);
@@ -26,10 +29,12 @@
   -ms-transition: var(--mainTransition);
   -o-transition: var(--mainTransition);
 }
+
 .bg:hover {
   background-color: white;
   color: black !important;
 }
+
 .link {
   color: white !important;
   font-weight: 600;

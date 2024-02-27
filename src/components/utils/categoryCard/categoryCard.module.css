@@ -1,9 +1,9 @@
 .card {
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   border-radius: 50% !important;
   /* width: 197px; */
-  padding: 24px 2px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -12,10 +12,26 @@
   background-color: #fff;
   border: 1px solid #e4e7e9;
 }
+
+@media screen and (max-width : 552px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 .mainImg {
   width: 100px;
   height: 100px;
 }
+
+@media screen and (max-width : 552px) {
+  .mainImg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .title {
   color: var(--darkColor);
   font-weight: 700;

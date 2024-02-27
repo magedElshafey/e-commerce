@@ -1,18 +1,21 @@
 .mainDiv {
   width: 100vw;
-  background-color: var(--grayColor);
+  background-color: white !important;
   display: flex;
   align-items: center;
   padding: 8px 116px;
 }
+
 .logo {
   height: 50px;
 }
+
 .tecno {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: -0.64px;
 }
+
 .searchContainer {
   border: 1px solid var(--redColor);
   background-color: white;
@@ -23,20 +26,24 @@
   box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
   border-radius: 8px !important;
 }
+
 .inp {
   border: none;
   background-color: transparent;
   width: 100% !important;
 }
+
 .inp::placeholder {
   color: #77878f;
   font-weight: 400;
   font-size: 13px;
   text-transform: capitalize;
 }
+
 .inp:focus {
   outline: none;
 }
+
 .icon {
   width: 17px;
   height: 17px;
@@ -49,9 +56,11 @@
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
 }
+
 .icon.ltr {
   right: 25px;
 }
+
 .icon.rtl {
   left: 25px;
 }

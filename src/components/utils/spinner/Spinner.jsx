@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./spinner.module.css";
-const Spinner = () => {
+const Spinner = ({ logo }) => {
   return (
     <div className={style.mainContainer}>
       <div className={style.spinner}>

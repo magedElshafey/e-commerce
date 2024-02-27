@@ -87,7 +87,7 @@ const App = () => {
   return (
     <>
       {loadingHomePage ? (
-        <Spinner />
+        <Spinner logo={data?.data?.data?.site?.logo} />
       ) : (
         <>
           <Meta

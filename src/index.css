@@ -3,41 +3,55 @@
   font-family: "GE SS Two";
   src: url("./fonts/GE SS Two Light.woff") format("woff"),
     url("./fonts/GE SS Two Light.woff2") format("woff2");
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
   font-style: normal;
   font-feature-settings: "lnum";
-  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
-  -moz-font-feature-settings: "lnum"; /* Firefox */
+  -webkit-font-feature-settings: "lnum";
+  /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum";
+  /* Firefox */
 }
+
 @font-face {
   font-family: "GE SS Two";
   src: url("./fonts/GE SS Two Medium.woff2") format("woff2"),
     url("./fonts/GE SS Two Medium.woff") format("woff");
-  font-weight: 500; /* Medium */
+  font-weight: 500;
+  /* Medium */
   font-style: normal;
   font-feature-settings: "lnum";
-  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
-  -moz-font-feature-settings: "lnum"; /* Firefox */
+  -webkit-font-feature-settings: "lnum";
+  /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum";
+  /* Firefox */
 }
+
 @font-face {
   font-family: "GE SS Two";
   src: url("./fonts/GE SS Two Bold.woff2") format("woff2"),
     url("./fonts/GE SS Two Bold.woff") format("woff");
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
   font-style: normal;
   font-feature-settings: "lnum";
-  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
-  -moz-font-feature-settings: "lnum"; /* Firefox */
+  -webkit-font-feature-settings: "lnum";
+  /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum";
+  /* Firefox */
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 ul,
 li {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -49,14 +63,18 @@ body {
   font-weight: 400;
   text-transform: capitalize;
 }
+
 html {
   scroll-behavior: smooth;
   font-feature-settings: "lnum";
-  -webkit-font-feature-settings: "lnum"; /* Safari/Chrome */
-  -moz-font-feature-settings: "lnum"; /* Firefox */
+  -webkit-font-feature-settings: "lnum";
+  /* Safari/Chrome */
+  -moz-font-feature-settings: "lnum";
+  /* Firefox */
 }
+
 :root {
-  --redColor: #de111b;
+  --redColor: #de0712;
   --blackColor: #000;
   --yellowColor: #f3de6d;
   --grayColor: #fafafa;
@@ -65,9 +83,11 @@ html {
   --darkColor: #191c1f;
   --graySection: #fafafa;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .menu,
 .cart {
   position: fixed;
@@ -84,37 +104,46 @@ html {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
 }
+
 @media screen and (min-width: 700px) {
   .cart {
     width: 550px;
   }
 }
+
 .menu.show {
   right: 0;
 }
+
 .cart.show {
   left: 0;
 }
+
 .menu.show,
 .cart.show {
   opacity: 1;
 }
+
 .menu.hide {
   right: -300%;
 }
+
 .cart.hide {
   left: -300%;
 }
+
 .menu.hide,
 .cart.hide {
   opacity: 0;
 }
+
 .controls {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 15px;
 }
+
 .controls button {
   background-color: var(--redColor);
   color: white;
@@ -131,17 +160,21 @@ html {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
 .red {
   color: red;
 }
+
 .mainLine {
   background-color: white;
   width: 100vw;
   height: 1px;
 }
+
 .red-color {
   color: var(--redColor);
 }
+
 .inp,
 .area {
   caret-color: var(--redColor);
@@ -160,14 +193,17 @@ html {
   -o-transition: 0.4s;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 .area {
   height: 150px;
 }
+
 .inp:focus,
 .area:focus {
   outline: none;
   border: 1px solid var(--redColor);
 }
+
 .label {
   transition: 0.4s;
   -webkit-transition: 0.4s;
@@ -175,9 +211,11 @@ html {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
 }
+
 .inp:focus .label {
   color: var(--redColor) !important;
 }
+
 .newBtn {
   text-transform: capitalize;
   border: none;
@@ -196,6 +234,7 @@ html {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
 }
+
 .newBtn:hover {
   background-color: var(--redColor);
   transform: translateY(-7px) !important;
@@ -204,24 +243,30 @@ html {
   -ms-transform: translateY(-7px) !important;
   -o-transform: translateY(-7px) !important;
 }
+
 .faceLine {
   width: 100%;
   height: 1px;
   background-color: #e8ecef;
 }
+
 .fw500 {
   font-weight: 600 !important;
 }
+
 .error {
   color: var(--redColor);
   font-size: 14px;
 }
+
 @media screen and (max-width: 767px) {
+
   .inp,
   .area {
     width: 100%;
   }
 }
+
 .table-container {
   overflow-x: auto;
 }
@@ -240,22 +285,28 @@ html {
 .checkInp:focus {
   outline: none;
 }
+
 .formContainer,
 .paymentContainer {
   width: 85%;
 }
+
 .formContainer {
   border: 1px solid #6c7275;
 }
+
 @media screen and (max-width: 767px) {
+
   .formContainer,
   .paymentContainer {
     width: 100%;
   }
 }
+
 .filterBtnTitle {
   color: #6c7275;
 }
+
 .filterBtn {
   display: flex;
   justify-content: center;
@@ -270,38 +321,48 @@ html {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
+
 .filterInp {
   width: 100%;
   border: none;
   background-color: transparent;
 }
+
 .filterInp:focus {
   outline: none;
 }
+
 .fs20 {
   font-size: 20px;
 }
+
 .dropdown-toggle::after {
   margin: 0 8px !important;
 }
+
 .dropdown-menu.show {
   text-align: start !important;
 }
+
 .bb:not(:last-of-type) {
   border-bottom: 1px solid #ccc;
 }
+
 .h-400 {
   height: 530px;
 }
+
 .slick-dots {
   bottom: -30px !important;
 }
+
 .main-section {
   background-color: rgba(240, 240, 240, 0.44);
   width: 100vw;
   display: flex;
   align-items: center;
 }
+
 .offer-card {
   background-color: #f3f5f7;
 
@@ -311,6 +372,7 @@ html {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
+
 .contact-form {
   width: 100%;
   background-color: white;
@@ -322,9 +384,11 @@ html {
   -ms-border-radius: 14px;
   -o-border-radius: 14px;
 }
+
 .bg-section {
   background-color: var(--graySection);
 }
+
 .slick-dots li button:before {
   font-size: 10px !important;
   margin-top: 15px !important;

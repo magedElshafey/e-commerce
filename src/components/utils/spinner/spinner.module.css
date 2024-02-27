@@ -1,20 +1,23 @@
 .mainContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100000;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 100000;
+
 }
+
 .spinner {
-       width: 11.2px;
+   width: 11.2px;
    height: 11.2px;
    animation: spinner-o824ag 1s infinite linear;
 }
+
 .spinner div {
    position: absolute;
    width: 100%;
@@ -41,7 +44,9 @@
 }
 
 @keyframes spinner-vse6n7 {
-   0%, 100% {
+
+   0%,
+   100% {
       transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
    }
 
