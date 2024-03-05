@@ -121,5 +121,6 @@
   "rated": "Top rated products",
   "allPrices": "all Prices",
   "location": "location",
-  "branches": "our branches"
+  "branches": "our branches",
+  "error": "Please check your data again"
 }

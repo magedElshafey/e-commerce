@@ -10,7 +10,7 @@ const useNameValidation = () => {
     // Regular expression to match only alphabetic characters and spaces
     const regex = /^[a-zA-Z\s]*$/;
 
-    if (!value) {
+    if (!value.trim()) {
       setError("");
     } else if (!regex.test(value)) {
       setError(t("nameError"));
@@ -19,7 +19,8 @@ const useNameValidation = () => {
     }
   };
 
-  const handleNameChange = (value) => {
+  const handleNameChange = (event) => {
+    const value = event.target.value;
     setName(value);
     validateName(value);
   };
@@ -28,6 +29,7 @@ const useNameValidation = () => {
     name,
     error,
     handleNameChange,
+    setName,
   };
 };
 

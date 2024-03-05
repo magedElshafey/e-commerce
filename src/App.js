@@ -53,6 +53,7 @@ import Meta from "./components/utils/Meta";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import SubSubSubCategory from "./pages/SubSubSubCategory";
+import OTP from "./pages/OTP";
 const App = () => {
   // lang
   useEffect(() => {
@@ -140,11 +141,14 @@ const App = () => {
           <Routes>
             <Route path="/reg" element={<Reg />} />
           </Routes>
-
+          <Routes>
+            <Route path="/otp" element={<OTP />} />
+          </Routes>
+          {/**static pages */}
           <Routes>
             <Route path="/branches" element={<Branches data={branches} />} />
           </Routes>
-          {/**static pages */}
+
           <Routes>
             <Route path="/faqs" element={<FAQ />} />
           </Routes>

@@ -16,15 +16,16 @@ const useEmailValidation = (initialValue = "") => {
     }
   };
 
-  const handleEmailChange = (value) => {
+  const handleEmailChange = (event) => {
+    const { value } = event.target;
     setEmail(value);
     validateEmail(value);
   };
-
   return {
     email,
     emailError,
     handleEmailChange,
+    setEmail,
   };
 };
 
