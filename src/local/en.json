@@ -122,5 +122,7 @@
   "allPrices": "all Prices",
   "location": "location",
   "branches": "our branches",
-  "error": "Please check your data again"
+  "error": "Please check your data again",
+  "otp": "Please enter the activation code",
+  "resend": "resend"
 }

@@ -3,7 +3,8 @@ import { toast } from "react-hot-toast";
 const initialState = {
   openForm: false,
   isLogin: JSON.parse(window.localStorage.getItem("auth")) || false,
-  token: JSON.parse(window.localStorage.getItem("token")) || null,
+
+  myData: {},
 };
 const authSlice = createSlice({
   name: "authSlice",
@@ -12,26 +13,25 @@ const authSlice = createSlice({
     login: (state) => {
       state.isLogin = true;
       window.localStorage.setItem("auth", JSON.stringify(state.isLogin));
-      toast.success("تم تسجيل الدخول بنجاح");
     },
     logout: (state) => {
       state.isLogin = false;
       window.localStorage.setItem("auth", JSON.stringify(state.isLogin));
-      window.localStorage.removeItem("token");
-      toast.success("تم تسجيل الخروج بنجاح");
+      window.localStorage.removeItem("user");
     },
-    addToken: (state, action) => {
-      state.token = action.payload;
-      window.localStorage.setItem("token", JSON.stringify(state.token));
-    },
+
     openForm: (state) => {
       state.openForm = true;
     },
     closeForm: (state) => {
       state.openForm = false;
     },
+    addMyData: (state, action) => {
+      state.myData = action.payload;
+      localStorage.setItem("user", JSON.stringify(state.myData));
+    },
   },
 });
-export const { login, logout, openForm, closeForm, addToken } =
+export const { login, logout, openForm, closeForm, addMyData } =
   authSlice.actions;
 export default authSlice.reducer;

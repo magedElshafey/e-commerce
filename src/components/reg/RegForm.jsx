@@ -11,8 +11,11 @@ import useEmailValidation from "../hooks/validation/useEmailValidation";
 import useNameValidation from "../hooks/validation/useNameValidation";
 import usePhoneNumberValidator from "../hooks/validation/usePhoneNumberValidator";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMyData } from "../../Redux/auth";
 import toast from "react-hot-toast";
 const RegForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const { name, error, handleNameChange, setName } = useNameValidation();
@@ -37,7 +40,8 @@ const RegForm = () => {
       console.log("this is the data from sign up", data?.data);
       if (data?.data.key === "success") {
         toast.success(data?.data?.msg);
-        localStorage.setItem("user", JSON.stringify(data?.data?.data));
+        dispatch(addMyData(data?.data?.data));
+
         navigate("/otp");
         // clear inputs
         setName("");
@@ -81,7 +85,7 @@ const RegForm = () => {
           {t("signIn")}
         </Link>
       </div>
-      <form onSubmit={handleClick}>
+      <form className="sans" onSubmit={handleClick}>
         <div className="mb-2">
           <label
             className="d-block m-0 mb-1 p-0 text-black-50 label"

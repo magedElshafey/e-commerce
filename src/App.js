@@ -55,6 +55,14 @@ import Privacy from "./pages/Privacy";
 import SubSubSubCategory from "./pages/SubSubSubCategory";
 import OTP from "./pages/OTP";
 const App = () => {
+  // deviceID
+  const userAgent = window.navigator.userAgent;
+  const platform = window.navigator.platform;
+  const randomString =
+    Math.random().toString(20).substring(2, 14) +
+    Math.random().toString(20).substring(2, 14);
+
+  const deviceID = `${userAgent}-${platform}-${randomString}`;
   // lang
   useEffect(() => {
     localStorage.setItem("lang", JSON.stringify(i18n.language));
@@ -136,13 +144,13 @@ const App = () => {
           </Routes>
           {/*auth*/}
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login deviceID={deviceID} />} />
           </Routes>
           <Routes>
             <Route path="/reg" element={<Reg />} />
           </Routes>
           <Routes>
-            <Route path="/otp" element={<OTP />} />
+            <Route path="/otp" element={<OTP deviceID={deviceID} />} />
           </Routes>
           {/**static pages */}
           <Routes>

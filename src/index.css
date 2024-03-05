@@ -447,3 +447,11 @@ html {
 .pointer {
   cursor: pointer;
 }
+
+.border-2 {
+  border: 1px solid var(--redColor);
+}
+
+.w-35 {
+  width: 65px !important;
+}
