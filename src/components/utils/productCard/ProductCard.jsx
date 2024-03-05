@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { addToCart } from "../../../Redux/cart";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import StarRatings from "react-star-ratings";
 const ProductCard = ({ data }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
@@ -16,12 +17,96 @@ const ProductCard = ({ data }) => {
       className={`pb-3 ${style.card} `}
       style={{ direction: i18n.language === "ar" ? "rtl" : "ltr" }}
     >
+      {data.hasOffer ? (
+        <div className={style.label}>
+          {data?.offer?.type === "fixed"
+            ? i18n.language === "ar"
+              ? `خصم ${data?.offer?.discount} جنيه`
+              : `${data?.offer?.discount} L.E Discount`
+            : i18n.language === "ar"
+            ? `خصم ${data?.offer?.discount} %`
+            : `${data?.offer?.discount}% discount`}
+        </div>
+      ) : null}
+
       {/**img */}
       <div className="d-flex justify-content-center my-3">
         <img alt="product/img" className={style.mainImg} src={data.image} />
       </div>
       {/*reveiw*/}
-      <div className="d-flex align-items-center gap-1 mb-2">
+      {data.rating.avg ? (
+        <div className="d-flex align-items-center gap-1 flex-wrap mb-2">
+          <div>
+            <StarRatings
+              rating={data?.rating?.avg} // Average rating value
+              starRatedColor="gold" // Color of the filled stars
+              starEmptyColor="lightgray" // Color of the empty stars
+              numberOfStars={5} // Total number of stars
+              starDimension="15px" // Size of the stars
+              starSpacing="2px" // Spacing between stars
+            />
+          </div>
+
+          <p
+            className={`m-0 p-0 mt-1 ${style.rev}`}
+          >{`(${data.rating.sum})`}</p>
+        </div>
+      ) : null}
+
+      {/* title*/}
+      <Link
+        to={`/product/${data.id}`}
+        className={`m-0 p-0  mb-2 ${style.title}`}
+      >
+        {data.name.substr(0, 25)}...
+      </Link>
+      {/*price*/}
+      <div className="mb-4">
+        <p className="m-0 p-0 fw-bolder sans">
+          {data?.hasOffer
+            ? data?.offer?.priceAfterDiscount
+            : data?.discount
+            ? data.price_after_discount
+            : data.price}{" "}
+          .00 {t("le")}
+        </p>
+        {data.discount && (
+          <del className="red m-0 p-0 sans">
+            {data.price}.00 {t("le")}
+          </del>
+        )}
+        {/**
+         *  <p className="fw-bolder m-0 p-0  ">
+          {data.discount ? data.price_after_discount : data.price}
+          
+        </p>
+        
+         */}
+      </div>
+      <div
+        className={`${style.iconContainer} ${
+          i18n.language === "ar" ? style.right : style.left
+        }  d-flex align-items-center justify-content-center gap-2 flex-wrap`}
+      >
+        <div className={style.circule}>
+          <BsCart className={style.icon} />
+        </div>
+        <div className={style.circule2}>
+          <AiOutlineHeart className={style.icon} />
+        </div>
+        <div
+          onClick={() => navigateProductDetails(data.id)}
+          className={style.circule3}
+        >
+          <AiOutlineEye className={style.icon} />
+        </div>
+      </div>
+    </div>
+  );
+};
+export default ProductCard;
+/**
+ *  <div className="d-flex align-items-center gap-1 mb-2">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,44 +171,4 @@ const ProductCard = ({ data }) => {
         </div>
         <p className={`m-0 p-0 ${style.rev}`}>(4.6)</p>
       </div>
-      {/* title*/}
-      <Link
-        to={`/product/${data.id}`}
-        className={`m-0 p-0  mb-2 ${style.title}`}
-      >
-        {data.name.substr(0, 25)}...
-      </Link>
-      {/*price*/}
-      <div className="mb-4">
-        <p className="fw-bolder m-0 p-0  ">
-          {data.disscount ? data.price_after_discount : data.price}
-          .00 {t("le")}
-        </p>
-        {data.discount && (
-          <del className="red m-0 p-0">
-            {data.price}.00 {t("le")}
-          </del>
-        )}
-      </div>
-      <div
-        className={`${style.iconContainer} ${
-          i18n.language === "ar" ? style.right : style.left
-        }  d-flex align-items-center justify-content-center gap-2 flex-wrap`}
-      >
-        <div className={style.circule}>
-          <BsCart className={style.icon} />
-        </div>
-        <div className={style.circule2}>
-          <AiOutlineHeart className={style.icon} />
-        </div>
-        <div
-          onClick={() => navigateProductDetails(data.id)}
-          className={style.circule3}
-        >
-          <AiOutlineEye className={style.icon} />
-        </div>
-      </div>
-    </div>
-  );
-};
-export default ProductCard;
+ */

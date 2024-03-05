@@ -3,7 +3,10 @@ import style from "./categoryCard.module.css";
 import { Link } from "react-router-dom";
 const CategoryCard = ({ data, path }) => {
   return (
-    <Link to={`${path}/${data.name}/${data.id}`} className={style.card}>
+    <Link
+      to={`${path}/${data.name}/${data.id}`}
+      className={`mx-auto ${style.card}`}
+    >
       <img alt="product/img" src={data.image} className={style.mainImg} />
       <p className={style.title}>{data.name}</p>
     </Link>

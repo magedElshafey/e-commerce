@@ -1,36 +1,56 @@
 .card {
-   position: relative !important;
-   padding: 16px 14px 16px 16px;
-   overflow: hidden;
-   height: 340px;
-   border-radius: 3px;
-   border: 1px solid  #E4E7E9;
-   background-color:  #FFF;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   -ms-border-radius: 3px;
-   -o-border-radius: 3px;
-  
+    position: relative !important;
+    padding: 16px 14px 16px 16px;
+    overflow: hidden;
+    height: 340px;
+    border-radius: 3px;
+    border: 1px solid #E4E7E9;
+    background-color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+
 }
+
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--redColor);
+    border-radius: 8px;
+    font-family: sans-serif !important;
+}
+
 .mainImg {
     width: 100px;
     height: 100px;
-    
+
     margin: auto !important;
 }
+
 .rev {
-    color:  #77878F;
+    color: #77878F;
 
 
-font-size: 12px;
-font-weight: 400;
+
+    font-weight: 400;
 
 }
+
 .title {
     color: var(--darkColor) !important;
-font-size: 14px;
+    font-size: 14px;
 }
-.circule , .circule2 , .circule3 {
+
+.circule,
+.circule2,
+.circule3 {
     width: 34px;
     height: 34px;
     transition: 0.4s;
@@ -38,7 +58,7 @@ font-size: 14px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -49,29 +69,36 @@ font-size: 14px;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
 .circule {
     background-color: var(--redColor);
     color: white;
 }
+
 .circule2 {
     background-color: var(--grayColor);
     color: var(--darkColor);
 }
+
 .circule3 {
     background-color: var(--darkColor);
     color: white;
 }
-.circule:hover , .circule2:hover , .circule3:hover {
-   transform: scale(1.03);
-   -webkit-transform: scale(1.03);
-   -moz-transform: scale(1.03);
-   -ms-transform: scale(1.03);
-   -o-transform: scale(1.03);
+
+.circule:hover,
+.circule2:hover,
+.circule3:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
 }
+
 .icon {
     width: 20px;
     height: 20px;
- transition: 0.4s;
+    transition: 0.4s;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
@@ -81,10 +108,12 @@ font-size: 14px;
 .iconContainer {
     position: absolute;
     bottom: 8px;
-  }
+}
+
 .left {
     left: 12px;
 }
+
 .right {
     right: 12px;
 }

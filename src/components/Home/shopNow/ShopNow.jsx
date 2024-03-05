@@ -37,7 +37,13 @@ const ShopNow = ({ data, banner }) => {
             </div>
           </div>
           <div className="col-12 col-md-4 mb-4 mb-md-0 d-flex justify-content-end">
-            <img alt="shop-banner" src={banner} className={style.mainImg} />
+            <a href={banner.url} target="_blank" rel="noreferrer">
+              <img
+                alt="shop-banner"
+                src={banner.image}
+                className={style.mainImg}
+              />
+            </a>
           </div>
         </div>
       </div>

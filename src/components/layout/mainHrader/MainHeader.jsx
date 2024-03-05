@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./mainHeader.module.css";
 import { GoSearch } from "react-icons/go";
 import { useTranslation } from "react-i18next";
@@ -6,8 +6,29 @@ import { useNavigate } from "react-router-dom";
 import { openCart } from "../../../Redux/cart";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import { request } from "../../utils/axios";
 const MainHeader = ({ isLogin, logo }) => {
   const dispatch = useDispatch();
+  const [keyword, setKeyWord] = useState("");
+  const [showKeywordsMenu, setShowKeyWordsMenu] = useState(false);
+  // handle show keywords menu
+
+  const handleChangeKeyword = (e) => {
+    setKeyWord(e.target.value);
+    setShowKeyWordsMenu(e.target.value.trim() !== "");
+  };
+  const handleKeywordsFetching = (text) => {
+    return request({ url: `/auto-complete?keyword=${text}` });
+  };
+  const { isLoading, data } = useQuery(
+    ["auto-complete", keyword],
+    () => handleKeywordsFetching(keyword),
+    {
+      enabled: keyword.trim() !== "",
+      onSuccess: (data) => console.log("keywords", data?.data?.data),
+    }
+  );
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const handleAccountNavigate = () =>
@@ -22,17 +43,54 @@ const MainHeader = ({ isLogin, logo }) => {
           </Link>
 
           {/*search container*/}
-          <div className={style.searchContainer}>
+          <div className={`${style.searchContainer} dropdown`}>
             <input
-              className={style.inp}
+              className={`${style.inp} dropdown-toggle`}
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
               placeholder={t("search")}
               type="text"
+              onChange={handleChangeKeyword}
+              value={keyword}
             />
             <GoSearch
               className={`${style.icon} ${
                 i18n.language === "ar" ? style.rtl : style.ltr
               }`}
             />
+            <div
+              className={`dropdown-menu t  ${
+                showKeywordsMenu ? "showw" : "hidee"
+              }`}
+            >
+              {isLoading ? (
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="spinner2"></div>
+                </div>
+              ) : (
+                <div>
+                  {data?.data?.data?.keywords?.map((item, index) => (
+                    <p
+                      onClick={() => {
+                        setKeyWord(item);
+                        setShowKeyWordsMenu(false);
+                      }}
+                      key={index}
+                      className="dropdown-item text-end pointer"
+                    >
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/**
+             *   <div className="d-flex justify-content-center">
+              <ul className=" dropdown-menu min-width mx-auto">
+                <div>{isLoading ? <p>loadingggg</p> : <div></div>}</div>
+              </ul>
+            </div>
+             */}
           </div>
           {/*cart , favourite , login */}
           <div className="d-flex align-items-center gap-2">

@@ -8,18 +8,33 @@ const FlashSale = ({ data }) => {
   return (
     <div className="container mb-4">
       <h3 className={`text-center mb-3 fw-bolder ${style.title}`}>
-        {t("offers")}
+        {data.title}
       </h3>
-      <Intro />
-      <div className="row">
-        {data.map((item, index) => (
-          <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-3" key={index}>
-            <ProductCard data={item} />
+      {data.description ? (
+        <p className="text-center mb-3 text-black-50">{data.description}</p>
+      ) : null}
+      <div className="row  align-items-center justify-content-center">
+        <div className="col-12 col-md-8">
+          <div className="row justify-content-between">
+            {data.products.map((item, index) => (
+              <div className="col-6 col-lg-4 col-xl-3 mb-3" key={index}>
+                <ProductCard data={item} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="col-12 col-md-4 mb-4 mb-md-0 d-flex justify-content-end">
+          <img alt="offer-img" className={style.mainImg} src={data.image} />
+        </div>
       </div>
     </div>
   );
 };
 
 export default FlashSale;
+/**
+ *    <Intro />
+ *   <div className="row">
+       
+      </div>
+ */

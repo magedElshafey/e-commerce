@@ -33,7 +33,7 @@ const Home = ({
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="py-4 mt-4 mt-md-0">
+        <div className="py-4  mt-5 mt-md-0">
           {bannerSlider.length && <AdsSlider data={bannerSlider} />}
           {weoffer.length && <Weoffer data={weoffer} />}
           <FlashSale data={flashsale} />
@@ -46,12 +46,11 @@ const Home = ({
           />
           <ShopNow data={shop} banner={banner4} />
           <ProductSlider data={productsForYou} title={t("customized")} />
+          <div className="my-5"></div>
           <Banner alt="banner/img" img={banner3} />
-        
-
-          <ProductSlider data={bestSaller} title={t("best")} />
-
-         
+          <div className="my-5">
+            <ProductSlider data={bestSaller} title={t("best")} />
+          </div>
           {data?.data?.data?.blogs.length && (
             <Blogs data={data?.data?.data?.blogs} />
           )}
@@ -64,10 +63,14 @@ const Home = ({
 export default Home;
 /**
  * 
-          <HeroBox
-            title={mainCategory.title}
-            data={mainCategory}
-            path={`/cat/${mainCategory.title}`}
-          />
+         
+          
+          
+         
         
+        
+
+        
+
+         
  */

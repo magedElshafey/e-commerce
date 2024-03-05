@@ -119,12 +119,12 @@ const App = () => {
                 <Home
                   bannerSlider={data?.data?.data?.banners}
                   weoffer={data?.data?.data?.features}
-                  flashsale={data?.data?.data?.tantawiOffers}
+                  flashsale={data?.data?.data?.offers[0]}
                   shopWithCategory={data?.data?.data?.categories}
-                  banner1={data?.data?.data.ads?.Ad1}
-                  banner2={data?.data?.data.ads?.Ad2}
-                  banner3={data?.data?.data.ads?.Ad3}
-                  banner4={data?.data?.data?.ads?.Ad4}
+                  banner1={data?.data?.data.ads[0]}
+                  banner2={data?.data?.data.ads[1]}
+                  banner3={data?.data?.data.ads[2]}
+                  banner4={data?.data?.data?.ads[3]}
                   mainCategory={data?.data?.data?.mainCategory}
                   shop={data?.data?.data?.shippingProducts}
                   productsForYou={data?.data?.data?.productsForYou}
@@ -244,6 +244,7 @@ const App = () => {
             account={account}
             payment={payment}
             logo={data?.data?.data?.site?.logo}
+            slogan={data?.data?.data?.site?.slogan}
           />
         </>
       )}

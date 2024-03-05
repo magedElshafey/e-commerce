@@ -6,16 +6,12 @@ import ClickOutsideWrapper from "../../hooks/useClickOutside";
 import { useDispatch } from "react-redux";
 import {
   AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineTwitter,
-  AiOutlineInstagram,
   AiOutlineHeart,
   AiOutlineShoppingCart,
   AiOutlineUser,
 } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
-import { FaPinterestP } from "react-icons/fa";
-import { BiLogoYoutube } from "react-icons/bi";
+import { useQuery } from "react-query";
+import { request } from "../../utils/axios";
 import { GoSearch } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
 import MenuSidebar from "../menuSidebar/MenuSidebar";
@@ -31,6 +27,25 @@ const MobileHeader = ({ data, logo, isLogin }) => {
   const navigate = useNavigate();
   const handleAccountNavigate = () =>
     isLogin ? navigate("/accountDetails") : navigate("/login");
+  const [keyword, setKeyWord] = useState("");
+  const [showKeywordsMenu, setShowKeyWordsMenu] = useState(false);
+  // handle show keywords menu
+
+  const handleChangeKeyword = (e) => {
+    setKeyWord(e.target.value);
+    setShowKeyWordsMenu(e.target.value.trim() !== "");
+  };
+  const handleKeywordsFetching = (text) => {
+    return request({ url: `/auto-complete?keyword=${text}` });
+  };
+  const { isLoading, data: keywords } = useQuery(
+    ["auto-complete", keyword],
+    () => handleKeywordsFetching(keyword),
+    {
+      enabled: keyword.trim() !== "",
+      onSuccess: (data) => console.log("keywords", data?.data?.data),
+    }
+  );
   return (
     <div className="d-md-none">
       <div className={style.navContainer}>
@@ -58,7 +73,50 @@ const MobileHeader = ({ data, logo, isLogin }) => {
               />
             </div>
           </div>
-          <div className={`mt-2 ${style.inputContainer}`}>
+          <div className={`mt-2 ${style.inputContainer} dropdown `}>
+            <input
+              className={`${style.inp} dropdown-toggle`}
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              placeholder={t("search")}
+              type="text"
+              onChange={handleChangeKeyword}
+              value={keyword}
+            />
+            <GoSearch
+              className={`${style.search} ${
+                i18n.language === "ar" ? style.rtl : style.ltr
+              }`}
+            />
+            <div
+              className={`dropdown-menu t  ${
+                showKeywordsMenu ? "showw" : "hidee"
+              }`}
+            >
+              {isLoading ? (
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="spinner2"></div>
+                </div>
+              ) : (
+                <div>
+                  {keywords?.data?.data?.keywords?.map((item, index) => (
+                    <p
+                      onClick={() => {
+                        setKeyWord(item);
+                        setShowKeyWordsMenu(false);
+                      }}
+                      key={index}
+                      className="dropdown-item text-end pointer"
+                    >
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+          {/**
+           *  <div className={`mt-2 ${style.inputContainer}`}>
             <input
               type="text"
               className={style.inp}
@@ -70,6 +128,7 @@ const MobileHeader = ({ data, logo, isLogin }) => {
               }`}
             />
           </div>
+           */}
         </div>
       </div>
       <MenuSidebar

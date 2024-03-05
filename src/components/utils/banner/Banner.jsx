@@ -5,7 +5,9 @@ const Banner = ({ img, alt }) => {
     <div className={`mb-4 ${style.mainDiv}`}>
       <div className="row">
         <div className="col-12">
-          <img alt={alt} className={style.mainImg} src={img} />
+          <a href={img.url} target="_blank" rel="noreferrer">
+            <img alt={alt} className={style.mainImg} src={img.image} />
+          </a>
         </div>
       </div>
     </div>

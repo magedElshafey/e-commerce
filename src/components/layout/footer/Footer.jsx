@@ -9,6 +9,7 @@ const Footer = ({
   account,
   payment,
   logo,
+  slogan,
 }) => {
   const { i18n, t } = useTranslation();
   const currentYear = new Date().getFullYear();
@@ -21,7 +22,7 @@ const Footer = ({
             <Link to="/">
               <img alt="logo" className={style.logo} src={logo} />
             </Link>
-            <p className="m-0 p-0 mb-3">{t("slogan")}</p>
+            <p className="m-0 p-0 mb-3">{slogan}</p>
             {socialMedia.length ? (
               <div className="d-flex items-center gap-2 flex-wrap">
                 {socialMedia.map((item, index) => (

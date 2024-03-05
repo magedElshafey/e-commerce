@@ -43,7 +43,7 @@ const CategorySlider = ({ data, path }) => {
   };
   return (
     <>
-      <Slider {...settings} className={style.slider}>
+      <Slider {...settings} className={`text-center ${style.slider}`}>
         {data.map((item, index) => (
           <CategoryCard key={index} data={item} path={path} />
         ))}

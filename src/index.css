@@ -58,10 +58,14 @@ a {
 
 body {
   overflow-x: hidden !important;
-  /* font-family: 'GE SS Two', sans-serif; */
+  font-family: 'GE SS Two', sans-serif;
 
   font-weight: 400;
   text-transform: capitalize;
+}
+
+.sans {
+  font-family: sans-serif;
 }
 
 html {
@@ -392,4 +396,54 @@ html {
 .slick-dots li button:before {
   font-size: 10px !important;
   margin-top: 15px !important;
+}
+
+.suggest-menu {
+  width: 100%;
+  padding: 8px;
+  position: absolute;
+  bottom: -280px;
+  left: 0;
+  z-index: 20000 !important;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.min-width {
+  min-width: 70% !important;
+  margin: 10px auto !important;
+}
+
+.showw {
+  display: block;
+  width: 100% !important;
+  margin: auto !important;
+}
+
+.t {
+  width: 100% !important;
+  margin: auto !important;
+}
+
+.hidee {
+  display: none;
+}
+
+.spinner2 {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, var(--redColor));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.pointer {
+  cursor: pointer;
 }
